@@ -1,0 +1,37 @@
+.booth{
+    width: 720px;
+    height: 480px;
+    border:solid 10px #ccc;
+}
+#video{
+    display: none;
+}
+.wrapper{
+
+}
+
+/*Botonera*/
+.botonera{
+
+}
+.grabar{
+
+}
+.parar{
+
+}
+
+/* Iconos */
+.iconos{
+
+}
+#objetos{
+	height: 480px;
+    overflow: auto;
+    width: 211px;
+    float: left;
+}
+#lista{
+	list-style: none;
+
+}
