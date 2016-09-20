@@ -87,7 +87,7 @@ function createCanvas() {
 	  fabric.util.requestAnimFrame(render);
 	  stats.update();
 	});
-	insertarFotoDrag('img/objetos/gif1.gif',false, 1, "init", 1, 0, 0);
+	insertarFotoDrag('img/objetos/gif2.gif',false, 1, "init", 1, 0, 0);
 	getFiltrosfabric();
 }
 
