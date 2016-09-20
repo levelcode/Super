@@ -24,20 +24,17 @@
             </ul>
         </nav>   
     </header>
-
-	
-
 	<div class="widget">
         
     
 		<center class="wrapper">
-			<div>
+			<div class="wrapper_container">
 				<div class="booth">
 					<canvas id="canvas" width="720" height="480"></canvas>
 				</div>
 				<div id="objetos"> 
+					<h2>Adornos</h2>
 	                <ul class="lista">
-	                    <h4>Adornos</h4>
 	                    <li>
 	                    <button class="botonObj"><img src="img/objetos/1.png" alt="" width="105"></button>
 	                    </li>
@@ -54,8 +51,8 @@
 	                    <button class="botonObj"><img src="img/objetos/5.png" alt="" width="105"></button>
 	                    </li>
 	                </ul>
+	                <h2>Fondos</h2>
 	                <ul class="lista">
-	                    <h4>Fondos</h4>
 	                    <li>
 	                    <button class="botonObjF"><img id="gif1" src="img/objetos/gif1.gif" alt="" width="105"></button>
 	                    </li>
@@ -73,13 +70,20 @@
 	                    </li>  
 	                </ul>
 		        </div>
+		        <div id="controls">
+					<!--<h3>Controles</h3>-->
+					<button class="boton grabar" >Grabar</button>
+			    	<button class="boton parar" style="display:none;" >Parar</button>
+			    	<button class="boton filtros" >Ver filtros</button>
+			    	<button class="boton borrar" >Borrar Elemento</button>
+				</div>
 			</div>
-			<div>
-				<div id="controls">
+			<div class="filtros_menu">
+				<div id="options_video">
 					<h3>Filtros Video:</h3>
 					<button id="normal" value="normal">Normal</button>
 					<button id="brighten" value="brighten">Iluminar</button>
-					<button id="threshold" value="threshold">Threshold</button>
+					<button id="threshold" value="threshold">B/W</button>
 					<button id="grey" value="grey">Grises</button>
 					<button id="invert" value="invert">Invertir</button>
 					<button id="noise" value="noise">Ruido</button>
@@ -91,12 +95,6 @@
 					<button id="lines" value="lines">Ruido TV</button>
 					<button id="dots" value="dots">Ruido TV2</button>
 					
-				</div>
-				<div id="options_video">
-					<h3>Controles</h3>
-					<button class="boton grabar" >Grabar</button>
-			    	<button class="boton parar" >Parar</button>
-			    	<button class="boton borrar" >Borrar Elemento</button>
 				</div>
 				<div id="options_fabric">
 					<h3>Filtros Elementos:</h3>
@@ -162,7 +160,7 @@
 		                  <p>
 		                  <label><span>Mezcla:</span> <input type="checkbox" id="blend"></label>
 		                  <br>
-		                  <label>Mode:</label>
+		                  <label>Modo:</label>
 		                    <select id="blend-mode" name="blend-mode">
 		                      <option selected="" value="add">Agregar</option>
 		                      <option value="diff">Difuminar</option>

@@ -27,7 +27,7 @@
 var stats = new Stats();
 stats.setMode(0);
 stats.domElement.style.position = 'absolute';
-stats.domElement.style.top = '9px';
+stats.domElement.style.top = '137px';
 stats.domElement.style.zIndex = 1;
 $('.booth').append(stats.domElement);
 
@@ -48,7 +48,7 @@ function init() {
 
 	v.addEventListener("loadedmetadata", vidLoaded, false);
 
-	document.getElementById('controls').addEventListener('click', function(e) {
+	document.getElementById('options_video').addEventListener('click', function(e) {
 		var value = e.target.value;
 		activeFilter = value ? value : activeFilter;
 	}, false);
@@ -87,6 +87,7 @@ function createCanvas() {
 	  fabric.util.requestAnimFrame(render);
 	  stats.update();
 	});
+	insertarFotoDrag('img/objetos/gif1.gif',false, 1, "init", 1, 0, 0);
 	getFiltrosfabric();
 }
 
@@ -368,12 +369,16 @@ function getCamera() {
 }
 function getEvents(){
 	$( ".grabar" ).click(function() {
+		$('.grabar').hide();
+		$('.parar').show();
 		c.discardActiveObject();
 		c.renderAll(); 
 		recorder.record();
 	});
 	
 	$('.parar').click(function() {
+		$('.grabar').show();
+		$('.parar').hide();
 		recorder.stop(function(blob) {
 		    var url = URL.createObjectURL(blob);
 		    window.open(url);
@@ -403,6 +408,12 @@ function getEvents(){
 		}
 		c.remove(object);
 	});
+	$( ".filtros" ).click(function() {
+	  	$( ".filtros_menu" ).slideToggle( "slow", function() {
+	    // Animation complete.
+	  });
+	});
+	$('.filtros_menu').slideUp(0);
 	console.log("Eventos OK");
 }
 function cambiarfondo(url){
