@@ -1,11 +1,55 @@
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  min-width: 1000px;
+@charset "utf-8";
+@import url("reset.css");
+/* CSS Document */
+@font-face {
+    font-family: 'prelow01-mediumregular';
+    src: url('../fonts/prelo_w01_medium-webfont.eot');
+    src: url('../fonts/prelo_w01_medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/prelo_w01_medium-webfont.woff2') format('woff2'),
+         url('../fonts/prelo_w01_medium-webfont.woff') format('woff'),
+         url('../fonts/prelo_w01_medium-webfont.svg#prelow01-mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
+
+@font-face {
+    font-family: 'prelow01-mediumitalicregular';
+    src: url('../fonts/prelo_w01_medium_italic-webfont.eot');
+    src: url('../fonts/prelo_w01_medium_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/prelo_w01_medium_italic-webfont.woff2') format('woff2'),
+         url('../fonts/prelo_w01_medium_italic-webfont.woff') format('woff'),
+         url('../fonts/prelo_w01_medium_italic-webfont.svg#prelow01-mediumitalicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html, body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+}
+body 
+{
+  font-family: 'prelow01-mediumitalicregular', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  max-width: 1920px;
+  display: block;
+  margin:0 auto;
+  position: relative;
+  left: 0;
+  right: 0;
+  height: auto;
+  transition:all .2s ease-out;
+  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 #controls {
@@ -18,9 +62,9 @@ html, body {
 }
 
 .controls{
-  width: 210px;
   height: 1000px;
   font-size: 12px;
+  width: 100%;
 }
 
 #options_video {
@@ -34,13 +78,15 @@ html, body {
 
 
 #options_fabric p{
-  width: 131px;
+  width: 100%;
   height: auto;
   display: inline-table;
   border: solid 1px gray;
   padding: 11px;
   border-radius: 10px;
-  margin-top: 0px;
+  margin-top: 10px;
+  background: #fff;
+  color: #000;
 }
 
 #options_fabric {
@@ -110,4 +156,209 @@ html, body {
 .iconos{
 
 }
+
+header
+{
+  max-width: 1920px;
+  width: 100%;
+  height: 240px;
+  display: block;
+  background: url(../img/header.png) no-repeat center top;
+  margin-bottom: -14px;
+  z-index: 2;
+  position: relative;
+}
+header nav
+{
+  max-width: 1280px;
+  width: 100%;
+  height: 240px;
+  display: block;
+}
+header nav .social
+{
+  float: right;
+  width: 64px;
+  height: 31px;
+  margin: 92px 0 0 0;
+}
+header nav .social .youtube_header
+{
+  width: 26px;
+  height: 31px;
+  float: left;
+  background: url(../img/social.png) no-repeat;
+}
+header nav .social .facebook_header
+{
+  width: 27px;
+  height: 31px;
+  float: right;
+  background: url(../img/social.png) no-repeat;
+  background-position: -37px 0px;
+}
+header nav ul
+{
+  max-width: 1024px;
+  width: 100%;
+  height: 87px;
+  line-height: 87px;
+  display: block;
+  margin: 0px auto 0;
+  text-align: center;
+  padding: 140px 0;
+}
+header nav ul li
+{
+  display: block;
+  margin: 0 0px;
+}
+header nav ul li:nth-child(1)
+{
+  float: left;
+}
+header nav ul li:nth-child(2)
+{
+  float: left;
+  margin-left: 50px;
+}
+header nav ul li:nth-child(3)
+{
+  float: left;
+  margin: -135px 0px 0;
+}
+header nav ul li:nth-child(4)
+{
+  float: left;
+  margin-left: 50px;
+}
+header nav ul li:nth-child(5)
+{
+  float: left;
+  margin-left: 50px;
+}
+header nav ul li a
+{
+  color: #fff;
+  font-size: 26px;
+  text-decoration: none;
+}
+footer
+{
+  max-width: 1920px;
+  width: 100%;
+  padding-top: 80px;
+  height: 310px;
+  display: block;
+  text-align: center;
+  background: #1c2b33;
+  position: relative;
+  clear: both;
+  font-family: 'prelow01-mediumregular';
+}
+footer .terminos_y_condiciones
+{
+  display: inline-block;
+  width: 225px;
+  vertical-align: top;
+}
+footer .terminos_y_condiciones:nth-child(2)
+{
+  margin: 0 50px;
+}
+footer .terminos_y_condiciones span
+{
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding-bottom: 20px;
+  background: url(../img/decor_footer.png) no-repeat bottom center;
+}
+footer .terminos_y_condiciones a
+{
+  color: #eb8a2a;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  background: url(../img/decor_link_footer.png) no-repeat bottom left;
+  margin: 30px 0 0 10px;
+}
+footer .terminos_y_condiciones a span
+{
+  color: #fff;
+  width: auto;
+  padding: 0;
+  display: inline-block;
+  background: none;
+}
+footer .derechos_copy
+{
+  font-family: 'prelow01-mediumitalicregular';
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 40px;
+  background: #e0020a;
+  border-bottom: 1px solid #217c79;
+  line-height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+footer .terminos_y_condiciones:nth-child(2) span
+{
+  text-align: left;
+  text-indent: 30px;
+}
+footer .terminos_y_condiciones a.facebook_footer
+{
+  width: 48px;
+  height: 48px;
+  float: left;
+  background: url(../img/social_footer.png) no-repeat bottom left;
+}
+footer .terminos_y_condiciones a.youtube_footer
+{
+  width: 48px;
+  height: 48px;
+  float: left;
+  margin: 30px 0 0 30px;
+  background: url(../img/social_footer.png) no-repeat bottom right;
+}
+footer .terminos_y_condiciones a.logo_footer
+{
+  background: none;
+  margin: -20px 0;
+}
+
+
+
+/*widget*/
+.widget
+{
+  max-width: 1920px;
+  width: 100%;
+  height: 1240px;
+  display: block;
+  background: url(../img/bg_widget.png) no-repeat center;
+  background-size: cover;
+  z-index: 0;
+  position: relative;
+  padding: 100px 0 0;
+}
+#controls button,
+#options_video button
+{
+  padding: 10px;
+  background: #fff;
+  border-radius: 10%;
+  margin: 10px;
+  border: 1px solid;
+  font-size: 12px;
+}
+
+
+
+
+
 
