@@ -1,0 +1,757 @@
+@charset "utf-8";
+@import url("reset.css");
+/* CSS Document */
+@font-face {
+    font-family: 'prelow01-mediumregular';
+    src: url('../fonts/prelo_w01_medium-webfont.eot');
+    src: url('../fonts/prelo_w01_medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/prelo_w01_medium-webfont.woff2') format('woff2'),
+         url('../fonts/prelo_w01_medium-webfont.woff') format('woff'),
+         url('../fonts/prelo_w01_medium-webfont.svg#prelow01-mediumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'prelow01-mediumitalicregular';
+    src: url('../fonts/prelo_w01_medium_italic-webfont.eot');
+    src: url('../fonts/prelo_w01_medium_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/prelo_w01_medium_italic-webfont.woff2') format('woff2'),
+         url('../fonts/prelo_w01_medium_italic-webfont.woff') format('woff'),
+         url('../fonts/prelo_w01_medium_italic-webfont.svg#prelow01-mediumitalicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html, body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+}
+body 
+{
+  font-family: 'prelow01-mediumitalicregular', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  max-width: 1920px;
+  display: block;
+  margin:0 auto;
+  position: relative;
+  left: 0;
+  right: 0;
+  height: auto;
+  transition:all .2s ease-out;
+  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+header
+{
+  max-width: 1920px;
+  width: 100%;
+  height: 240px;
+  display: block;
+  background: url(../assets/header.png) no-repeat center top;
+  margin-bottom: -14px;
+  z-index: 2;
+  position: relative;
+}
+header nav
+{
+  max-width: 1280px;
+  width: 100%;
+  height: 240px;
+  display: block;
+}
+header nav .social
+{
+  float: right;
+  width: 64px;
+  height: 31px;
+  margin: 92px 0 0 0;
+}
+header nav .social .youtube_header
+{
+  width: 26px;
+  height: 31px;
+  float: left;
+  background: url(../assets/social.png) no-repeat;
+}
+header nav .social .facebook_header
+{
+  width: 27px;
+  height: 31px;
+  float: right;
+  background: url(../assets/social.png) no-repeat;
+  background-position: -37px 0px;
+}
+header nav ul
+{
+  max-width: 1024px;
+  width: 100%;
+  height: 87px;
+  line-height: 87px;
+  display: block;
+  margin: 0 auto 0;
+  padding: 140px 0;
+  text-align: center;
+}
+header nav ul li
+{
+  display: block;
+  margin: 0 0px;
+}
+header nav ul li:nth-child(1)
+{
+  float: left;
+}
+header nav ul li:nth-child(2)
+{
+  float: left;
+  margin-left: 50px;
+}
+header nav ul li:nth-child(3)
+{
+  float: left;
+  margin: -135px 0px 0;
+}
+header nav ul li:nth-child(4)
+{
+  float: left;
+  margin-left: 50px;
+}
+header nav ul li:nth-child(5)
+{
+  float: left;
+  margin-left: 50px;
+}
+header nav ul li a
+{
+  color: #fff;
+  font-size: 26px;
+  text-decoration: none;
+}
+footer
+{
+  max-width: 1920px;
+  width: 100%;
+  padding-top: 80px;
+  height: 310px;
+  display: block;
+  text-align: center;
+  background: #1c2b33;
+  position: relative;
+  clear: both;
+  font-family: 'prelow01-mediumregular';
+}
+footer .terminos_y_condiciones
+{
+  display: inline-block;
+  width: 225px;
+  vertical-align: top;
+}
+footer .terminos_y_condiciones:nth-child(2)
+{
+  margin: 0 50px;
+}
+footer .terminos_y_condiciones span
+{
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding-bottom: 20px;
+  background: url(../assets/decor_footer.png) no-repeat bottom center;
+}
+footer .terminos_y_condiciones a
+{
+  color: #eb8a2a;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  background: url(../assets/decor_link_footer.png) no-repeat bottom left;
+  margin: 30px 0 0 10px;
+}
+footer .terminos_y_condiciones a span
+{
+  color: #fff;
+  width: auto;
+  padding: 0;
+  display: inline-block;
+  background: none;
+}
+footer .derechos_copy
+{
+  font-family: 'prelow01-mediumitalicregular';
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 40px;
+  background: #e0020a;
+  border-bottom: 1px solid #217c79;
+  line-height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+footer .terminos_y_condiciones:nth-child(2) span
+{
+  text-align: left;
+  text-indent: 30px;
+}
+footer .terminos_y_condiciones a.facebook_footer
+{
+  width: 48px;
+  height: 48px;
+  float: left;
+  background: url(../assets/social_footer.png) no-repeat bottom left;
+}
+footer .terminos_y_condiciones a.youtube_footer
+{
+  width: 48px;
+  height: 48px;
+  float: left;
+  margin: 30px 0 0 30px;
+  background: url(../assets/social_footer.png) no-repeat bottom right;
+}
+footer .terminos_y_condiciones a.logo_footer
+{
+  background: none;
+  margin: -20px 0;
+}
+
+
+
+/*widget*/
+.widget
+{
+  max-width: 1920px;
+  width: 100%;
+  height: 1240px;
+  display: block;
+  background: url(../assets/bg_widget.png) no-repeat center;
+  background-size: cover;
+  z-index: 0;
+  position: relative;
+  padding: 100px 0 0;
+}
+
+/* internas */
+.wrapper_int
+{
+  overflow: overlay;
+  max-width: 1920px;
+  width: 100%;
+  height: auto;
+  display: block;
+  background: url(../assets/fondo_int.png) no-repeat center;
+  background-size: cover;
+  z-index: 0;
+  position: relative;
+  padding: 100px 100px;
+  top: -125px;
+  margin-bottom: -125px;
+}
+.wrapper_int.premios
+{
+  max-width: 1920px;
+  width: 100%;
+  height: auto;
+  display: block;
+  background: url(../assets/fondo_premios.png) no-repeat center bottom;
+  background-size: cover;
+  z-index: 0;
+  position: relative;
+  padding: 100px 0 100px;
+}
+/* video compartir */
+.wrapper_int .box_compartir
+{
+  max-width: 1024px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.wrapper_int .box_compartir .titulo_compartir
+{
+  max-width: 1222px;
+  width: 100%;
+  height: 453px;
+  display: block;
+  background: url(../assets/compartir_header.png) no-repeat center;
+  background-size: contain;
+  z-index: 0;
+  position: relative;
+  margin: 0 -119px;
+}
+.wrapper_int .box_compartir .titulo_compartir p
+{
+  position: absolute;
+  top: 210px;
+  right: 40px;
+  width: 600px;
+  font-size: 19px;
+  line-height: 26px;
+  font-family: 'prelow01-mediumregular';
+}
+.wrapper_int .box_compartir .box_video
+{
+  max-width: 680px;
+  width: 100%;
+  height: 405px;
+  margin: -11% auto 0;
+  display: block;
+  background: #fff;
+  border: #fff;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: -5px 6px 20px -4px rgb(90, 90, 90);
+  -moz-box-shadow: -5px 6px 20px -4px rgb(90, 90, 90);
+  box-shadow: -5px 6px 20px -4px rgb(90, 90, 90)º;
+}
+.wrapper_int .box_compartir .controls_video_compartir
+{
+  max-width: 680px;
+  width: 100%;
+  height: 90px;
+  display: block;
+  background: rgb(49,49,49); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(49,49,49,1) 0%, rgba(25,25,25,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(49,49,49,1) 0%,rgba(25,25,25,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(49,49,49,1) 0%,rgba(25,25,25,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313131', endColorstr='#191919',GradientType=0 ); /* IE6-9 */
+  background-size: contain;
+  z-index: 0;
+  position: relative;
+  margin: 10px auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.wrapper_int .box_compartir .controls_video_compartir .play,
+.wrapper_int .box_compartir .controls_video_compartir .stop,
+.wrapper_int .box_compartir .controls_video_compartir .repeat
+{
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: 20px;
+  background: url(../assets/play.png) no-repeat center;
+  cursor: pointer;
+}
+.wrapper_int .box_compartir .box_social_compartir
+{
+  max-width: 680px;
+  width: 100%;
+  height: 90px;
+  display: block;
+  z-index: 0;
+  position: relative;
+  margin: 10px auto;
+}
+.wrapper_int .box_compartir .compartir_facebook_video
+{
+  width: 364px;
+  height: 160px;
+  float: left;
+  margin: -32px 0 0 -51px;
+  background: url(../assets/compartir_en_redes.png) no-repeat center;
+}
+.wrapper_int .box_compartir .inicia_el_reto
+{
+  width: 374px;
+  height: 160px;
+  float: right;
+  margin: -32px 0 0 -51px;
+  background: url(../assets/inicia_el_reto.png) no-repeat center;
+}
+.shadow_compartir
+{
+  max-width: 807px;
+  height: 102px;
+  margin: -30px auto 0;
+  display: block;
+  background: url(../assets/shadow.png) no-repeat center;
+}
+/* instrucciones */
+.wrapper_int .box_instrucciones
+{
+  max-width: 1024px;
+  width: 100%;
+  height: auto;
+  margin: -100px auto 0;
+  position: relative;
+  overflow: hidden;
+}
+.wrapper_int .box_instrucciones .titulo_instrucciones
+{
+  max-width: 1222px;
+  width: 100%;
+  height: 453px;
+  display: block;
+  background: url(../assets/instrucciones_header.png) no-repeat center;
+  background-size: contain;
+  z-index: 0;
+  position: relative;
+  margin: -100px -59px 0;
+}
+.wrapper_int .box_instrucciones .titulo_instrucciones p
+{
+  position: absolute;
+  top: 225px;
+  right: 10px;
+  width: 600px;
+  font-size: 19px;
+  line-height: 26px;
+  font-family: 'prelow01-mediumregular';
+}
+.wrapper_int .box_instrucciones .box_pasos_instrucciones
+{
+  width: 100%;
+  height: auto;
+  margin: -100px auto;
+}
+.wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos
+{
+  width: 230px;
+  height: auto;
+  float: left;
+  margin: 0 3.1% 0 0;
+  display: block;
+}
+.wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos:last-child
+{
+  margin: 0;
+}
+.wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos img
+{
+  width: 100%;
+  height: auto;
+  margin: 0 0 90px;
+}
+.wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos span
+{
+  width: 100%;
+  display: block;
+  color: #f0ff00;
+  font-size: 26px;
+  line-height: 100%;
+  font-family: 'prelow01-mediumregular';
+  padding: 0 0 40px 0;
+}
+.wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos p
+{
+  width: 84%;
+  display: block;
+  color: #fff;
+  font-size: 22px;
+  line-height: 28px;
+  font-family: 'prelow01-mediumregular';
+}
+/* premios */
+.wrapper_int .box_premios
+{
+  max-width: 1024px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.wrapper_int .box_premios .titulo_premios
+{
+  max-width: 1162px;
+  width: 100%;
+  height: 468px;
+  display: block;
+  background: url(../assets/premio_header.png) no-repeat center;
+  background-size: contain;
+  z-index: 0;
+  position: relative;
+  margin: 0 0px;
+}
+.wrapper_int .box_premios .titulo_premios p
+{
+  position: absolute;
+  top: 169px;
+  right: 45px;
+  width: 570px;
+  font-size: 19px;
+  line-height: 26px;
+  font-family: 'prelow01-mediumregular';
+}
+.wrapper_int .box_premios .titulo_premios p span
+{
+  color: #000;
+}
+
+.wrapper_int .box_premios .titulo_premios_2
+{
+  max-width: 1000px;
+  width: 100%;
+  height: 230px;
+  display: block;
+  background: url(../assets/premio_header_2.png) no-repeat center;
+  background-size: contain;
+  z-index: 0;
+  position: relative;
+  margin: 0 0px;
+}
+.wrapper_int .box_premios .titulo_premios_2 p
+{
+  position: absolute;
+  top: 100px;
+  left: 45px;
+  width: 570px;
+  font-size: 19px;
+  line-height: 26px;
+  font-family: 'prelow01-mediumregular';
+  color: #000;
+}
+.wrapper_int .box_premios .inicia_el_reto
+{
+  width: 374px;
+  height: 160px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  background: url(../assets/inicia_el_reto.png) no-repeat center;
+}
+.wrapper_int .box_premios .terminos_condiciones_premios
+{
+  width: 208px;
+  height: 35px;
+  position: relative;
+  font-family: 'prelow01-mediumregular';
+  display: block;
+  margin: 0 auto;
+  background: #620808;
+  border: 3px solid #fff;
+  text-align: center;
+  line-height: 29px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  left: 70px;
+  top: -30px;
+  z-index: 10px;
+}
+
+/* formulario */
+.wrapper_int .box_formulario
+{
+  max-width: 1024px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+.wrapper_int .box_formulario .titulo_formulario
+{
+  max-width: 1222px;
+  width: 100%;
+  height: 453px;
+  display: block;
+  background: url(../assets/formulario_header.png) no-repeat center;
+  background-size: contain;
+  z-index: 0;
+  position: relative;
+  margin: 0 -119px;
+}
+.wrapper_int .box_formulario .titulo_formulario p
+{
+  position: absolute;
+  top: 210px;
+  right: 40px;
+  width: 600px;
+  font-size: 19px;
+  line-height: 26px;
+  font-family: 'prelow01-mediumregular';
+}
+.wrapper_int .box_formulario .box_video_formulario
+{
+  max-width: 600px;
+  width: 100%;
+  float: right;
+  height: 375px;
+  margin: -11% 130px 0 0;
+  display: block;
+  background: #fff;
+  border: #fff;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: -5px 6px 20px -4px rgb(90, 90, 90);
+  -moz-box-shadow: -5px 6px 20px -4px rgb(90, 90, 90);
+  box-shadow: -5px 6px 20px -4px rgb(90, 90, 90)º;
+}
+.wrapper_int .box_formulario .controls_video_compartir
+{
+  max-width: 600px;
+  width: 100%;
+  height: 77px;
+  float: right;
+  display: block;
+  background: rgb(49,49,49); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(49,49,49,1) 0%, rgba(25,25,25,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(49,49,49,1) 0%,rgba(25,25,25,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(49,49,49,1) 0%,rgba(25,25,25,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313131', endColorstr='#191919',GradientType=0 ); /* IE6-9 */
+  background-size: contain;
+  z-index: 0;
+  position: relative;
+  margin: 10px 130px 0 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.wrapper_int .box_formulario .controls_video_compartir .play,
+.wrapper_int .box_formulario .controls_video_compartir .stop,
+.wrapper_int .box_formulario .controls_video_compartir .repeat
+{
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: 10px;
+  background: url(../assets/play.png) no-repeat center;
+  cursor: pointer;
+}
+
+.wrapper_int .box_formulario .shadow_compartir
+{
+  max-width: 607px;
+  width: 100%;
+  height: 102px;
+  float: right;
+  margin: -30px 130px 0 0;
+  display: block;
+  background: url(../assets/shadow.png) no-repeat center;
+  background-size: 101%;
+}
+.formulario
+{
+  float: left;
+  width: 280px;
+  height: auto;
+  vertical-align: top;
+  position: relative;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.73);
+  padding: 20px 10px;
+  margin: -11% 0 0 0;
+  font-family: 'prelow01-mediumregular';
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.formulario input
+{
+  height: 40px;
+  width: 95%;
+  display: block;
+  background: #c7c7c7;
+  padding: 0 4%;
+  margin: 0 auto 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+ /* WebKit browsers */
+.formulario input::-webkit-input-placeholder {
+  color: #fff !important; 
+}
+
+/* Mozilla Firefox 4 to 18 */
+.formulario input:-moz-placeholder { 
+  color: #fff !important;
+}
+
+/* Mozilla Firefox 19+ */
+.formulario input::-moz-placeholder { 
+  color: #fff !important; 
+}
+
+/* Internet Explorer 10+ */
+.formulario input:-ms-input-placeholder { 
+   color: #fff !important; 
+}
+.formulario .box_captcha
+{
+  height: 130px;
+  width: 95%;
+  display: block;
+  background: #fff;
+  margin: 0 auto 10px;
+  border: 1px solid red;
+}
+.formulario .generar_url
+{
+  height: 40px;
+  width: 95%;
+  display: block;
+  background: #c95513;
+  padding: 0 4%;
+  margin: 0 auto 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+.formulario .enviar_compartir
+{
+  width: 320px;
+  height: 160px;
+  float: left;
+  font-size: 0;
+  margin: -26px 0 0 -53px;
+  background: url(../assets/compartir_en_redes.png) no-repeat center;
+  background-size: contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
