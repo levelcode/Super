@@ -8,37 +8,37 @@
               <h2>Adornos</h2>
               <ul class="lista">
                   <li>
-                  <button class="botonObj"><img src="img/objetos/1.png" alt="" width="105"></button>
+                  <button class="botonObj"><img src="<?php bloginfo('template_url')?>/img/objetos/1.png" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObj"><img src="img/objetos/2.png" alt="" width="105"></button>
+                  <button class="botonObj"><img src="<?php bloginfo('template_url')?>/img/objetos/2.png" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObj"><img src="img/objetos/3.png" alt="" width="105"></button>
+                  <button class="botonObj"><img src="<?php bloginfo('template_url')?>/img/objetos/3.png" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObj"><img src="img/objetos/4.png" alt="" width="105"></button>
+                  <button class="botonObj"><img src="<?php bloginfo('template_url')?>/img/objetos/4.png" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObj"><img src="img/objetos/5.png" alt="" width="105"></button>
+                  <button class="botonObj"><img src="<?php bloginfo('template_url')?>/img/objetos/5.png" alt="" width="105"></button>
                   </li>
               </ul>
               <h2>Fondos</h2>
               <ul class="lista">
                   <li>
-                  <button class="botonObjF"><img id="gif1" src="img/objetos/gif1.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif1" src="<?php bloginfo('template_url')?>/img/objetos/gif1.gif" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObjF"><img id="gif2" src="img/objetos/gif2.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif2" src="<?php bloginfo('template_url')?>/img/objetos/gif2.gif" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObjF"><img id="gif3" src="img/objetos/gif3.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif3" src="<?php bloginfo('template_url')?>/img/objetos/gif3.gif" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObjF"><img id="gif4" src="img/objetos/gif4.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif4" src="<?php bloginfo('template_url')?>/img/objetos/gif4.gif" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObjF"><img id="gif5" src="img/objetos/gif5.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif5" src="<?php bloginfo('template_url')?>/img/objetos/gif5.gif" alt="" width="105"></button>
                   </li>  
               </ul>
           </div>

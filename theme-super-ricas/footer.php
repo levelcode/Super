@@ -10,7 +10,7 @@
     </div>
     <div class="terminos_y_condiciones">
         <a href="javascript:void(0);" class="logo_footer">
-            <img src="assets/logo_footer.png" alt="">
+            <img src="<?php bloginfo('template_url')?>/assets/logo_footer.png" alt="">
         </a>
     </div>
     <div class="derechos_copy">
