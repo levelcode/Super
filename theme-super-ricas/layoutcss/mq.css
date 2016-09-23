@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* CSS Document */
+@media (max-width: 1279px) 
+{
+    header nav ul
+    {
+        max-width: 1000px;
+    }
+    header nav ul li:nth-child(2) 
+    {
+        margin-left: 7.5%;
+    } 
+    .wrapper_int .box_instrucciones .box_pasos_instrucciones
+    {
+        margin: -70px auto 0;
+    }
+    .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos img
+    {
+        margin: 0 0 40px;
+    }
+    .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos span
+    {
+        font-size: 19px;   
+    }
+    .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos p
+    {
+        font-size: 16px;
+        line-height: 21px;
+    }
+    .wrapper_int .box_instrucciones .titulo_instrucciones p
+    {
+        top: 211px;
+        width: 59%;
+    }
+    .wrapper_int .box_premios .titulo_premios p
+    {
+        font-size: 16px;
+    }
+    .wrapper_int .box_premios .titulo_premios_2
+    {
+        margin: -10% 0px 0;
+    }
+    .wrapper_int .box_formulario .box_video_formulario
+    {
+        max-width: initial;
+        margin: -11% 0px 0 0;
+        width: 64%;
+    }
+    .wrapper_int .box_formulario .controls_video_compartir
+    {
+        max-width: initial;
+        margin: 10px 0 0;
+        width: 64%;
+    }
+    .wrapper_int .box_formulario .shadow_compartir
+    {
+        max-width: initial;
+        margin: -40px 0 0;
+        width: 64%;
+    }
+    .wrapper_int .box_formulario .volver
+    {
+        margin: -30px 21% 0 0;
+    }
+
+
+}
+
+@media (max-width: 1023px) 
+{
+    header nav ul
+    {
+        max-width: 620px;
+    }
+    header nav ul li a
+    {
+        font-size: 16px;
+    }
+    header nav ul li:nth-child(2),
+    header nav ul li:nth-child(4),
+    header nav ul li:nth-child(5)
+    {
+            margin-left: 4%;
+    }
+    header nav ul li:nth-child(3)
+    {
+        width: 250px;
+    }
+    header nav ul li:nth-child(3) a img
+    {
+        width: 100%;
+    }
+    .wrapper_int 
+    {
+        max-width: initial;
+        width: 100%;
+        padding: 50px 20px;
+    }
+    .wrapper_int .box_instrucciones
+    {
+        display: block;
+        max-width: initial;
+        width: 768px;
+    }
+    .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos
+    {
+        margin: 0 4% 0 0;
+    }
+    .wrapper_int .box_compartir .titulo_compartir,
+    .wrapper_int .box_formulario .titulo_formulario
+    {
+        margin: 0 -6%;
+    }
+    .wrapper_int .box_compartir .titulo_compartir p
+    {
+        font-size: 14px;
+    }
+    .wrapper_int .box_premios .titulo_premios_2 p,
+    .wrapper_int .box_formulario .titulo_formulario p
+    {
+        font-size: 16px;
+    }
+    .wrapper_int .box_formulario .box_video_formulario,
+    .wrapper_int .box_formulario .controls_video_compartir,
+    .wrapper_int .box_formulario .shadow_compartir
+    {
+        width: 58%;
+    }
+    footer .terminos_y_condiciones
+    {
+        width: 200px;
+    }
+
+}
+
+@media (max-width: 768px) 
+{
+
+}
+
+@media (max-width: 767px) 
+{
+
+}
+
+@media (max-width: 414px) 
+{
+
+}
+
+@media (max-width: 375px) 
+{
+
+}
+
+@media (max-width: 320px) 
+{
+
+}
