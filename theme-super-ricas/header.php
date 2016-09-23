@@ -22,11 +22,11 @@
                 <a href="javascript:void(0);" class="facebook_header"></a>
             </div>
             <ul>
-                <li><a href="javascript:void(0);">HOME</a></li>
-                <li><a href="javascript:void(0);">INSTRUCCIONES</a></li>
-                <li><a href="javascript:void(0);"><img src="<?php bloginfo('template_url')?>/assets/logo.png" alt=""></a></li>
-                <li><a href="javascript:void(0);">PREMIOS</a></li>
-                <li><a href="javascript:void(0);">GALERIAS</a></li>
+                <li><a href="<?php echo home_url('/'); ?>">HOME</a></li>
+                <li><a href="/instrucciones">INSTRUCCIONES</a></li>
+                <li><a href="<?php echo home_url('/'); ?>"><img src="<?php bloginfo('template_url')?>/assets/logo.png" alt=""></a></li>
+                <li><a href="/premios">PREMIOS</a></li>
+                <li><a href="<?php echo home_url('/'); ?>#gallery">GALERIAS</a></li>
             </ul>
-        </nav>   
+        </nav>
     </header>
