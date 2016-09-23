@@ -6,7 +6,7 @@
         window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
                                    || window[vendors[x]+'CancelRequestAnimationFrame'];
     }
- 
+
     if (!window.requestAnimationFrame)
         window.requestAnimationFrame = function(callback, element) {
             var currTime = new Date().getTime();
@@ -16,7 +16,7 @@
             lastTime = currTime + timeToCall;
             return id;
         };
- 
+
     if (!window.cancelAnimationFrame)
         window.cancelAnimationFrame = function(id) {
             clearTimeout(id);
@@ -71,7 +71,7 @@ function createCanvas() {
 	ctx = c.getContext('2d');
 	c.width = 0;
 	c.height = 0;
-	
+
 
 	c2 = document.createElement('canvas');
 	ctx2 = c2.getContext('2d');
@@ -98,7 +98,7 @@ function loop() {
 }
 
 function draw() {
-	
+
     switch (activeFilter) {
         case 'normal':
             ctx.drawImage(v, 0, 0, winWidth, vHeight);
@@ -233,7 +233,7 @@ function noise() {
 
 	for (var i = 0; i < pixelDataLen; i += 4 ) {
 		var rand =  (0.5 - Math.random()) * 70;
-		
+
 		var r = pixelData.data[i];
 		var g = pixelData.data[i+1];
 		var b = pixelData.data[i+2];
@@ -339,7 +339,7 @@ function colorStuff(number) {
 	var pixelDataLen = data.length;
 	// Loop through each pixel and convert it to grey scale
 	for (var i = 0; i < pixelDataLen; i += number ) {
-		
+
 		// Loop through the subpixels, convoluting each using an edge-detection matrix.
         if( i % 4 == 3 ) continue;
         data[i] = 127 + 2 * data[i] - data[i + 4] - data[i + c2Width * 4];
@@ -372,26 +372,44 @@ function getEvents(){
 		$('.grabar').hide();
 		$('.parar').show();
 		c.discardActiveObject();
-		c.renderAll(); 
+		c.renderAll();
 		recorder.record();
 	});
-	
+
+	//Stop action for generate video
 	$('.parar').click(function() {
 		$('.grabar').show();
 		$('.parar').hide();
 		recorder.stop(function(blob) {
-		    var url = URL.createObjectURL(blob);
-		    window.open(url);
+		    var url = URL.createObjectURL(blob),
+		        heightWG = $('.content_widget').outerHeight();
+		    $('.box_formulario .box_video_formulario').append('<video id="video_1" controls><source src="'+url+'" type="video/webm"></video>');
+		    $('body').addClass('active_form');
+		    //Animation scroll
+		    $('html, body').animate({
+	          	scrollTop: heightWG
+	        }, 1000);
 		});
 	});
-	//Handler para carga de los elementos desde una lista 
+
+	//Back button
+	$('.volver').click(function(event) {
+		$('body').removeClass('active_form');
+		//Clena video
+		$('.box_formulario .box_video_formulario').find('video').remove();
+		//Animation scroll
+	    $('html, body').animate({
+          	scrollTop: 0
+        }, 1000);
+	});
+	//Handler para carga de los elementos desde una lista
 	$(".botonObj img").click(function(e){
 
 		var var_url = $(this).prop('src');
 		insertarFotoDrag(var_url,true, num_zobject, "init", 0.5, 0, 0);
 		num_zobject++
 	});
-	//Handler para carga fondos 
+	//Handler para carga fondos
 	$(".botonObjF img").click(function(e){
 		var fondo = c.item(1);
 		c.remove(fondo);
@@ -421,7 +439,7 @@ function cambiarfondo(url){
 }
 var insertarFotoDrag = function(url, seleccionable, zindex, nombre, scale)
 {
-	fabric.Image.fromURL(url, function(oImg) { 
+	fabric.Image.fromURL(url, function(oImg) {
 		oImg.scale(scale);
 		oImg.selectable = seleccionable;
 		oImg.set({
@@ -577,18 +595,18 @@ function getFiltrosfabric(){
 	  $('multiply-color').onchange = function() {
 	    applyFilterValue(13, 'color', this.value);
 	  };
-	  
-	  $('blend').onclick= function() { 
+
+	  $('blend').onclick= function() {
 	    applyFilter(14, this.checked && new f.Blend({
 	      color: document.getElementById('blend-color').value,
 	      mode: document.getElementById('blend-mode').value
 	    }));
 	  };
-	 
+
 	  $('blend-mode').onchange = function() {
 	    applyFilterValue(14, 'mode', this.value);
 	  };
-	 
+
 	  $('blend-color').onchange = function() {
 	    applyFilterValue(14, 'color', this.value);
 	  };

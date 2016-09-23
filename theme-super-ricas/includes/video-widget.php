@@ -4,7 +4,7 @@
           <div class="booth">
               <canvas id="canvas" width="720" height="480"></canvas>
           </div>
-          <div id="objetos"> 
+          <div id="objetos">
               <h2>Adornos</h2>
               <ul class="lista">
                   <li>
@@ -39,7 +39,7 @@
                   </li>
                   <li>
                   <button class="botonObjF"><img id="gif5" src="<?php bloginfo('template_url')?>/img/objetos/gif5.gif" alt="" width="105"></button>
-                  </li>  
+                  </li>
               </ul>
           </div>
           <div id="controls">
@@ -66,7 +66,7 @@
               <button id="redCyan" value="redCyan">Hypster</button>
               <button id="lines" value="lines">Ruido TV</button>
               <button id="dots" value="dots">Ruido TV2</button>
-              
+
           </div>
           <div id="options_fabric">
               <h3>Filtros Elementos:</h3>
@@ -153,4 +153,4 @@
 
   <a href="javascript:void(0);" class="instrucciones_widget"></a>
 
-  </div>
+</div>

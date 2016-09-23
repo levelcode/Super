@@ -35,7 +35,7 @@ html, body {
   width: 100%;
   color: #fff;
 }
-body 
+body
 {
   font-family: 'prelow01-mediumitalicregular', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -237,7 +237,7 @@ body
 
 
 
-header 
+header
 {
   max-width: 1920px;
   width: 100%;
@@ -1043,22 +1043,22 @@ form.videos_form
 }
  /* WebKit browsers */
 .formulario input::-webkit-input-placeholder {
-  color: #fff !important; 
+  color: #fff !important;
 }
 
 /* Mozilla Firefox 4 to 18 */
-.formulario input:-moz-placeholder { 
+.formulario input:-moz-placeholder {
   color: #fff !important;
 }
 
 /* Mozilla Firefox 19+ */
-.formulario input::-moz-placeholder { 
-  color: #fff !important; 
+.formulario input::-moz-placeholder {
+  color: #fff !important;
 }
 
 /* Internet Explorer 10+ */
-.formulario input:-ms-input-placeholder { 
-   color: #fff !important; 
+.formulario input:-ms-input-placeholder {
+   color: #fff !important;
 }
 .formulario .box_captcha
 {
@@ -1100,6 +1100,27 @@ form.videos_form
   -moz-box-shadow: none;
   box-shadow: none;
 }
+/* JS validations */
+
+/* ------------------------ Active form --------------------------- */
+.wrapper_int{
+  display:none;
+}
+  .wrapper_int > div{
+    display:none;
+  }
+
+body.active_form .wrapper_int{
+  display:block;
+}
+  body.active_form .wrapper_int .box_formulario{
+    display:block;
+  }
+  //hide record button
+  body.active_form  .boton.grabar{
+    display:none;
+  }
+
 
 
 
