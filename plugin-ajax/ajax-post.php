@@ -32,7 +32,7 @@ function apf_addpost() {
     $post_id = wp_insert_post( array(
         'post_title'        => $title,
         'post_content'      => $content,
-        'post_status'       => 'publish',
+        'post_status'       => 'pending',
         'post_author'       => '2'
     ) );
  

@@ -383,27 +383,39 @@ function getEvents(){
 		recorder.stop(function(blob) {
 		    var url = URL.createObjectURL(blob),
 		        heightWG = $('.content_widget').outerHeight();
-		    $('.box_formulario .box_video_formulario').append('<video id="video_1" controls><source src="'+url+'" type="video/webm"></video>');
-		    //display active form
-		    $('body').addClass('active_form');
-		    //send value to form
-		    $('#apfform input.content').val(url);
-		    //enable input
-		    $("#apfform input").prop('disabled', false);
-		    //Animation scroll
-		    $('html, body').animate({
-	          	scrollTop: heightWG
-	        }, 1000);
+
+		    //upload video
+		    uploadToServer(blob, function(progress, fileURL) {
+                if(progress === 'termino') {
+                    console.log("Subida satisfactoria URL:"+fileURL);
+
+                    $('.box_formulario .box_video_formulario').append('<video id="video_1" controls><source src="'+fileURL+'" type="video/webm"></video>');
+				    //display active form
+				    $('body').addClass('active_form');
+				    //send value to form
+				    $('#apfform input.content').val(fileURL);
+				    //enable input
+				    $("#apfform input").prop('disabled', false);
+				    //Animation scroll
+				    $('html, body').animate({
+			          	scrollTop: heightWG
+			        }, 1000);
+
+                    return;
+                }else{
+					console.log(progress);
+                }
+                
+            });
+
 		});
 	});
 
 	//Ajax form data
-
-	$('.enviar_compartir').click(function(event) {
+	$('.generar_url').click(function(event) {
 		var title = $('.formulario .name').val(),
 			contents = $('.formulario .content').val();
 		//Launch ajax data plugin
-		console.log(title + '/////'+contents);
 		apfaddpost(title,contents);
 	});
 
@@ -627,6 +639,69 @@ function getFiltrosfabric(){
 	    applyFilterValue(14, 'color', this.value);
 	  };
 	  console.log("Filtros Fabric OK");
+}
+
+function uploadToServer(blob, callback) {
+    //var blob = recordRTC instanceof Blob ? recordRTC : recordRTC.blob;
+    var fileType = blob.type.split('/')[0] || 'audio';
+    var fileName = (Math.random() * 1000).toString().replace('.', '');
+
+    if (fileType === 'audio') {
+        fileName += '.' + (!!navigator.mozGetUserMedia ? 'ogg' : 'wav');
+    } else {
+        fileName += '.webm';
+    }
+
+    // create FormData
+    var formData = new FormData();
+    formData.append(fileType + '-filename', fileName);
+    formData.append(fileType + '-blob', blob);
+
+    callback('Uploading ' + fileType + ' recording to server.');
+
+    makeXMLHttpRequest('https://supercrokantes.tk/wp-content/themes/theme-super-ricas/save.php', formData, function(progress) {
+        if (progress !== 'Archivo Disponible') {
+            callback(progress);
+            return;
+        }else{
+        	var initialURL = 'https://supercrokantes.tk/wp-content/themes/theme-super-ricas/uploads/';
+        	callback('termino', initialURL + fileName);
+        } 
+    });
+}
+
+function makeXMLHttpRequest(url, data, callback) {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            callback('Archivo Disponible');
+        }
+    };
+
+    request.upload.onloadstart = function() {
+        callback('Iniciando Subida...');
+    };
+
+    request.upload.onprogress = function(event) {
+        callback('Progreso: ' + Math.round(event.loaded / event.total * 100) + "%");
+    };
+
+    request.upload.onload = function() {
+        callback('Termino Subida');
+    };
+
+    request.upload.onerror = function(error) {
+        callback('Failed to upload to server');
+        console.error('XMLHttpRequest failed', error);
+    };
+
+    request.upload.onabort = function(error) {
+        callback('Upload aborted.');
+        console.error('XMLHttpRequest aborted', error);
+    };
+
+    request.open('POST', url);
+    request.send(data);
 }
 
 window.onload = init();
