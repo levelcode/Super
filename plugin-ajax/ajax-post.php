@@ -26,6 +26,8 @@ function apf_addpost() {
  
     $title = $_POST['apftitle'];
     $content =  $_POST['apfcontents'];
+
+    echo "title :".$title." Content:".$content;
  
     $post_id = wp_insert_post( array(
         'post_title'        => $title,

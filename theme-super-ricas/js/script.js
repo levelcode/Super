@@ -384,7 +384,12 @@ function getEvents(){
 		    var url = URL.createObjectURL(blob),
 		        heightWG = $('.content_widget').outerHeight();
 		    $('.box_formulario .box_video_formulario').append('<video id="video_1" controls><source src="'+url+'" type="video/webm"></video>');
+		    //display active form
 		    $('body').addClass('active_form');
+		    //send value to form
+		    $('#apfform input.content').val(url);
+		    //enable input
+		    $("#apfform input").prop('disabled', false);
 		    //Animation scroll
 		    $('html, body').animate({
 	          	scrollTop: heightWG
@@ -392,11 +397,23 @@ function getEvents(){
 		});
 	});
 
+	//Ajax form data
+
+	$('.enviar_compartir').click(function(event) {
+		var title = $('.formulario .name').val(),
+			contents = $('.formulario .content').val();
+		//Launch ajax data plugin
+		console.log(title + '/////'+contents);
+		apfaddpost(title,contents);
+	});
+
 	//Back button
 	$('.volver').click(function(event) {
 		$('body').removeClass('active_form');
 		//Clena video
 		$('.box_formulario .box_video_formulario').find('video').remove();
+		//Reset value form
+		$('#apfform input.content').val('');
 		//Animation scroll
 	    $('html, body').animate({
           	scrollTop: 0
@@ -404,7 +421,6 @@ function getEvents(){
 	});
 	//Handler para carga de los elementos desde una lista
 	$(".botonObj img").click(function(e){
-
 		var var_url = $(this).prop('src');
 		insertarFotoDrag(var_url,true, num_zobject, "init", 0.5, 0, 0);
 		num_zobject++
