@@ -19,3 +19,32 @@ function apf_enqueuescripts()
     wp_localize_script( 'apf', 'apfajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
 add_action('wp_enqueue_scripts', apf_enqueuescripts);
+
+//Lectura post
+function apf_addpost() {
+    $results = '';
+ 
+    $title = $_POST['apftitle'];
+    $content =  $_POST['apfcontents'];
+ 
+    $post_id = wp_insert_post( array(
+        'post_title'        => $title,
+        'post_content'      => $content,
+        'post_status'       => 'publish',
+        'post_author'       => '2'
+    ) );
+ 
+    if ( $post_id != 0 )
+    {
+        $results = '*Post Added';
+    }
+    else {
+        $results = '*Error occurred while adding the post';
+    }
+    // Return the String
+    die($results);
+}
+
+// Llamado ajax api wordpress
+add_action( 'wp_ajax_nopriv_apf_addpost', 'apf_addpost' );
+add_action( 'wp_ajax_apf_addpost', 'apf_addpost' );
