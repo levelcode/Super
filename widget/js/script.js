@@ -32,7 +32,7 @@ stats.domElement.style.zIndex = 1;
 $('.booth').append(stats.domElement);
 
 
-var c, ctx, c2, ctx2, v, winWidth, winHeight, vHeight, c2Width, c2Height, ratio, animation;
+var c, ctx, c2, ctx2, v, winWidth, winHeight, vHeight, c2Width, c2Height, ratio, animation, recorder;
 
 var activeFilter = 'normal';
 var num_zobject = 4;
@@ -380,8 +380,20 @@ function getEvents(){
 		$('.grabar').show();
 		$('.parar').hide();
 		recorder.stop(function(blob) {
-		    var url = URL.createObjectURL(blob);
-		    window.open(url);
+			uploadToServer(blob, function(progress, fileURL) {
+                if(progress === 'termino') {
+
+                    console.log("Subida satisfactoria URL:"+fileURL);
+                    return;
+                }else{
+					console.log(progress);
+                }
+                
+            });
+
+            //console.log("Cargado el:"+progress+"%");
+		    //var url = URL.createObjectURL(blob);
+		    //window.open(url);
 		});
 	});
 	//Handler para carga de los elementos desde una lista 
@@ -593,6 +605,70 @@ function getFiltrosfabric(){
 	    applyFilterValue(14, 'color', this.value);
 	  };
 	  console.log("Filtros Fabric OK");
+}
+
+function uploadToServer(blob, callback) {
+    //var blob = recordRTC instanceof Blob ? recordRTC : recordRTC.blob;
+    var fileType = blob.type.split('/')[0] || 'audio';
+    var fileName = (Math.random() * 1000).toString().replace('.', '');
+
+    if (fileType === 'audio') {
+        fileName += '.' + (!!navigator.mozGetUserMedia ? 'ogg' : 'wav');
+    } else {
+        fileName += '.webm';
+    }
+
+    // create FormData
+    var formData = new FormData();
+    formData.append(fileType + '-filename', fileName);
+    formData.append(fileType + '-blob', blob);
+
+    callback('Uploading ' + fileType + ' recording to server.');
+
+    makeXMLHttpRequest('save.php', formData, function(progress) {
+        if (progress !== 'Archivo Disponible') {
+            callback(progress);
+            return;
+        }else{
+        	var initialURL = location.href.replace(location.href.split('/').pop(), '') + 'uploads/';
+        	callback('termino', initialURL + fileName);
+        } 
+    });
+}
+
+
+function makeXMLHttpRequest(url, data, callback) {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            callback('Archivo Disponible');
+        }
+    };
+
+    request.upload.onloadstart = function() {
+        callback('Iniciando Subida...');
+    };
+
+    request.upload.onprogress = function(event) {
+        callback('Progreso: ' + Math.round(event.loaded / event.total * 100) + "%");
+    };
+
+    request.upload.onload = function() {
+        callback('Termino Subida');
+    };
+
+    request.upload.onerror = function(error) {
+        callback('Failed to upload to server');
+        console.error('XMLHttpRequest failed', error);
+    };
+
+    request.upload.onabort = function(error) {
+        callback('Upload aborted.');
+        console.error('XMLHttpRequest aborted', error);
+    };
+
+    request.open('POST', url);
+    request.send(data);
 }
 
 window.onload = init();
