@@ -24,30 +24,26 @@
     <div class="busqueda_galeria_botones"></div>
     <div class="box_content_videos">
 
-    <?php 
+    <?php
         //Query posts type
         $args = array(
             'post_type' => 'post',
             'posts_per_page' => 200
         );
- 
+
         query_posts($args);
 
         while(have_posts()):the_post();
 
             $videoUrl = get_post_meta($post->ID, 'url_video' );
     ?>
-        
+
         <div class="videos">
             <div class="box_estrellas">
-                <div class="estrella activate"></div>
-                <div class="estrella"></div>
-                <div class="estrella"></div>
-                <div class="estrella"></div>
-                <div class="estrella"></div>
+                <?php echo do_shortcode('[usr 3]');?>
             </div>
             <div class="box_video">
-                <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">    
+                <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">
                     <video>
                         <source src="<?php echo $videoUrl[0]; ?>" type="video/webm">
                     </video>
