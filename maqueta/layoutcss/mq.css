@@ -136,11 +136,19 @@
 
 @media (max-width: 768px) 
 {
-
+    .wrapper 
+    {
+        zoom: 0.7;       
+    }
 }
 
 @media (max-width: 767px) 
 {
+    .menu_icon
+    {
+        display: block;
+    }
+
     .wrapper_int .box_formulario .titulo_formulario,
     .wrapper_int .box_premios .titulo_premios,
     .wrapper_int .box_premios .titulo_premios_2,

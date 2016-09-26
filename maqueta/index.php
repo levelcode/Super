@@ -22,10 +22,20 @@
     <script src="js/general.js"></script>
 </head>
 <body>
+    
+    
 
-
-
-
+    <div class="menu_icon">
+        <a href="javascript:void(0);" class="menu"></a>
+    </div>
+    <div id="menu_p">
+        <ul>
+            <li><a href="javascript:void(0);">HOME</a></li>
+            <li><a href="javascript:void(0);">INSTRUCCIONES</a></li>
+            <li><a href="javascript:void(0);">PREMIOS</a></li>
+            <li><a href="javascript:void(0);">GALERIAS</a></li>
+        </ul>   
+    </div>
 
 	<header>
         <nav>
@@ -40,6 +50,7 @@
                 <li><a href="javascript:void(0);">PREMIOS</a></li>
                 <li><a href="javascript:void(0);">GALERIAS</a></li>
             </ul>
+
         </nav>   
     </header>
 
