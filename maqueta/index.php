@@ -23,6 +23,10 @@
 </head>
 <body>
 
+
+
+
+
 	<header>
         <nav>
             <div class="social">
@@ -38,8 +42,14 @@
             </ul>
         </nav>   
     </header>
+
+
+
+
     
     <div class="widget" style="display: block;">
+
+
 
         <div class="content_widget">
 
@@ -199,72 +209,44 @@
             
         </div>
 
-        <div class="content_videos">
-            <div class="header_videos">            
-                <form action="" class="videos_form">    
-                    <div class="select-style select_1">
-                        <select>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                        </select>
-                    </div>
 
-                    <div class="select-style select_2">
-                        <select>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                        </select>
-                    </div>
-                    <button></button>
-                </form>
+
+
+
+        <div class="content_videos">
+            <div class="header_videos">
+                
+            <form action="" class="videos_form">    
+                <div class="select-style select_1">
+                    <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+                <div class="select-style select_2">
+                    <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+
+                <button class="buscar">
+                </button>
+            </form>
+
+
+
+
             </div>
             <div class="busqueda_galeria_botones"></div>
             <div class="box_content_videos">
                 
-                <div class="videos">
-                    <div class="box_estrellas">
-                        <div class="estrella activate"></div>
-                        <div class="estrella"></div>
-                        <div class="estrella"></div>
-                        <div class="estrella"></div>
-                        <div class="estrella"></div>
-                    </div>
-                    <div class="box_video">
-                        
-                    </div>
-                    <span class="nombre_video">
-                        Andres rincon
-                    </span>
-                    <span class="titulo_video">
-                        Reto super ricas
-                    </span>
-                    <div class="shadow_video"></div>
-                </div>
-
-                <div class="videos">
-                    <div class="box_estrellas">
-                        <div class="estrella activate"></div>
-                        <div class="estrella"></div>
-                        <div class="estrella"></div>
-                        <div class="estrella"></div>
-                        <div class="estrella"></div>
-                    </div>
-                    <div class="box_video">
-                        
-                    </div>
-                    <span class="nombre_video">
-                        Andres rincon
-                    </span>
-                    <span class="titulo_video">
-                        Reto super ricas
-                    </span>
-                    <div class="shadow_video"></div>
-                </div>
-
 
 
                 <div class="videos">
@@ -276,7 +258,7 @@
                         <div class="estrella"></div>
                     </div>
                     <div class="box_video">
-                        
+                        <video src=""></video>
                     </div>
                     <span class="nombre_video">
                         Andres rincon
@@ -297,7 +279,7 @@
                         <div class="estrella"></div>
                     </div>
                     <div class="box_video">
-                        
+                        <video src=""></video>
                     </div>
                     <span class="nombre_video">
                         Andres rincon
@@ -307,8 +289,6 @@
                     </span>
                     <div class="shadow_video"></div>
                 </div>
-
-
 
 
                 <div class="videos">
@@ -320,7 +300,7 @@
                         <div class="estrella"></div>
                     </div>
                     <div class="box_video">
-                        
+                        <video src=""></video>
                     </div>
                     <span class="nombre_video">
                         Andres rincon
@@ -330,7 +310,6 @@
                     </span>
                     <div class="shadow_video"></div>
                 </div>
-
 
 
                 <div class="videos">
@@ -342,7 +321,7 @@
                         <div class="estrella"></div>
                     </div>
                     <div class="box_video">
-                        
+                        <video src=""></video>
                     </div>
                     <span class="nombre_video">
                         Andres rincon
@@ -352,8 +331,6 @@
                     </span>
                     <div class="shadow_video"></div>
                 </div>
-
-
 
 
                 <div class="videos">
@@ -365,7 +342,7 @@
                         <div class="estrella"></div>
                     </div>
                     <div class="box_video">
-                        
+                        <video src=""></video>
                     </div>
                     <span class="nombre_video">
                         Andres rincon
@@ -375,8 +352,6 @@
                     </span>
                     <div class="shadow_video"></div>
                 </div>
-
-
 
 
                 <div class="videos">
@@ -388,7 +363,7 @@
                         <div class="estrella"></div>
                     </div>
                     <div class="box_video">
-                        
+                        <video src=""></video>
                     </div>
                     <span class="nombre_video">
                         Andres rincon
@@ -398,6 +373,10 @@
                     </span>
                     <div class="shadow_video"></div>
                 </div>
+
+
+
+                
 
 
 
@@ -417,7 +396,9 @@
                 <p><strong>Andrés</strong>, ya hizo el <strong>Reto Super Crokantes</strong>, anímate a hacer el tuyo y podrás viajar a disfrutar los sonidos de Colombia...</p>
             </div>
             <div class="box_video">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SRB2YlQOSBI" frameborder="0" allowfullscreen></iframe>  
+                <video src="">
+                    
+                </video> 
             </div>
             <div class="controls_video_compartir">
                 <div class="play">
@@ -430,6 +411,12 @@
                 <a href="javascript:void(0);" class="inicia_el_reto"></a>
             </div>
         </div><!--box_compartir-->
+
+
+
+
+
+
 
         <div class="box_instrucciones" style="display:none;">
             <div class="titulo_instrucciones">
@@ -459,6 +446,14 @@
             </div>
         </div><!--box_instrucciones-->
 
+
+
+
+
+
+
+
+
         <div class="box_premios" style="display:none;">
             <div class="titulo_premios">
                 <p>Grábate haciendo el <span> <strong>Reto Super Crokantes</strong></span> , compártelo con tus amigos en Facebook, haz que tu video sea el más compartido y podrás ganar un viaje a caño cristales todo incluido* para que lo disfrutes con la persona que quieras *</p>
@@ -472,10 +467,21 @@
             </a>
         </div><!--box_compartir-->
 
+
+
+
+
+
+
+
+
+
         <div class="box_formulario" style="display:none;">
             <div class="titulo_formulario">
                 <p>¡Está listo! ya hiciste el reto Super Crokante, ahora solo debes compartir la URL a todos tus amigos para que puedas ganar</p>
             </div>
+
+
 
             <div class="formulario">
                 <input type="text" placeholder="Nombre">
@@ -486,6 +492,8 @@
                 <input type="text" placeholder="URL GENERADA">
                 <input type="submit" class="enviar_compartir" >
             </div>
+
+
 
             <div class="box_video_formulario">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SRB2YlQOSBI" frameborder="0" allowfullscreen></iframe>  
@@ -498,7 +506,16 @@
             <div class="shadow_compartir"></div>
             <a href="" class="volver"></a>
         </div><!--box_formulario-->
+
+
+
+
     </div>
+
+
+
+
+
 
     <footer>
         <div class="terminos_y_condiciones">
@@ -520,6 +537,7 @@
         </div>
     </footer>
 
+
     <script src="js/stats.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/fabric.js"></script>
@@ -529,6 +547,7 @@
     <script src="js/clmtrackr.js"></script>
     <script src="js/model_pca_20_svm.js"></script>
     <script src="js/script.js"></script>
+
 
     
 </body>
