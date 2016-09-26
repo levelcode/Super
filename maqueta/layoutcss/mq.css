@@ -387,7 +387,10 @@
 
 @media (max-width: 414px) 
 {
-
+    .widget .content_videos .box_content_videos
+    {
+        margin: 0px auto 0;
+    }
 }
 
 @media (max-width: 375px) 
@@ -397,5 +400,24 @@
 
 @media (max-width: 320px) 
 {
-
+    .wrapper
+    {
+        zoom: 0.3;
+        margin: 400px 0 0;
+    }
+    .select-style 
+    {
+        width: 80px;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

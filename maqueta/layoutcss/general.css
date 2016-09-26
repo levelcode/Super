@@ -1128,7 +1128,7 @@ button.buscar
 }
 /* JS validations */
 
-/* ------------------------ Active form ---------------------------
+/* ------------------------ Active form --------------------------- */
 .wrapper_int
 {
   display:none;
@@ -1146,14 +1146,25 @@ body.active_form .wrapper_int .box_formulario
 {
   display:block;
 }
-// hide record button
+/* hide record button */
+body.active_form  .boton.grabar
+{
+  display:none;
+}
+/*single page*/
+.single .wrapper_int .box_compartir{
+  display: block;
+}
+.single .wrapper_int {
+  display: block;
+}
+/*hide record button*/
 body.active_form  .boton.grabar
 {
   display:none;
 }
 
 
- */
 
 
 

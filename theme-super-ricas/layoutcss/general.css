@@ -1155,6 +1155,9 @@ body.active_form  .boton.grabar
 .single .wrapper_int .box_compartir{
   display: block;
 }
+.single .wrapper_int {
+  display: block;
+}
 /*hide record button*/
 body.active_form  .boton.grabar
 {
