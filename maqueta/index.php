@@ -476,7 +476,7 @@
 
 
 
-        <div class="box_formulario" style="display:none;">
+        <div class="box_formulario" style="display:block;">
             <div class="titulo_formulario">
                 <p>¡Está listo! ya hiciste el reto Super Crokante, ahora solo debes compartir la URL a todos tus amigos para que puedas ganar</p>
             </div>
@@ -496,7 +496,7 @@
 
 
             <div class="box_video_formulario">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/SRB2YlQOSBI" frameborder="0" allowfullscreen></iframe>  
+                <video src=""></video> 
             </div>
             <div class="controls_video_compartir">
                 <div class="play">
