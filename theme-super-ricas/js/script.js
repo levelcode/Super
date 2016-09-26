@@ -378,37 +378,23 @@ function getEvents(){
 
 	//Stop action for generate video
 	$('.parar').click(function() {
+
 		$('.grabar').show();
 		$('.parar').hide();
+		$(this).hide();
 		$(this).parent().addClass('loading');
-		//recorder
+		//temporal video
 		recorder.stop(function(blob) {
 		    var url = URL.createObjectURL(blob),
 		        heightWG = $('.content_widget').outerHeight();
-
-		    //upload video
-		    uploadToServer(blob, function(progress, fileURL) {
-                if(progress === 'termino') {
-                    console.log("Subida satisfactoria URL:"+fileURL);
-                    $(this).parent().removeClass('loading');
-
-                    $('.box_formulario .box_video_formulario').append('<video id="video_1" controls><source src="'+fileURL+'" type="video/webm"></video>');
-				    //display active form
-				    $('body').addClass('active_form');
-				    //send value to form
-				    $('#apfform input.content').val(fileURL);
-				    //enable input
-				    $("#apfform input").prop('disabled', false);
-				    //Animation scroll
-				    $('.content_widget').hide();
-
-                    return;
-                }else{
-
-                }
-                
-            });
-
+		    $('.box_formulario .box_video_formulario').append('<video id="video_1" controls><source src="'+url+'" type="video/webm"></video>');
+		    $('body').addClass('active_form');
+		    //send value to form
+		    $('#apfform input.content').val(url);
+		    //enable input
+		    $("#apfform input").prop('disabled', false);
+		    //dissapear widget
+		    $('.content_widget').hide();
 		});
 	});
 
@@ -417,7 +403,24 @@ function getEvents(){
 		var title = $('.formulario .name').val(),
 			contents = $('.formulario .content').val(),
 			mail = $('.formulario .mail').val(),
-			alias = $('.formulario .alias').val();
+			alias = $('.formulario .alias').val(),
+			blobUrl = $('#video_1 > source').val('src');
+
+		//Loader class
+		$(this).parent().addClass('loading');
+		//upload video
+		recorder.stop(function(blob) {
+			uploadToServer(blob, function(progress, fileURL) {
+			    if(progress === 'termino') {
+			        console.log("Subida satisfactoria URL:"+fileURL);
+			        $(this).parent().removeClass('loading');
+
+			        return;
+			    }else{
+			    	console.log('error uploading file')
+			    }
+			});
+		});
 		//Launch ajax data plugin
 		apfaddpost(title,mail,mail,alias,contents);
 	});
@@ -670,7 +673,7 @@ function uploadToServer(blob, callback) {
         }else{
         	var initialURL = 'https://supercrokantes.tk/wp-content/themes/theme-super-ricas/uploads/';
         	callback('termino', initialURL + fileName);
-        } 
+        }
     });
 }
 
