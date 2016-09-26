@@ -523,11 +523,6 @@ footer .terminos_y_condiciones a.logo_footer
   float: left;
   background: #eeeeee url(../assets/play_button.png) no-repeat center;
 }
-
-.widget .content_videos .box_content_videos .box_video video{
-  width:100%;
-}
-
 .widget .content_videos .box_content_videos .nombre_video
 {
   text-align: left;
@@ -1142,7 +1137,7 @@ button.buscar
 {
   display:none;
 }
-
+  
 body.active_form .wrapper_int
 {
   display:block;
@@ -1151,12 +1146,20 @@ body.active_form .wrapper_int .box_formulario
 {
   display:block;
 }
-//hide record button
+/* hide record button */
 body.active_form  .boton.grabar
 {
   display:none;
 }
-
+/*single page*/
+.single .wrapper_int .box_compartir{
+  display: block;
+}
+/*hide record button*/
+body.active_form  .boton.grabar
+{
+  display:none;
+}
 
 
 

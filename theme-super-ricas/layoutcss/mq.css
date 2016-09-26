@@ -141,6 +141,72 @@
 
 @media (max-width: 767px) 
 {
+    .wrapper_int .box_formulario .titulo_formulario,
+    .wrapper_int .box_premios .titulo_premios,
+    .wrapper_int .box_premios .titulo_premios_2,
+    .wrapper_int .box_instrucciones .titulo_instrucciones,
+    .wrapper_int .box_compartir .titulo_compartir
+    {
+        background: url(../assets/mobile_formulario.png) no-repeat center;
+        background-size: contain;
+        margin: 200px auto 30px;
+        width: 320px;
+        height: 550px;
+    }
+    .wrapper_int .box_premios .titulo_premios
+    {
+        background: url(../assets/mobile_premio1.png) no-repeat center;
+        background-size: contain;
+        margin: 150px auto 0px;
+    }
+    .wrapper_int .box_premios .titulo_premios_2
+    {
+        background: url(../assets/mobile_premio2.png) no-repeat center;
+        background-size: contain;
+        margin: 0px auto 0px;
+    }
+    .wrapper_int .box_instrucciones .titulo_instrucciones
+    {
+        background: url(../assets/mobile_instrucciones.png) no-repeat center;
+        background-size: contain;
+        margin: 100px auto 50px;
+    }
+    .wrapper_int .box_compartir .titulo_compartir
+    {
+        background: url(../assets/mobile_compartir.png) no-repeat center;
+        background-size: contain;
+        margin: 100px auto 50px;
+    }
+    .wrapper_int .box_formulario .titulo_formulario p,
+    .wrapper_int .box_premios .titulo_premios p,
+    .wrapper_int .box_premios .titulo_premios_2 p,
+    .wrapper_int .box_instrucciones .titulo_instrucciones p,
+    .wrapper_int .box_compartir .titulo_compartir p
+    {
+        width: 70%;
+        position: relative;
+        text-align: center;
+        right: 0;
+        left: 0;
+        font-size: 18px;
+        margin: 0 auto;
+        top: 250px;
+    }
+    .wrapper_int .box_premios .titulo_premios p
+    {
+        top: 220px;
+    }
+    .wrapper_int .box_compartir .titulo_compartir p,
+    .wrapper_int .box_premios .titulo_premios_2 p
+    {
+        top: 270px;
+    }
+    .wrapper_int .box_instrucciones .titulo_instrucciones p
+    {
+        top: 280px;
+    }
+
+
     header nav .social
     {
         position: absolute;
@@ -184,11 +250,6 @@
     .wrapper_int .box_instrucciones
     {
         width: 100%;
-    }
-    .wrapper_int .box_instrucciones .titulo_instrucciones
-    {
-        margin: 50px -59px 0;
-        background-size:contain;
     }
     .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos
     {
@@ -247,10 +308,7 @@
     {
         overflow: hidden;
     }
-    .wrapper_int .box_formulario .titulo_formulario
-    {
-        margin: 50px -6% 0;
-    }
+
     footer
     {
         padding-top: 40px;
@@ -329,7 +387,10 @@
 
 @media (max-width: 414px) 
 {
-
+    .widget .content_videos .box_content_videos
+    {
+        margin: 0px auto 0;
+    }
 }
 
 @media (max-width: 375px) 
@@ -339,5 +400,24 @@
 
 @media (max-width: 320px) 
 {
-
+    .wrapper
+    {
+        zoom: 0.3;
+        margin: 400px 0 0;
+    }
+    .select-style 
+    {
+        width: 80px;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
