@@ -388,6 +388,7 @@ function getEvents(){
 		    uploadToServer(blob, function(progress, fileURL) {
                 if(progress === 'termino') {
                     console.log("Subida satisfactoria URL:"+fileURL);
+                    $(this).parent().removeClass('loader');
 
                     $('.box_formulario .box_video_formulario').append('<video id="video_1" controls><source src="'+fileURL+'" type="video/webm"></video>');
 				    //display active form
@@ -403,7 +404,7 @@ function getEvents(){
 
                     return;
                 }else{
-					console.log(progress);
+					$(this).parent().addClass('loader');
                 }
                 
             });
@@ -461,7 +462,7 @@ function getEvents(){
 	    // Animation complete.
 	  });
 	});
-	
+
 	$('.filtros_menu').slideUp(0);
 	console.log("Eventos OK");
 }
