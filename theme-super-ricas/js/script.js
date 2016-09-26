@@ -456,11 +456,12 @@ function getEvents(){
 		}
 		c.remove(object);
 	});
-	$( ".filtros" ).click(function() {
+	$( ".filtros").unbind('click').click(function() {
 	  	$( ".filtros_menu" ).slideToggle( "slow", function() {
 	    // Animation complete.
 	  });
 	});
+	
 	$('.filtros_menu').slideUp(0);
 	console.log("Eventos OK");
 }

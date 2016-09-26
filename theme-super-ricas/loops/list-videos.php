@@ -47,10 +47,11 @@
                 <div class="estrella"></div>
             </div>
             <div class="box_video">
-                <a href="#" data-attr="<?php echo $videoUrl[0]; ?>"></a>    
-                <video>
-                    <source src="<?php echo $videoUrl[0]; ?>" type="video/webm">
-                </video>
+                <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">    
+                    <video>
+                        <source src="<?php echo $videoUrl[0]; ?>" type="video/webm">
+                    </video>
+                </a>
             </div>
             <span class="nombre_video">
                 <?php the_title();?>
