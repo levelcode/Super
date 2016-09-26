@@ -414,9 +414,11 @@ function getEvents(){
 	//Ajax form data
 	$('.generar_url').click(function(event) {
 		var title = $('.formulario .name').val(),
-			contents = $('.formulario .content').val();
+			contents = $('.formulario .content').val(),
+			mail = $('.formulario .mail').val(),
+			alias = $('.formulario .alias').val();
 		//Launch ajax data plugin
-		apfaddpost(title,contents);
+		apfaddpost(title,contents,mail,alias);
 	});
 
 	//Back button

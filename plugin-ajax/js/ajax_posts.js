@@ -1,12 +1,14 @@
 //funcion ajax para añadir`posts
-function apfaddpost(posttitle,postcontent) {
+function apfaddpost(posttitle,postcontent,postmail,postalias) {
     jQuery.ajax({
         type: 'POST',
         url: apfajax.ajaxurl,
         data: {
             action: 'apf_addpost',
             apftitle: posttitle,
-            apfcontents: postcontent
+            apfcontents: postcontent,
+            apfmail: postmail,
+            apfalias: postalias
         },
         success: function(data, textStatus, XMLHttpRequest) {
             var id = '#apf-response';

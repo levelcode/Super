@@ -24,13 +24,13 @@
 
         <div class="formulario" id="apfform" action="" method="post"enctype="multipart/form-data">
             <div id="apf-response" style="background-color:#E6E6FA"></div>
-            <input type="text" class="name" placeholder="Nombre" name="apftitle">
-            <input type="text" placeholder="Correo" name="apfmail">
-            <input type="text" placeholder="Alias">
+            <input type="text" class="name" placeholder="Nombre" name="apftitle" required>
+            <input type="email" class="mail" placeholder="Correo" name="apfmail" required>
+            <input type="text" class="alias" placeholder="Alias">
             <input type="hidden" class="content" name="apfcontents">
             <div class="box_captcha"></div>
             <a href="javascript:void(0);" class="generar_url">GENERAR URL</a>
-            <input type="text" placeholder="URL GENERADA">
+            <input type="text" class="url_generated" placeholder="URL GENERADA">
             <input type="submit" class="enviar_compartir" >
         </div>
 
