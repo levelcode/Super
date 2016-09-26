@@ -518,6 +518,11 @@ footer .terminos_y_condiciones a.logo_footer
   float: left;
   background: #eeeeee url(../assets/play_button.png) no-repeat center;
 }
+
+.widget .content_videos .box_content_videos .box_video video{
+  width:100%;
+}
+
 .widget .content_videos .box_content_videos .nombre_video
 {
   text-align: left;
@@ -1120,33 +1125,3 @@ body.active_form .wrapper_int{
   body.active_form  .boton.grabar{
     display:none;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

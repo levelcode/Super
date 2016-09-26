@@ -25,14 +25,14 @@ function apf_addpost() {
     $results = '';
  
     $title = $_POST['apftitle'];
-    $content =  $_POST['apfcontents'];
+    $video =  $_POST['apfvideo'];
     $mail =  $_POST['apfmail'];
     $alias =  $_POST['apfalias'];
+    $content = $_POST['apfcontents'];
 
-    //Conditional for duplicate posts
-    $args = array("meta_key" => "Mail", "meta_value" =>$mail);
-    $posts = get_posts($args);
-    if (count($posts) < 0){
+    //Conditional for duplicate post
+
+    if (!get_page_by_title($title, 'OBJECT', 'post') ){
         //add post
         $post_id = wp_insert_post( array(
             'post_title'        => $title,
@@ -44,6 +44,7 @@ function apf_addpost() {
         //Update mail
         update_post_meta($post_id,'Mail',$mail);
         update_post_meta($post_id,'Alias',$alias);
+        update_post_meta($post_id,'url_video',$video);
     }
  
     if ( $post_id != 0 )

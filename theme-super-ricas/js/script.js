@@ -418,7 +418,7 @@ function getEvents(){
 			mail = $('.formulario .mail').val(),
 			alias = $('.formulario .alias').val();
 		//Launch ajax data plugin
-		apfaddpost(title,contents,mail,alias);
+		apfaddpost(title,mail,mail,alias,contents);
 	});
 
 	//Back button
