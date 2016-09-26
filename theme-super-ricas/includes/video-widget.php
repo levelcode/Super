@@ -26,24 +26,30 @@
               <h2>Fondos</h2>
               <ul class="lista">
                   <li>
-                  <button class="botonObjF"><img id="gif1" src="<?php bloginfo('template_url')?>/img/objetos/gif1.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif1" src="<?php bloginfo('template_url')?>/img/objetos/gif1.png" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObjF"><img id="gif2" src="<?php bloginfo('template_url')?>/img/objetos/gif2.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif2" src="<?php bloginfo('template_url')?>/img/objetos/gif2.png" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObjF"><img id="gif3" src="<?php bloginfo('template_url')?>/img/objetos/gif3.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif3" src="<?php bloginfo('template_url')?>/img/objetos/gif3.png" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObjF"><img id="gif4" src="<?php bloginfo('template_url')?>/img/objetos/gif4.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif4" src="<?php bloginfo('template_url')?>/img/objetos/gif4.png" alt="" width="105"></button>
                   </li>
                   <li>
-                  <button class="botonObjF"><img id="gif5" src="<?php bloginfo('template_url')?>/img/objetos/gif5.gif" alt="" width="105"></button>
+                  <button class="botonObjF"><img id="gif5" src="<?php bloginfo('template_url')?>/img/objetos/gif5.png" alt="" width="105"></button>
                   </li>
               </ul>
           </div>
           <div id="controls">
+              <audio id="super_audio" style="display:none">
+                <source src="https://supercrokantes.tk/wp-content/themes/theme-super-ricas/audio/super.ogg" type="audio/ogg">
+                <source src="https://supercrokantes.tk/wp-content/themes/theme-super-ricas/audio/super.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio HTML5
+              </audio>
               <!--<h3>Controles</h3>-->
+              <p class="crono">0:0</p>
               <button class="boton grabar" >Grabar</button>
               <button class="boton parar" style="display:none;" >Parar</button>
               <button class="boton filtros" >Ver filtros</button>

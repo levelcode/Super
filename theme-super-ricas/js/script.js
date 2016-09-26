@@ -55,6 +55,7 @@ function init() {
 	getCamera();
 	getRecorder();
 	getEvents();
+	getAudio();
 }
 
 function vidLoaded() {
@@ -87,7 +88,7 @@ function createCanvas() {
 	  fabric.util.requestAnimFrame(render);
 	  stats.update();
 	});
-	insertarFotoDrag('img/objetos/gif2.gif',false, 1, "init", 1, 0, 0);
+	insertarFotoDrag('wp-content/themes/theme-super-ricas/img/objetos/gif2.gif',false, 1, "init", 1, 0, 0);
 	getFiltrosfabric();
 }
 
@@ -354,21 +355,60 @@ function getRecorder(){
 	});
 	console.log("Grabadora OK");
 }
+function errorMessage(message, e) {
+    console.error(message, typeof e == 'undefined' ? '' : e);
+    //alert(message);
+}
 
 function getCamera() {
-	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-	window.URL = window.URL || window.webkitURL;
-
-	navigator.getUserMedia({video: true}, function(localMediaStream) {
-		v.src = window.URL.createObjectURL(localMediaStream);
-
-	}, function(error) {
-		console.log(error);
-	});
+	if (location.protocol === 'https:') {
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+		if (navigator.getUserMedia) {
+			window.URL = window.URL || window.webkitURL;
+			navigator.getUserMedia({video: true}, function(localMediaStream) {
+				v.src = window.URL.createObjectURL(localMediaStream);
+			}, function (e) {
+	            var message;
+	            switch (e.name) {
+	                case 'NotFoundError':
+	                case 'DevicesNotFoundError':
+	                    message = 'Porfavor configure su webcam primero';
+	                    break;
+	                case 'SourceUnavailableError':
+	                    message = 'La cámara esta en estado ocupado';
+	                    break;
+	                case 'PermissionDeniedError':
+	                case 'SecurityError':
+	                    message = 'Permisos Negados';
+	                    break;
+	                default: errorMessage('Reeeejected!', e);
+	                    return;
+	            }
+	            errorMessage(message);
+	        });
+		} else errorMessage('Navegador Incompatible');
+	} else errorMessage('Use https:// para ver este sitio')
 	console.log("Camara OK");
 }
+
+function getAudio(){
+	/*
+	$('.grabar').hide();
+	$("#super_audio").trigger('load');
+	$("#super_audio").bind("load",function(){
+        $('.grabar').show();
+        console.log("Pista de audio cargada");
+    });
+    */
+}
+
 function getEvents(){
 	$( ".grabar" ).click(function() {
+		$("#super_audio").trigger('play');
+		var aud = document.getElementById("super_audio");
+		aud.onended = function() {
+		    detener();
+		};
 		$('.grabar').hide();
 		$('.parar').show();
 		c.discardActiveObject();
@@ -378,7 +418,10 @@ function getEvents(){
 
 	//Stop action for generate video
 	$('.parar').click(function() {
-
+		detener();
+	});
+	function detener(){
+		stopAudio();
 		$('.grabar').show();
 		$('.parar').hide();
 		$(this).hide();
@@ -387,7 +430,18 @@ function getEvents(){
 		recorder.stop(function(blob) {
 		    var url = URL.createObjectURL(blob),
 		        heightWG = $('.content_widget').outerHeight();
-		    $('.box_formulario .box_video_formulario').append('<video id="video_1" controls><source src="'+url+'" type="video/webm"></video>');
+		    $('.box_formulario .box_video_formulario').append('<video id="video_1" ><source src="'+url+'" type="video/webm"></video>');
+		    
+		    $('#play_video').click(function() {
+		    	$("#super_audio").trigger('play');
+		    	$("#video_1").trigger('play');
+		    	var aud = document.getElementById("video_1");
+				aud.onended = function() {
+				    stopAudio();
+
+				};
+		    });
+
 		    $('body').addClass('active_form');
 		    //send value to form
 		    $('#apfform input.content').val(url);
@@ -396,7 +450,7 @@ function getEvents(){
 		    //dissapear widget
 		    $('.content_widget').hide();
 		});
-	});
+	}
 
 	//Ajax form data
 	$('.generar_url').click(function(event) {
@@ -488,6 +542,10 @@ var insertarFotoDrag = function(url, seleccionable, zindex, nombre, scale)
 		c.renderAll();
 	});
 	console.log("Se agrego:"+url);
+}
+function stopAudio(){
+  $("#super_audio").trigger('pause');
+  $("#super_audio").prop("currentTime",0);
 }
 function getFiltrosfabric(){
 	fabric.Object.prototype.transparentCorners = false;

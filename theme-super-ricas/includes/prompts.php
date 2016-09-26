@@ -38,7 +38,7 @@
 
         </div>
         <div class="controls_video_compartir">
-            <div class="play"></div>
+            <div id="play_video" class="play"></div>
         </div>
         <div class="shadow_compartir"></div>
         <a href="" class="volver"></a>

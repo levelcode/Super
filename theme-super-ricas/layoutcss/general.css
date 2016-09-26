@@ -242,6 +242,17 @@ video
   background: rgba(0,0,0,0.8);
   border-radius: 0 0 10px 10px;
 }
+#options_video button {
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid gray;
+    font-size: 12px;
+    background: transparent;
+    color: white;
+    width: 81px;
+}
 
 
 /* leo*/
