@@ -380,6 +380,8 @@ function getEvents(){
 	$('.parar').click(function() {
 		$('.grabar').show();
 		$('.parar').hide();
+		$(this).parent().addClass('loading');
+		//recorder
 		recorder.stop(function(blob) {
 		    var url = URL.createObjectURL(blob),
 		        heightWG = $('.content_widget').outerHeight();
@@ -388,7 +390,7 @@ function getEvents(){
 		    uploadToServer(blob, function(progress, fileURL) {
                 if(progress === 'termino') {
                     console.log("Subida satisfactoria URL:"+fileURL);
-                    $(this).parent().removeClass('loader');
+                    $(this).parent().removeClass('loading');
 
                     $('.box_formulario .box_video_formulario').append('<video id="video_1" controls><source src="'+fileURL+'" type="video/webm"></video>');
 				    //display active form
@@ -398,13 +400,11 @@ function getEvents(){
 				    //enable input
 				    $("#apfform input").prop('disabled', false);
 				    //Animation scroll
-				    $('html, body').animate({
-			          	scrollTop: heightWG
-			        }, 1000);
+				    $('.content_widget').hide();
 
                     return;
                 }else{
-					$(this).parent().addClass('loader');
+
                 }
                 
             });
