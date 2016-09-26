@@ -80,7 +80,8 @@
     header nav ul li:nth-child(4),
     header nav ul li:nth-child(5)
     {
-            margin-left: 4%;
+        margin-left: 4%;
+        margin-right: 0%;
     }
     header nav ul li:nth-child(3)
     {
@@ -140,7 +141,190 @@
 
 @media (max-width: 767px) 
 {
+    header nav .social
+    {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 250px auto 0;
+    }
+    .wrapper_int .box_compartir .box_social_compartir
+    {
+        text-align: center;
+        display: block;
+        overflow: hidden;
+        height: auto;
+    }
+    .wrapper_int .box_compartir .compartir_facebook_video,
+    .wrapper_int .box_compartir .inicia_el_reto
+    {
+        margin: 0px 0 0 -6%;
+        display: inline-block;
+        float: none;
+    }
+    header nav ul li:nth-child(2),
+    header nav ul li:nth-child(4),
+    header nav ul li:nth-child(5),
+    header nav ul li:nth-child(1)
+    {
+        display: none;
+    }
+    .shadow_compartir
+    {
+        background-size:contain;
+    }
+    header nav ul li:nth-child(3) {
+        margin: -139px auto 0;
+        float: none;
+        width: 240px;
+        top: 0;
+        overflow: hidden;
+        display: block;
+    }
+    .wrapper_int .box_instrucciones
+    {
+        width: 100%;
+    }
+    .wrapper_int .box_instrucciones .titulo_instrucciones
+    {
+        margin: 50px -59px 0;
+        background-size:contain;
+    }
+    .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos
+    {
+        width: 100%;
+        margin: 0 0 50px 0;
+    }
+    .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos img
+    {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+    .wrapper_int .box_premios .inicia_el_reto
+    {
+        left: -6%;
+    }
+    .wrapper_int .box_premios .terminos_condiciones_premios
+    {
+        left: 0;
+        top: 0;
+    }
+    .formulario
+    {
+        width: 100%;
+        position: relative;
+        float: none;
+        overflow: hidden;
+    }
+    .formulario .enviar_compartir
+    {
+        margin: -4px auto -20px;
+        float: none;
+        left: -4%;
+        position: relative;
+    }
+    .wrapper_int .box_formulario .box_video_formulario, 
+    .wrapper_int .box_formulario .controls_video_compartir, 
+    .wrapper_int .box_formulario .shadow_compartir
+    {
+        width: 100%;
+        margin: 5% 0px 0 0;
+        position: relative;
+        float: none;
+        overflow: hidden;
+    }
+    .wrapper_int .box_formulario .shadow_compartir
+    {
+        margin: 3% 0px 0 0;
+    }
+    .wrapper_int .box_formulario .volver
+    {
+        margin: 0 auto 40px;
+        float: none;
+    }
+    .wrapper_int .box_formulario
+    {
+        overflow: hidden;
+    }
+    .wrapper_int .box_formulario .titulo_formulario
+    {
+        margin: 50px -6% 0;
+    }
+    footer
+    {
+        padding-top: 40px;
+        height: auto;
+        overflow: hidden;
+    }
+    footer .terminos_y_condiciones span,
+    footer .terminos_y_condiciones:nth-child(2) span
+    {
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+    footer .terminos_y_condiciones,
+    footer .terminos_y_condiciones:nth-child(2)
+    {
+        width: 230px;
+        margin: 10px auto 50px;
+        display: block;
+        height: 100%;
+        text-align: center;
+        display: block;
+    } 
+    footer .terminos_y_condiciones:nth-child(2)
+    {
+        overflow: hidden;
+    }
+    footer .terminos_y_condiciones a
+    {
+        font-size: 13px;
+    }
+    footer .terminos_y_condiciones a.facebook_footer,
+    footer .terminos_y_condiciones a.youtube_footer
+    {
+        display: inline-block;
+        float: none;
+    }
+    footer .terminos_y_condiciones a.logo_footer img
+    {
+        width: 100px;
+    }
+    footer .derechos_copy
+    {
+        height: 20px;
+        font-size: 10px;
+        line-height: 20px;
+    }
+    .select-style
+    {
+        width: 100px;
+    }
+    form.videos_form
+    {
+        width: 100%;
+    }
+    .instrucciones_widget
+    {
+        width: 300px;
+        height: 300px;
+        background-size: contain;
+        left: -12%;
+    }
+    .widget .content_widget
+    {
+        height: auto;
+    }
+    .wrapper
+    {
+        zoom: 0.4;
+        margin: 500px 0 0;
+    }
+    
 
+    
 }
 
 @media (max-width: 414px) 
