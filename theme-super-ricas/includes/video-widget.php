@@ -34,27 +34,27 @@
               <p class="crono">0:0</p>
               <button class="boton grabar" >Grabar</button>
               <button class="boton parar" style="display:none;" >Parar</button>
+              <div class="filtros_menu">
+                <div id="options_video">
+                  <h3>Filtros Video:</h3>
+                  <button id="normal" value="normal">Normal</button>
+                  <button id="brighten" value="brighten">Iluminar</button>
+                  <button id="grey" value="grey">Grises</button>
+                  <button id="noise" value="noise">Ruido</button>
+                  <button id="blur" value="blur">Desenfocar</button>
+                  <button id="sharpen" value="sharpen">Enfocar</button>
+                  <button id="edges" value="edges">Contornos</button>
+                  <button id="lumos" value="lumos">Niebla</button>
+                  <button id="redCyan" value="redCyan">Hypster</button>
+                  <button id="redCyan2" value="redCyan2">Hypster 2</button>
+                  <button id="dots" value="dots">Ruido TV 2</button>
+                </div>
+              </div>
               <button class="boton filtros" >Ver filtros</button>
               <button class="boton borrar" >Borrar Elemento</button>
           </div>
       </div>
-      <div class="filtros_menu">
-          <div id="options_video">
-              <h3>Filtros Video:</h3>
-              <button id="normal" value="normal">Normal</button>
-              <button id="brighten" value="brighten">Iluminar</button>
-              <button id="grey" value="grey">Grises</button>
-              <button id="noise" value="noise">Ruido</button>
-              <button id="blur" value="blur">Desenfocar</button>
-              <button id="sharpen" value="sharpen">Enfocar</button>
-              <button id="edges" value="edges">Contornos</button>
-              <button id="lumos" value="lumos">Niebla</button>
-              <button id="redCyan" value="redCyan">Hypster</button>
-              <button id="redCyan2" value="redCyan2">Hypster 2</button>
-              <button id="dots" value="dots">Ruido TV 2</button>
-
-          </div>
-      </div>
+      
   </center>
 
   <a href="javascript:void(0);" class="instrucciones_widget"></a>

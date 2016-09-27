@@ -580,12 +580,12 @@ function getEvents(){
 		c.remove(object);
 	});
 	$( ".filtros").unbind('click').click(function() {
-	  	$( ".filtros_menu" ).slideToggle( "slow", function() {
+	  	$( '#options_video' ).slideToggle( "slow", function() {
 	    // Animation complete.
 	  });
 	});
 
-	$('.filtros_menu').slideUp(0);
+	$('#options_video').slideUp(0);
 	console.log("Eventos OK");
 }
 function cambiarfondo(url){
