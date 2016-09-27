@@ -18,7 +18,7 @@
                 <option value="audi">Audi</option>
                 </select>
             </div>
-            <button></button>
+            <button class="buscar"></button>
         </form>
     </div>
     <div class="busqueda_galeria_botones"></div>
