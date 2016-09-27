@@ -58,13 +58,62 @@ video
 }
 .menu_icon
 {
+  width: 100%;
+  height: 30px;
+  left:0;
+  position: relative;
+  top: 0;
+  background: #000;
+  display: none;
+}
+.menu_icon a.menu
+{
   width: 30px;
   height: 30px;
+  position: relative;
+  left: 10px;
+  border;1px
+  solid red;
+  float: left;
   left: 5%;
   border: 1px solid red;
+}
+ #menu_p
+{
+  width: 100%;
+  height: 100%;
+  background:url(../assets/backgrounds/bg_menu.png);
+  top: 0;
+  left:0;
+  right:0;
+  opacity: 0;
+  margin: -100% 0 0 0;
+  z-index: -100;
   position: absolute;
   top: 255px;
 }
+#menu_p ul
+{
+  height: 300px;
+  background: #000;
+}
+#menu_p ul li
+{
+  height: 25%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #fff;
+}
+#menu_p ul li a
+{
+  align-self: center;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+
 
 /* leo */
 
@@ -264,9 +313,10 @@ header
 {
   max-width: 1920px;
   width: 100%;
-  height: 240px;
+  height: 215px;
   display: block;
   background: url(../assets/header.png) no-repeat center top;
+  background-size: 100% 160px;
   margin-bottom: -14px;
   z-index: 2;
   position: relative;
@@ -275,7 +325,7 @@ header nav
 {
   max-width: 1280px;
   width: 100%;
-  height: 240px;
+  height: 205px;
   display: block;
   margin: 0 auto;
 }
@@ -284,7 +334,7 @@ header nav .social
   float: right;
   width: 64px;
   height: 31px;
-  margin: 92px 1% 0 0;
+  margin: 57px 1% 0 0;
 }
 header nav .social .youtube_header
 {
@@ -303,13 +353,13 @@ header nav .social .facebook_header
 }
 header nav ul
 {
-  max-width: 1024px;
+  max-width: 795px;
   width: 100%;
-  height: 87px;
+  height: 76px;
   line-height: 87px;
   display: block;
   margin: 0 auto 0;
-  padding: 140px 0;
+  padding: 79px 0;
   text-align: center;
 }
 header nav ul li
@@ -324,36 +374,41 @@ header nav ul li:nth-child(1)
 header nav ul li:nth-child(2)
 {
   float: left;
-  margin-left: 9%;
+  margin-left: 8%;
+  margin-right: 4%;
 }
 header nav ul li:nth-child(3)
 {
   float: left;
-  margin: -135px 0px 0;
+  margin: -75px 0px 0;
 }
 header nav ul li:nth-child(4)
 {
   float: left;
-  margin-left: 9%;
+  margin-left: 8%;
 }
 header nav ul li:nth-child(5)
 {
   float: left;
-  margin-left: 9%;
+  margin-left: 8%;
 }
 header nav ul li a
 {
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   text-shadow: -2px 1px 4px rgb(76, 76, 76);
+}
+header nav ul li a img
+{
+  width: 225px;
 }
 footer
 {
   max-width: 1920px;
   width: 100%;
-  padding-top: 80px;
-  height: 310px;
+  padding-top: 60px;
+  height: 240px;
   display: block;
   text-align: center;
   background: #1c2b33;
@@ -369,13 +424,13 @@ footer .terminos_y_condiciones
 }
 footer .terminos_y_condiciones:nth-child(2)
 {
-  margin: 0 50px;
+  margin: 0 40px;
 }
 footer .terminos_y_condiciones span
 {
   display: block;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   padding-bottom: 20px;
   background: url(../assets/decor_footer.png) no-repeat bottom center;
 }
@@ -385,9 +440,9 @@ footer .terminos_y_condiciones a
   text-decoration: none;
   width: 100%;
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   background: url(../assets/decor_link_footer.png) no-repeat bottom left;
-  margin: 30px 0 0 10px;
+  margin: 20px 0 0 10px;
 }
 footer .terminos_y_condiciones a span
 {
@@ -403,12 +458,12 @@ footer .derechos_copy
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 40px;
+  height: 30px;
   background: #e0020a;
   border-bottom: 1px solid #217c79;
-  line-height: 40px;
+  line-height: 30px;
   color: #fff;
-  font-size: 16px;
+  font-size: 13px;
 }
 footer .terminos_y_condiciones:nth-child(2) span
 {
@@ -417,23 +472,30 @@ footer .terminos_y_condiciones:nth-child(2) span
 }
 footer .terminos_y_condiciones a.facebook_footer
 {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   float: left;
   background: url(../assets/social_footer.png) no-repeat bottom left;
+  background-size: cover;
 }
 footer .terminos_y_condiciones a.youtube_footer
 {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   float: left;
-  margin: 30px 0 0 30px;
+  margin: 20px 0 0 30px;
   background: url(../assets/social_footer.png) no-repeat bottom right;
+  background-size: cover;
 }
 footer .terminos_y_condiciones a.logo_footer
 {
   background: none;
   margin: -20px 0;
+  width: 150px;
+}
+footer .terminos_y_condiciones a.logo_footer img
+{
+  width: 100%;
 }
 
 
@@ -454,14 +516,14 @@ footer .terminos_y_condiciones a.logo_footer
 .widget .content_widget
 {
   max-width: 1920px;
+  height: auto;
   width: 100%;
-  height: 1270px;
   display: block;
   background: url(../assets/bg_widget.png) no-repeat center;
   background-size: cover;
   z-index: 0;
   position: relative;
-  padding: 100px 0 0;
+  padding: 120px 0 0;
 }
 .widget .content_videos
 {
@@ -485,7 +547,7 @@ footer .terminos_y_condiciones a.logo_footer
   max-width: 1186px;
   width: 100%;
   background: url(../assets/bg_botones_video.png) no-repeat center top;
-  background-size: 940px;
+  background-size: 900px;
   display: block;
   margin: -106px auto 0;
   position: relative;
@@ -497,7 +559,7 @@ footer .terminos_y_condiciones a.logo_footer
   width: 100%;
   height: auto;
   display: block;
-  margin: 70px auto 0;
+  margin: 10px auto 0;
   z-index: 0;
   position: relative;
   text-align: center;
@@ -519,13 +581,14 @@ footer .terminos_y_condiciones a.logo_footer
   width: 100%;
   height: 32px;
   float: left;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
 }
 .widget .content_videos .box_content_videos .box_estrellas .estrella
 {
   background: url(../assets/star.png);
-  width: 30px;
-  height: 30px;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
   float: left;
   margin: 0 5px 0 0;
   margin-bottom: 12px;
@@ -533,6 +596,7 @@ footer .terminos_y_condiciones a.logo_footer
 .widget .content_videos .box_content_videos .box_estrellas .estrella.activate
 {
   background: url(../assets/star_activate.png);
+  background-size: contain;
 }
 .widget .content_videos .box_content_videos .box_video
 {
@@ -579,7 +643,7 @@ footer .terminos_y_condiciones a.logo_footer
     padding: 0;
     margin: 0;
     border: 1px solid #667d23;
-    width: 210px;
+    width: 200px;
     height: 30px;
     border-radius: 6px;
     line-height: 30px;
@@ -595,20 +659,21 @@ footer .terminos_y_condiciones a.logo_footer
 }
 .instrucciones_widget
 {
-  width: 408px;
-  height: 409px;
+  width: 308px;
+  height: 309px;
   display: block;
-  left: -7%;
+  left: -4%;
   margin: 0 auto;
-  background: url(../assets/instrucciones_widget.png) no-repeat;
+  background: url(../assets/instrucciones_widget.png) no-repeat center;
   position: relative;
+  background-size: contain;
 }
 form.videos_form
 {
   width: 640px;
   margin: 0 auto;
   display: block;
-  padding: 76px 0 0;
+  padding: 70px 0 0;
   position: relative;
   z-index: 100;
   text-align: center;
@@ -684,21 +749,21 @@ button.buscar
 {
   max-width: 1222px;
   width: 100%;
-  height: 453px;
+  height: 353px;
   display: block;
   background: url(../assets/compartir_header.png) no-repeat center;
-  background-size: contain;
+  background-size: 80%;
   z-index: 0;
   position: relative;
-  margin: 0 -11%;
+  margin: 0 -7%;
 }
 .wrapper_int .box_compartir .titulo_compartir p
 {
   position: absolute;
-  top: 210px;
-  right: 40px;
-  width: 58%;
-  font-size: 19px;
+  top: 160px;
+  right: 110px;
+  width: 48%;
+  font-size: 16px;
   line-height: 26px;
   font-family: 'prelow01-mediumregular';
 }
@@ -707,7 +772,7 @@ button.buscar
   max-width: 680px;
   width: 100%;
   height: 405px;
-  margin: -11% auto 0;
+  margin: -5% auto 0;
   display: block;
   background: #fff;
   border: #fff;
@@ -742,13 +807,14 @@ button.buscar
 .wrapper_int .box_compartir .controls_video_compartir .stop,
 .wrapper_int .box_compartir .controls_video_compartir .repeat
 {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   position: relative;
   display: block;
   margin: 0 auto;
-  top: 20px;
+  top: 25px;
   background: url(../assets/play.png) no-repeat center;
+  background-size: contain;
   cursor: pointer;
 }
 .wrapper_int .box_compartir .box_social_compartir
@@ -799,21 +865,21 @@ button.buscar
 {
   max-width: 1222px;
   width: 100%;
-  height: 453px;
+  height: 400px;
   display: block;
   background: url(../assets/instrucciones_header.png) no-repeat center;
-  background-size: contain;
+  background-size: 80%;
   z-index: 0;
   position: relative;
-  margin: -100px -59px 0;
+  margin: -50px -59px -50px;
 }
 .wrapper_int .box_instrucciones .titulo_instrucciones p
 {
   position: absolute;
-  top: 225px;
-  right: 10px;
+  top: 195px;
+  right: 0px;
   width: 600px;
-  font-size: 19px;
+  font-size: 16px;
   line-height: 26px;
   font-family: 'prelow01-mediumregular';
 }
@@ -837,26 +903,26 @@ button.buscar
 }
 .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos img
 {
-  width: 100%;
+  width: 70%;
   height: auto;
-  margin: 0 0 90px;
+  margin: 0 0 50px;
 }
 .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos span
 {
   width: 100%;
   display: block;
   color: #f0ff00;
-  font-size: 26px;
+  font-size: 20px;
   line-height: 100%;
   font-family: 'prelow01-mediumregular';
-  padding: 0 0 40px 0;
+  padding: 0 0 20px 0;
 }
 .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos p
 {
   width: 93%;
   display: block;
   color: #fff;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 28px;
   font-family: 'prelow01-mediumregular';
 }
@@ -866,16 +932,16 @@ button.buscar
   max-width: 1024px;
   width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin: 50px auto 0;
 }
 .wrapper_int .box_premios .titulo_premios
 {
   max-width: 1162px;
   width: 100%;
-  height: 468px;
+  height: 368px;
   display: block;
   background: url(../assets/premio_header.png) no-repeat center;
-  background-size: contain;
+  background-size: 80%;
   z-index: 0;
   position: relative;
   margin: 0 0px;
@@ -883,10 +949,10 @@ button.buscar
 .wrapper_int .box_premios .titulo_premios p
 {
   position: absolute;
-  top: 169px;
-  right: 45px;
-  width: 54%;
-  font-size: 19px;
+  top: 120px;
+  right: 125px;
+  width: 45%;
+  font-size: 16px;
   line-height: 26px;
   font-family: 'prelow01-mediumregular';
 }
@@ -902,7 +968,7 @@ button.buscar
   height: 230px;
   display: block;
   background: url(../assets/premio_header_2.png) no-repeat center;
-  background-size: contain;
+  background-size: 80%;
   z-index: 0;
   position: relative;
   margin: 0 0px;
@@ -911,9 +977,9 @@ button.buscar
 {
   position: absolute;
   top: 100px;
-  left: 45px;
-  width: 57%;
-  font-size: 19px;
+  left: 150px;
+  width: 50%;
+  font-size: 16px;
   line-height: 26px;
   font-family: 'prelow01-mediumregular';
   color: #000;
@@ -953,7 +1019,7 @@ button.buscar
 /* formulario */
 .wrapper_int .box_formulario
 {
-  max-width: 1024px;
+  max-width: 945px;
   width: 100%;
   height: auto;
   margin: -60px auto;
@@ -965,18 +1031,18 @@ button.buscar
   height: 453px;
   display: block;
   background: url(../assets/formulario_header.png) no-repeat center;
-  background-size: contain;
+  background-size: 90%;
   z-index: 0;
   position: relative;
-  margin: 0 -119px;
+  margin: 0 -59px;
 }
 .wrapper_int .box_formulario .titulo_formulario p
 {
   position: absolute;
   top: 210px;
-  right: 40px;
-  width: 57%;
-  font-size: 18px;
+  right: 100px;
+  width: 47%;
+  font-size: 16px;
   line-height: 26px;
   font-family: 'prelow01-mediumregular';
 }
@@ -986,7 +1052,7 @@ button.buscar
   width: 100%;
   float: right;
   height: 375px;
-  margin: -11% 130px 0 0;
+  margin: -11% 30px 0 0;
   display: block;
   background: #fff;
   border: #fff;
@@ -1013,7 +1079,7 @@ button.buscar
   background-size: contain;
   z-index: 0;
   position: relative;
-  margin: 10px 130px 0 0;
+  margin: 10px 30px 0 0;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -1038,7 +1104,7 @@ button.buscar
   width: 100%;
   height: 102px;
   float: right;
-  margin: -30px 130px 0 0;
+  margin: -30px 30px 0 0;
   display: block;
   background: url(../assets/shadow.png) no-repeat center;
   background-size: 101%;
@@ -1048,10 +1114,10 @@ button.buscar
   width: 172px;
   height: 73px;
   float: right;
-  margin: -30px 33% 0 0;
+  margin: -30px 24% 0 0;
   display: block;
   background: url(../assets/volver.png) no-repeat center;
-  background-size: 101%;
+  background-size: 85%;
 }
 .formulario
 {
@@ -1203,6 +1269,9 @@ body.active_form  .boton.grabar
 }
 
 /*page internal validations*/
+.page-template .widget .wrapper_int{
+display:block;
+}
 
 .page-template .wrapper_int{
   display:block;
