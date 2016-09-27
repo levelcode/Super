@@ -90,11 +90,10 @@ video
   margin: -100% 0 0 0;
   z-index: -100;
   position: absolute;
-  top: 255px;
 }
 #menu_p ul
 {
-  height: 300px;
+  height: 200px;
   background: #000;
 }
 #menu_p ul li
@@ -109,7 +108,7 @@ video
 {
   align-self: center;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none;
 }
 
