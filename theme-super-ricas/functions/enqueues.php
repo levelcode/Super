@@ -43,7 +43,7 @@ function bst_enqueues() {
 	wp_register_script('clmtr-js', get_template_directory_uri() . '/js/clmtrackr.js', false, null, true);
 	wp_enqueue_script('clmtr-js');
 
-	wp_register_script('model_pca-js', get_template_directory_uri() . '/js/script.js', false, null, true);
+	wp_register_script('model_pca-js', get_template_directory_uri() . '/js/model_pca_20_svm.js', false, null, true);
 	wp_enqueue_script('model_pca-js');
 
 	wp_register_script('custom-script-js', get_template_directory_uri() . '/js/script.js', false, null, true);
