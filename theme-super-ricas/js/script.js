@@ -546,7 +546,7 @@ function getEvents(){
 		/* Act on the event */
 		$('body').addClass('active_form');
 		//destroy preview
-		 $(this).parent('.box_preview').remove();
+		 $('.box_preview').remove();
 	});
 
 	//Ajax form data

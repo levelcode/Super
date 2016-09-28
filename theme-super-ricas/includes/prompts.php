@@ -2,7 +2,7 @@
 
     <div class="box_compartir box_preview">
         <div class="titulo_compartir">
-            <p>Revisa tu video ates de publicarlo</p>
+            <p>Revisa tu video antes de publicarlo</p>
         </div>
         <div class="box_video">
 

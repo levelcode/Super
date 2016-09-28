@@ -1173,6 +1173,12 @@ button.buscar
   -moz-box-shadow: inset -8px 8px 8px -4px rgba(0,0,0,0.27);
   box-shadow: inset -8px 8px 8px -4px rgba(0,0,0,0.27);
 }
+.formulario input.succed{
+  border:1px solid green;
+  background-color:#b2f49b;
+  color:green;
+}
+
  /* WebKit browsers */
 .formulario input::-webkit-input-placeholder {
   color: #fff !important;

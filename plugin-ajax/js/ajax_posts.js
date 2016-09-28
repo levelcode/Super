@@ -13,9 +13,8 @@ function apfaddpost(posttitle,postcontent,postmail,postalias,callback) {
 
         },
         success: function(data, textStatus, XMLHttpRequest) {
-            var id = '#apf-response';
-            jQuery(id).html('');
-            jQuery(id).append(data);
+            jQuery('.url_generated').val(data);
+            jQuery('.url_generated').addClass('succed');
             resetvalues();
             callback("url");
         },
@@ -29,6 +28,6 @@ function resetvalues() {
     //append body for new window
     $('body').addClass('procced-post');
     //reset value input
-    $('#apfform input').val('');
- 
+    $('.volver').remove();
+    $('.generar_url').remove();
 }

@@ -23,6 +23,7 @@ add_action('wp_enqueue_scripts', apf_enqueuescripts);
 //Lectura post
 function apf_addpost() {
     $results = '';
+    $link_post = '';
  
     $title = $_POST['apftitle'];
     $video =  $_POST['apfvideo'];
@@ -39,37 +40,25 @@ function apf_addpost() {
             'post_content'      => $content,
             'post_status'       => 'pending',
             'post_author'       => '2'
-        ) );
+        ));
 
         //Update mail
         update_post_meta($post_id,'Mail',$mail);
         update_post_meta($post_id,'Alias',$alias);
         update_post_meta($post_id,'url_video',$video);
+        //get permalink
+        $link_post = get_permalink($post_id);
     }
  
     if ( $post_id != 0 )
     {
-        $results = '*Post Added';
+        $results = $link_post;
     }
     else {
-        $results = '*Error occurred while adding the post';
+        $results = '*Error al añadir el video';
     }
     // Return the String
     die($results);
-}
-
-add_action( 'init', 'my_func' );
-
-function my_func()  {
-$my_post = '';
-if( get_page_by_title('test','OBJECT','ads') == NULL )
-$my_post= array(
-        'post_title'    => 'test',
-        'post_name'     => 'test',
-        'post_type'     => 'ads',
-        'post_status'   => 'publish'
-);
-wp_insert_post( $my_post );
 }
 
 // Llamado ajax api wordpress
