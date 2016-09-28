@@ -24,7 +24,7 @@ add_action('wp_enqueue_scripts', apf_enqueuescripts);
 function apf_addpost() {
     $results = '';
     $link_post = '';
- 
+
     $title = $_POST['apftitle'];
     $video =  $_POST['apfvideo'];
     $mail =  $_POST['apfmail'];
@@ -49,10 +49,10 @@ function apf_addpost() {
         //get permalink
         $link_post = get_permalink($post_id);
     }
- 
+
     if ( $post_id != 0 )
     {
-        $results = $link_post;
+        $results = $link_post.'&preview=true';
     }
     else {
         $results = '*Error al añadir el video';

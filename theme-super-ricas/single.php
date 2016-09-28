@@ -2,7 +2,13 @@
 <!--Index file-->
 <div class="widget single">
 	<div class="wrapper_int"><!--colocar clase premios para colocar el otro bg-->
+
+
 	    <?php
+	    //GET VALIDATION
+	    if(isset($_GET['preview'])):
+	    	echo '<h2>pronto verás tu post</h2>'
+	    else:
 	    while(have_posts()):the_post();
 
             $videoUrl = get_post_meta($post->ID, 'url_video' );
@@ -28,6 +34,7 @@
 	    <?php
 	    	endwhile;
 	    	wp_reset_query();
+	    	endif;
 	    ?>
     </div>
 </div>
