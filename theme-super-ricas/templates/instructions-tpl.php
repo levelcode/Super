@@ -21,7 +21,7 @@
 	            <p>Graba tu reto <br> Super Crokante, solo debes “caer en el Crok” con tus <br>Super Crokantes mientras suena la canción, diviértete y  ponle toda la actitud.</p>
 	        </div>
 	        <div class="pasos">
-	            <img src="<?php bloginfo('template_url')?>/assets/ingresa_logo.png" alt="">
+	            <img src="<?php bloginfo('template_url')?>/assets/ingresa_logo_2.png" alt="">
 	            <span><strong>3. INGRESA</strong></span>
 	            <p>Ingresa tus datos de contacto y acepta los términos.</p>
 	        </div>

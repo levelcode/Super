@@ -4,7 +4,7 @@
 	*/
 	get_header();
 ?>
-<div class="wrapper_int">
+<div class="wrapper_int premios">
 	<div class="box_premios">
         <div class="titulo_premios">
             <p>Grábate haciendo el <span> <strong>Reto Super Crokantes</strong></span> , compártelo con tus amigos en Facebook, haz que tu video sea el más compartido y podrás ganar un viaje a caño cristales todo incluido* para que lo disfrutes con la persona que quieras *</p>
