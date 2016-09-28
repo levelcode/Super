@@ -560,6 +560,7 @@ function getEvents(){
 			console.log(String('Error al Publicar '+error));
 		}else{
 			console.log('Éxito al publicar en Wordpress');
+			$('.formulario').removeClass('loading');
 		}	
 	}
 

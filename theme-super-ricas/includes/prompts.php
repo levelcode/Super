@@ -24,7 +24,7 @@
 
         <form class="formulario" id="apfform" action="" method="post"enctype="multipart/form-data">
             <div class="loader">
-                <img src="<?php bloginfo('template_url');?>/loading.svg" alt="loader">
+                <img src="<?php bloginfo('template_url');?>/img/loading.svg" alt="loader">
             </div><!--loader-->
 
             <div id="apf-response" style="background-color:#E6E6FA"></div>

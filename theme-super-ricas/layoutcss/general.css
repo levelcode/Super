@@ -1343,3 +1343,8 @@ display:block;
     background-color: rgba(255,255,255,.7);
     z-index: 2;
   }
+
+    .formulario.loading .loader img{
+      display: block;
+      margin: 30% auto;
+    }
