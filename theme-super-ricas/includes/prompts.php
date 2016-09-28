@@ -22,7 +22,11 @@
             <p>¡Está listo! ya hiciste el reto Super Crokante, ahora solo debes compartir la URL a todos tus amigos para que puedas ganar</p>
         </div>
 
-        <div class="formulario" id="apfform" action="" method="post"enctype="multipart/form-data">
+        <form class="formulario" id="apfform" action="" method="post"enctype="multipart/form-data">
+            <div class="loader">
+                <img src="<?php bloginfo('template_url');?>/loading.svg" alt="loader">
+            </div><!--loader-->
+
             <div id="apf-response" style="background-color:#E6E6FA"></div>
             <input type="text" class="name" placeholder="Nombre" name="apftitle" required>
             <input type="email" class="mail" placeholder="Correo" name="apfmail" required>
@@ -32,7 +36,7 @@
             <a href="javascript:void(0);" class="generar_url">GENERAR URL</a>
             <input type="text" class="url_generated" placeholder="URL GENERADA">
             <input type="submit" class="enviar_compartir" >
-        </div>
+        </form>
 
         <div class="box_video_formulario">
 
