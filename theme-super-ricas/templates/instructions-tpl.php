@@ -26,7 +26,7 @@
 	            <p>Ingresa tus datos de contacto y acepta los términos.</p>
 	        </div>
 	        <div class="pasos">
-	            <img src="<?php bloginfo('template_url')?>/assets/comparte_logo.png" alt="">
+	            <img src="<?php bloginfo('template_url')?>/assets/premios.png" alt="">
 	            <span><strong>4. COMPARTE</strong></span>
 	            <p>Haz que tu video sea el más compartido de la semana y podrás ganar uno de nuestro premios semanales, o un viaje para dos personas a Caño Cristales con todos los gastos pagos*</p>
 	        </div>
