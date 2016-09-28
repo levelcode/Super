@@ -62,6 +62,6 @@
         endwhile;
         wp_reset_query();
     ?>
-
+    <img src="assets/pauta.png" alt="" class="banner">
     </div>
 </div>
