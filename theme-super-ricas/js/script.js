@@ -3,6 +3,7 @@
 var url_video;
 //Esta variable es el elemento de video con HTML, se genera en el evento parar
 var append_video;
+//variable global
 var blob_video;
 
 
@@ -493,6 +494,7 @@ function getEvents(){
 	$('.parar').click(function() {
 		detener();
 	});
+
 	function detener(){
 		stopAudio();
 		$('.grabar').show();
@@ -504,11 +506,10 @@ function getEvents(){
 			//Blob a glogal
 			blob_video = blob;
 			//Video en URL
-		    url_video = URL.createObjectURL(blob_video),
-		    heightWG = $('.content_widget').outerHeight();
+		    url_video = URL.createObjectURL(blob_video);
 		    //Elemento del video en el append
 		    append_video = '<video id="video_1" ><source src="'+url_video+'" type="video/webm"></video>'
-		    $('.box_formulario .box_video_formulario').append(append_video);
+		    $('.box_preview .box_video').append(append_video);
 		    $('#play_video').click(function() {
 		    	$("#super_audio").trigger('play');
 		    	$("#video_1").trigger('play');
@@ -518,7 +519,7 @@ function getEvents(){
 				};
 		    });
 
-		    $('body').addClass('active_form');
+		    $('body').addClass('active_preview');
 		    //send value to form
 		    $('#apfform input.content').val(url_video);
 		    //enable input
@@ -527,6 +528,26 @@ function getEvents(){
 		    $('.content_widget').hide();
 		});
 	};
+
+	//Publish preview in form
+	$('.publish_preview').click(function(event) {
+
+		//Append video in form
+		append_video = '<video id="video_2" ><source src="'+url_video+'" type="video/webm"></video>'
+		    $('.box_formulario .box_video_formulario').append(append_video);
+		    $('#play_video').click(function() {
+		    	$("#super_audio").trigger('play');
+		    	$("#video_1").trigger('play');
+		    	var aud = document.getElementById("video_1");
+				aud.onended = function() {
+				    stopAudio();
+				};
+		    });
+		/* Act on the event */
+		$('body').addClass('active_form');
+		//destroy preview
+		 $(this).parent('.box_preview').remove();
+	});
 
 	//Ajax form data
 	$('.generar_url').click(function(event) {
@@ -539,8 +560,7 @@ function getEvents(){
 			console.log(String('Error al Publicar '+error));
 		}else{
 			console.log('Éxito al publicar en Wordpress');
-		}
-		
+		}	
 	}
 
 	function upload(callback){
@@ -563,10 +583,15 @@ function getEvents(){
 	//Back button
 	$('.volver').click(function(event) {
 		$('body').removeClass('active_form');
-		//Clena video
+		$('body').removeClass('active_preview');
+		
+		//Clean video
 		$('.box_formulario .box_video_formulario').find('video').remove();
+		$('.box_formulario .box_video_formulario').find('video').remove();
+		
 		//Reset value form
 		$('#apfform input.content').val('');
+		
 		//Animation scroll
 	    $('html, body').animate({
           	scrollTop: 0

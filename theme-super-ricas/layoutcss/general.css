@@ -1113,7 +1113,7 @@ button.buscar
   background: url(../assets/shadow.png) no-repeat center;
   background-size: 101%;
 }
-.wrapper_int .box_formulario .volver
+.wrapper_int .volver
 {
   width: 172px;
   height: 73px;
@@ -1123,6 +1123,23 @@ button.buscar
   background: url(../assets/volver.png) no-repeat center;
   background-size: 85%;
 }
+
+.wrapper_int .publish_preview{
+  display:block;
+  background-color:orange;
+  width:200px;
+  text-align: center;
+  padding:1em;
+  text-transform:uppercase;
+  color:#fff;
+  text-decoration:none;
+  border-radius:.5em;
+  box-shadow:0 0 10px #333;
+  font-size:2em;
+  font-weight:bold;
+
+}
+
 .formulario
 {
   float: left;
@@ -1227,17 +1244,18 @@ button.buscar
   display:none;
 }
 
-body.active_form .wrapper_int
-{
+body.active_form .wrapper_int,
+body.active_preview .wrapper_int {
   display:block;
 }
-body.active_form .wrapper_int .box_formulario
-{
+
+body.active_preview .wrapper_int .box_preview,
+body.active_form .wrapper_int .box_formulario {
   display:block;
 }
+
 /* hide record button */
-body.active_form  .boton.grabar
-{
+body.active_form  .boton.grabar {
   display:none;
 }
 /*single page*/
@@ -1247,6 +1265,22 @@ body.active_form  .boton.grabar
 .single .wrapper_int {
   display: block;
 }
+
+/*box preview*/
+
+.box_preview .box_social_compartir{
+  text-align:center
+}
+
+.box_preview .box_social_compartir > a{
+  position:relative;
+  margin:0 0 0 0 !important;
+  float:none;
+  vertical-align:middle;
+  left:auto !important;
+  display:inline-block!important;
+}
+
 /*hide record button*/
 body.active_form  .boton.grabar
 {
