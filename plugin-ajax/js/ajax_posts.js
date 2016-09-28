@@ -1,5 +1,5 @@
 //funcion ajax para añadir`posts
-function apfaddpost(posttitle,postcontent,postmail,postalias,postvideo) {
+function apfaddpost(posttitle,postcontent,postmail,postalias,callback) {
     jQuery.ajax({
         type: 'POST',
         url: apfajax.ajaxurl,
@@ -9,7 +9,7 @@ function apfaddpost(posttitle,postcontent,postmail,postalias,postvideo) {
             apfcontents: postcontent,
             apfmail: postmail,
             apfalias: postalias,
-            apfvideo: postvideo
+            apfvideo: postcontent
 
         },
         success: function(data, textStatus, XMLHttpRequest) {
@@ -17,11 +17,11 @@ function apfaddpost(posttitle,postcontent,postmail,postalias,postvideo) {
             jQuery(id).html('');
             jQuery(id).append(data);
             resetvalues();
+            callback("url");
         },
         error: function(MLHttpRequest, textStatus, errorThrown) {
-            alert(errorThrown);
+            callback("error", errorThrown);
         }
-
     });
 }
  

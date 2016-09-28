@@ -1,3 +1,11 @@
+//Globales
+//Esta variable es el elemento del Blob
+var url_video;
+//Esta variable es el elemento de video con HTML, se genera en el evento parar
+var append_video;
+var blob_video;
+
+
 //******************************
 //*** Validadores de Browser ***
 //******************************
@@ -466,7 +474,7 @@ function getAudio(){
 function getEvents(){
 	$( ".grabar" ).click(function() {
 		if(ios == true){
-			alert("Lo sentimos, tu dispositivo no soporta la grabación en linea.");
+			alert("Lo sentimos, tu dispositivo no soporta grabación en linea.");
 		}else{
 			$("#super_audio").trigger('play');
 			var aud = document.getElementById("super_audio");
@@ -493,56 +501,64 @@ function getEvents(){
 		$(this).parent().addClass('loading');
 		//temporal video
 		recorder.stop(function(blob) {
-		    var url = URL.createObjectURL(blob),
-		        heightWG = $('.content_widget').outerHeight();
-		    $('.box_formulario .box_video_formulario').append('<video id="video_1" ><source src="'+url+'" type="video/webm"></video>');
-		    
+			//Blob a glogal
+			blob_video = blob;
+			//Video en URL
+		    url_video = URL.createObjectURL(blob_video),
+		    heightWG = $('.content_widget').outerHeight();
+		    //Elemento del video en el append
+		    append_video = '<video id="video_1" ><source src="'+url_video+'" type="video/webm"></video>'
+		    $('.box_formulario .box_video_formulario').append(append_video);
 		    $('#play_video').click(function() {
 		    	$("#super_audio").trigger('play');
 		    	$("#video_1").trigger('play');
 		    	var aud = document.getElementById("video_1");
 				aud.onended = function() {
 				    stopAudio();
-
 				};
 		    });
 
 		    $('body').addClass('active_form');
 		    //send value to form
-		    $('#apfform input.content').val(url);
+		    $('#apfform input.content').val(url_video);
 		    //enable input
 		    $("#apfform input").prop('disabled', false);
 		    //dissapear widget
 		    $('.content_widget').hide();
 		});
-	}
+	};
 
 	//Ajax form data
 	$('.generar_url').click(function(event) {
-		var title = $('.formulario .name').val(),
-			contents = $('.formulario .content').val(),
-			mail = $('.formulario .mail').val(),
-			alias = $('.formulario .alias').val(),
-			blobUrl = $('#video_1 > source').val('src');
-
-		//Loader class
+		upload(postPublicado);
 		$(this).parent().addClass('loading');
-		//upload video
-		recorder.stop(function(blob) {
-			uploadToServer(blob, function(progress, fileURL) {
-			    if(progress === 'termino') {
-			        console.log("Subida satisfactoria URL:"+fileURL);
-			        $(this).parent().removeClass('loading');
-
-			        return;
-			    }else{
-			    	console.log('error uploading file')
-			    }
-			});
-		});
-		//Launch ajax data plugin
-		apfaddpost(title,mail,mail,alias,contents);
 	});
+
+	function postPublicado(string, error){
+		if(string == "error"){
+			console.log(String('Error al Publicar '+error));
+		}else{
+			console.log('Éxito al publicar en Wordpress');
+		}
+		
+	}
+
+	function upload(callback){
+		uploadToServer(blob_video, function(progress, fileURL) {
+		    if(progress === 'termino') {
+		       	console.log("Subida satisfactoria:" + fileURL);
+		        $(this).parent().removeClass('loading');
+		        var title = $('.formulario .name').val(),
+				contents = fileURL,
+				mail = $('.formulario .mail').val(),
+				alias = $('.formulario .alias').val();
+				//Subida de post a WordPress
+				apfaddpost(title,contents,mail,alias,callback);
+		    }else{
+		    	callback("error", "Subiendo archivo");
+		    }
+		});
+	};
 
 	//Back button
 	$('.volver').click(function(event) {
