@@ -17,15 +17,7 @@
             //post validation
             if($post_state[0] == "publicado"){
          ?>
-				<script>
-					alert('publicado!!');
-				</script>
-         <?php } else { ?>
-		         <script>
-					alert('no publicado!!');
-				</script>
-        <?php } ?>
-        <!--content compartir-->
+				<!--content compartir-->
 	    <div class="box_compartir">
 	        <div class="titulo_compartir">
 	            <p><strong><?php the_title(); ?></strong>, ya hizo el <strong>Reto Super Crokantes</strong>, anímate a hacer el tuyo y podrás viajar a disfrutar los sonidos de Colombia...</p>
@@ -52,8 +44,16 @@
 	        <script>
 	        var init_single = true;
 	        </script>
-
 	    </div><!--box_compartir-->
+
+
+         <?php } else { ?>
+         	<div class="img-poster" style="display: block;">
+         		<img src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="">
+         	</div>
+
+        <?php } ?>
+
 	    <?php
 	    	endwhile;
 	    	wp_reset_query();

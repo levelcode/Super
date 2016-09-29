@@ -657,7 +657,7 @@ footer .terminos_y_condiciones a.logo_footer img
 .widget .content_videos .box_content_videos .box_estrellas img
 {
   float: left;
-  margin: 8px !important;  
+  margin: 8px !important;
 }
 .widget .content_videos .box_content_videos .box_estrellas .estrella
 {
@@ -1444,3 +1444,12 @@ display:block;
   display: block;
   margin: 30% auto;
 }
+/*validation img*/
+.wrapper_int .img-poster{
+  display:block;
+}
+  .wrapper_int .img-poster img{
+    margin:15% auto 0;
+    max-width:100%;
+    display:block;
+  }
