@@ -12,7 +12,8 @@
 	    while(have_posts()):the_post();
 
             $videoUrl = get_post_meta($post->ID, 'url_video' );
-            // $ValidPublico = get_post_meta($post->ID, 'publico' );
+            $post_state = get_post_meta($post->ID, 'meta-box-dropdown' );
+            echo $post_state;
          ?>
 	    <div class="box_compartir">
 	        <div class="titulo_compartir">
