@@ -44,7 +44,7 @@
             </div>
             <div class="box_video">
                 <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">
-                    <video>
+                    <video class="videos_galeria">
                         <source src="<?php echo $videoUrl[0]; ?>" type="video/webm">
                     </video>
                 </a>

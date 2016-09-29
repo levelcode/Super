@@ -58,7 +58,7 @@ body
   margin: 0 auto;
   max-width: 700px;
 }
-video
+video.videos_galeria
 {
   width: 100%;
   height: 100%;
@@ -638,6 +638,7 @@ footer .terminos_y_condiciones a.logo_footer img
   display: block;
   float: left;
   background: #eeeeee url(../assets/play_button.png) no-repeat center;
+  overflow: hidden;
 }
 .widget .content_videos .box_content_videos .nombre_video
 {
@@ -1350,30 +1351,31 @@ display:block;
   display:block;
 }
 
-  .page-template .wrapper_int div{
-    display:block;
-  }
+.page-template .wrapper_int div{
+  display:block;
+}
 
 /*loader form*/
-.formulario{
+.formulario
+{
   position: relative;
 }
-  .formulario .loader{
-    display: none;
-  }
+.formulario .loader{
+  display: none;
+}
 
-  .formulario.loading .loader{
-    display:block;
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255,255,255,.7);
-    z-index: 2;
-  }
+.formulario.loading .loader{
+  display:block;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.7);
+  z-index: 2;
+}
 
-    .formulario.loading .loader img{
-      display: block;
-      margin: 30% auto;
-    }
+.formulario.loading .loader img{
+  display: block;
+  margin: 30% auto;
+}
