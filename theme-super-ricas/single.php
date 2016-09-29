@@ -13,8 +13,19 @@
 
             $videoUrl = get_post_meta($post->ID, 'url_video' );
             $post_state = get_post_meta($post->ID, 'meta-box-dropdown' );
-            echo $post_state;
+
+            //post validation
+            if($post_state[0] == "publicado"){
          ?>
+				<script>
+					alert('publicado!!');
+				</script>
+         <?php } else { ?>
+		         <script>
+					alert('no publicado!!');
+				</script>
+        <?php } ?>
+        <!--content compartir-->
 	    <div class="box_compartir">
 	        <div class="titulo_compartir">
 	            <p><strong><?php the_title(); ?></strong>, ya hizo el <strong>Reto Super Crokantes</strong>, anímate a hacer el tuyo y podrás viajar a disfrutar los sonidos de Colombia...</p>
