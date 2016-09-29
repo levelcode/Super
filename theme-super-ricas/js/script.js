@@ -7,6 +7,7 @@ var append_video;
 var blob_video;
 
 
+
 //******************************
 //*** Validadores de Browser ***
 //******************************
@@ -104,10 +105,13 @@ var c, ctx, c2, ctx2, v, winWidth, winHeight, vHeight, c2Width, c2Height, ratio,
 var activeFilter = 'normal';
 var num_zobject = 4;
 
-
+function con(str){
+	console.log(str);
+}
 
 function init() {
-
+	con("Constructor call");
+	$('.loader').hide();
 	winWidth = 720;
 	winHeight = 405;
 
@@ -155,7 +159,6 @@ function createCanvas() {
 	  fabric.util.requestAnimFrame(render);
 	  stats.update();
 	});
-	insertarFotoDrag('wp-content/themes/theme-super-ricas/img/objetos/gif2.png',false, 1, "init", 1, 0, 0);
 }
 
 function loop() {
@@ -423,7 +426,7 @@ function getRecorder(){
 	recorder = new CanvasRecorder(document.getElementById('canvas'), {
 	    disableLogs: false
 	});
-	console.log("Grabadora OK");
+	con("Grabadora OK");
 }
 function errorMessage(message, e) {
     console.error(message, typeof e == 'undefined' ? '' : e);
@@ -458,7 +461,7 @@ function getCamera() {
 	        });
 		} else errorMessage('Navegador Incompatible');
 	} else errorMessage('Use https:// para ver este sitio')
-	console.log("Camara OK");
+	con("Camara OK");
 }
 
 function getAudio(){
@@ -467,7 +470,7 @@ function getAudio(){
 	$("#super_audio").trigger('load');
 	$("#super_audio").bind("load",function(){
         $('.grabar').show();
-        console.log("Pista de audio cargada");
+        con("Pista de audio cargada");
     });
     */
 }
@@ -496,72 +499,29 @@ function getEvents(){
 		if(ios == true){
 			alert("Lo sentimos, tu dispositivo no soporta grabación en linea.");
 		}else{
-			$("#super_audio").trigger('play');
-			var aud = document.getElementById("super_audio");
-			aud.onended = function() {
-			    detener();
-			};
-			$('.grabar').hide();
-			$('.parar').show();
-			c.discardActiveObject();
-			c.renderAll();
-			recorder.record();
+			start_fn();
 		}
 	});
 
 	//Stop action for generate video
 	$('.parar').click(function() {
-		detener();
+		detener_fn(false);
 	});
-
-	function detener(){
-		stopAudio();
-		$('.grabar').show();
-		$('.parar').hide();
-		$(this).hide();
-		$(this).parent().addClass('loading');
-		//temporal video
-		recorder.stop(function(blob) {
-			//Blob a glogal
-			blob_video = blob;
-			//Video en URL
-		    url_video = URL.createObjectURL(blob_video);
-		    //Elemento del video en el append
-		    append_video = '<video id="video_1" ><source src="'+url_video+'" type="video/webm"></video>'
-		    $('.box_preview .box_video').append(append_video);
-		    $('#play_video').click(function() {
-		    	$("#super_audio").trigger('play');
-		    	$("#video_1").trigger('play');
-		    	var aud = document.getElementById("video_1");
-				aud.onended = function() {
-				    stopAudio();
-				};
-		    });
-
-		    $('body').addClass('active_preview');
-		    //send value to form
-		    $('#apfform input.content').val(url_video);
-		    //enable input
-		    $("#apfform input").prop('disabled', false);
-		    //dissapear widget
-		    $('.content_widget').hide();
-		});
-	};
-
-	//Publish preview in form
 	$('.publish_preview').click(function(event) {
-
-		//Append video in form
-		append_video = '<video id="video_2" ><source src="'+url_video+'" type="video/webm"></video>'
-		    $('.box_formulario .box_video_formulario').append(append_video);
-		    $('#play_video').click(function() {
-		    	$("#super_audio").trigger('play');
-		    	$("#video_1").trigger('play');
-		    	var aud = document.getElementById("video_1");
-				aud.onended = function() {
-				    stopAudio();
-				};
-		    });
+		$('#stop_video_prev').trigger("click");
+		$('.box_preview .box_video').empty();
+		append_video = '<video id="video_def" ><source src="'+url_video+'" width="590" type="video/webm"></video>'
+	    $('.box_formulario .box_video_formulario').append(append_video);
+	    $('#play_video_def').click(function() {
+	    	$('#play_video_def').hide();
+	    	$('#stop_video_def').show();
+	    	playAudioVideo($("#video_def"));
+	    });
+	    $('#stop_video_def').click(function() {
+	    	$('#play_video_def').show();
+	    	$('#stop_video_def').hide();
+	    	stopAudioVideo($("#video_def"));
+	    });
 		/* Act on the event */
 		$('body').addClass('active_form');
 		//destroy preview
@@ -573,32 +533,6 @@ function getEvents(){
 		upload(postPublicado);
 		$(this).parent().addClass('loading');
 	});
-
-	function postPublicado(string, error){
-		if(string == "error"){
-			console.log(String('Error al Publicar '+error));
-		}else{
-			console.log('Éxito al publicar en Wordpress');
-			$('.formulario').removeClass('loading');
-		}	
-	}
-
-	function upload(callback){
-		uploadToServer(blob_video, function(progress, fileURL) {
-		    if(progress === 'termino') {
-		       	console.log("Subida satisfactoria:" + fileURL);
-		        $(this).parent().removeClass('loading');
-		        var title = $('.formulario .name').val(),
-				contents = fileURL,
-				mail = $('.formulario .mail').val(),
-				alias = $('.formulario .alias').val();
-				//Subida de post a WordPress
-				apfaddpost(title,contents,mail,alias,callback);
-		    }else{
-		    	callback("error", "Subiendo archivo");
-		    }
-		});
-	};
 
 	//Back button
 	$('.volver').click(function(event) {
@@ -617,18 +551,13 @@ function getEvents(){
           	scrollTop: 0
         }, 1000);
 	});
-	//Handler para carga de los elementos desde una lista
-	$(".botonObj img").click(function(e){
-		var var_url = $(this).prop('src');
-		insertarFotoDrag(var_url,true, num_zobject, "init", 0.5, 0, 0);
-		num_zobject++
-	});
 	//Handler para carga fondos
 	$(".botonObjF img").click(function(e){
-		var fondo = c.item(1);
+		var fondo = c.item(0);
 		c.remove(fondo);
-		var var_url = $(this).prop('src');
-		insertarFotoDrag(var_url,false, 1, "init", 1, 0, 0);
+		var var_url = $(this).attr('datan');
+		var url_back = 'https://supercrokantes.tk/wp-content/themes/theme-super-ricas/img/objetos/gif'+var_url+'.png';
+		insertarFotoDrag(url_back,false, 0, "init", 1, 0, 0);
 		num_zobject++
 	});
 	//Función para borrar los elementos en focus
@@ -647,8 +576,87 @@ function getEvents(){
 	});
 
 	$('#options_video').slideUp(0);
-	console.log("Eventos OK");
+	con("Eventos OK");
 }
+//Publish preview in form
+function postPublicado(string, error){
+	if(string == "error"){
+		con(String('Error al Publicar '+error));
+	}else{
+		con('Éxito al publicar en Wordpress');
+		$('.formulario').removeClass('loading');
+	};
+};
+//Upload Video
+function upload(callback){
+	uploadToServer(blob_video, function(progress, fileURL) {
+	    if(progress === 'termino') {
+	       	con("Subida satisfactoria:" + fileURL);
+	        $(this).parent().removeClass('loading');
+	        var title = $('.formulario .name').val(),
+			contents = fileURL,
+			mail = $('.formulario .mail').val(),
+			alias = $('.formulario .alias').val();
+			//Subida de post a WordPress
+			apfaddpost(title,contents,mail,alias,callback);
+	    }else{
+	    	callback("error", "Subiendo archivo");
+	    };
+	});
+};
+//Start Recording 
+function start_fn(){
+	playVideo();
+	cronoStart();
+	$('.grabar').hide();
+	$('.parar').show();
+	c.discardActiveObject();
+	c.renderAll();
+	recorder.record();
+}
+//Stop Recording
+function detener_fn(valid_end){
+	stopVideo();
+	cronoStop();
+
+	$('.grabar').show();
+	$('.parar').hide();
+	$(this).hide();
+	$(this).parent().addClass('loading');
+	//temporal video
+	recorder.stop(function(blob) {
+		if(valid_end ==true)
+		{
+			//Blob a glogal
+			blob_video = blob;
+			//Video en URL
+		    url_video = URL.createObjectURL(blob_video);
+		    //Elemento del video en el append
+		    append_video = '<video id="video_prev" ><source src="'+url_video+'" width="590" type="video/webm"></video>'
+		    $('.box_preview .box_video').append(append_video);
+		    $('#play_video_prev').click(function() {
+		    	$('#play_video_prev').hide();
+		    	$('#stop_video_prev').show();
+		    	playAudioVideo($("#video_prev"));
+		    });
+		    $('#stop_video_prev').click(function() {
+		    	$('#play_video_prev').show();
+		    	$('#stop_video_prev').hide();
+		    	stopAudioVideo($("#video_prev"));
+		    });
+		    $('body').addClass('active_preview');
+		    //send value to form
+		    $('#apfform input.content').val(url_video);
+		    //enable input
+		    $("#apfform input").prop('disabled', false);
+		    //dissapear widget
+		    $('.content_widget').hide();
+		}else{
+			blob = null;
+			alert("Debes grabar los 20 segundos para concursar!");
+		}
+	});
+};
 function cambiarfondo(url){
 	insertarFotoDrag(url,true, false,1,"init",scale, top, left);
 }
@@ -667,11 +675,48 @@ var insertarFotoDrag = function(url, seleccionable, zindex, nombre, scale)
 		c.moveTo(oImg, zindex);
 		c.renderAll();
 	});
-	console.log("Se agrego:"+url);
+	con("Se agrego:"+url);
 }
-function stopAudio(){
-  $("#super_audio").trigger('pause');
-  $("#super_audio").prop("currentTime",0);
+
+//Controles video y Audio Super
+function playAudioVideo(video){
+	video.prop("currentTime",0);
+	video.trigger('play');
+	$("#super_audio").trigger('play');
+	var aud = document.getElementById("super_audio");
+	aud.onended = function() {
+	    video.trigger('pause');
+	    video.prop("currentTime",0);
+	};
+};
+function stopAudioVideo(video){
+	video.trigger('pause');
+  	video.prop("currentTime",0);
+  	$("#super_audio").trigger('pause');
+  	$("#super_audio").prop("currentTime",0);
+};
+function playVideo(){
+	$("#super_video").trigger('play');
+	var aud = document.getElementById("super_video");
+	aud.onended = function() {
+	    detener_fn(true);
+	};
+};
+function stopVideo(){
+  $("#super_video").trigger('pause');
+  $("#super_video").prop("currentTime",0);
+};
+//Crono
+var crono;
+function cronoStart(){
+	var tiempo = 0;
+	crono = setInterval(function(){
+		tiempo++
+		$(".crono").html(Number(tiempo/100));
+	}, 10);
+}
+function cronoStop(){
+	clearInterval(crono);
 }
 
 function uploadToServer(blob, callback) {

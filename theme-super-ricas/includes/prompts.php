@@ -8,11 +8,12 @@
 
         </div>
         <div class="controls_video_compartir">
-            <div class="play" id="play_video"></div>
+            <div class="play" id="play_video_prev"></div>
+            <div class="stop" id="stop_video_prev" ></div>
         </div>
         <div class="shadow_compartir"></div>
         <div class="box_social_compartir">
-            <a href="" class="volver"></a>
+            <a href="javascript:void(0);" class="volver"></a>
             <a href="javascript:void(0);" class="publish_preview">Publicar</a>
         </div>
     </div><!--box_compartir-->
@@ -42,7 +43,8 @@
 
         </div>
         <div class="controls_video_compartir">
-            <div id="play_video" class="play"></div>
+            <div class="play" id="play_video_def"></div>
+            <div class="stop" id="stop_video_def"></div>
         </div>
         <div class="shadow_compartir"></div>
         <a href="" class="volver"></a>
