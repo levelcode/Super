@@ -133,7 +133,7 @@ function init() {
 		con("Constructor Single");
 		getEvents();
 	}
-
+	
 }
 
 function vidLoaded() {
@@ -472,6 +472,25 @@ function getCamera() {
 }
 
 function getEvents(){
+
+	//Gonzo script
+     $('a.menu').click(function() {
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $('#menu_p').animate({
+                opacity: 0,
+                margin: '-100% 0 0 0',
+                'z-index': -100
+            }, 900 );           
+        }else{
+            $(this).addClass('active');
+            $('#menu_p').animate({
+                opacity: 1,
+                margin: '30px 0 0 0',
+            }, 900 ).css('z-index', 100);  
+        }
+    });
+	
 	$( ".grabar" ).click(function() {
 		if(ios == true){
 			alert("Lo sentimos, tu dispositivo no soporta grabación en linea.");
@@ -515,14 +534,14 @@ function getEvents(){
 	$('.volver').click(function(event) {
 		$('body').removeClass('active_form');
 		$('body').removeClass('active_preview');
-
+		
 		//Clean video
 		$('.box_formulario .box_video_formulario').find('video').remove();
 		$('.box_formulario .box_video_formulario').find('video').remove();
-
+		
 		//Reset value form
 		$('#apfform input.content').val('');
-
+		
 		//Animation scroll
 	    $('html, body').animate({
           	scrollTop: 0
@@ -591,7 +610,7 @@ function upload(callback){
 	    };
 	});
 };
-//Start Recording
+//Start Recording 
 function start_fn(){
 	playVideo();
 	cronoStart();
@@ -697,10 +716,12 @@ function stopVideo(){
 var crono;
 function cronoStart(){
 	var tiempo = 0;
+	var duracion = 20;
 	crono = setInterval(function(){
-		tiempo++
-		$(".crono").html(Number(tiempo/100));
-	}, 10);
+		tiempo = $("#super_video").prop("currentTime");
+		var tiempo_v = 29 - Math.floor(tiempo);
+		$(".crono").html(Number(tiempo_v));
+	}, 1);
 }
 function cronoStop(){
 	clearInterval(crono);

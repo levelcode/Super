@@ -172,6 +172,12 @@ video.videos_galeria
   display: inline-block;
   vertical-align: top;
 }
+#super_video{
+  position: absolute;
+  width: 720px;
+  height: 60px;
+  margin-left: -360px;
+}
 #video_prev{
   width: 660px;
   height: 440px;
