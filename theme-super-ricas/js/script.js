@@ -112,21 +112,28 @@ function con(str){
 function init() {
 	con("Constructor call");
 	$('.loader').hide();
-	winWidth = 720;
-	winHeight = 405;
+	if(init_single != true)
+	{
+		con("Constructor Widget");
+		winWidth = 720;
+		winHeight = 405;
 
-	v = document.createElement('video');
+		v = document.createElement('video');
 
-	v.addEventListener("loadedmetadata", vidLoaded, false);
+		v.addEventListener("loadedmetadata", vidLoaded, false);
 
-	document.getElementById('options_video').addEventListener('click', function(e) {
-		var value = e.target.value;
-		activeFilter = value ? value : activeFilter;
-	}, false);
-	getCamera();
-	getRecorder();
-	getEvents();
-	getAudio();
+		document.getElementById('options_video').addEventListener('click', function(e) {
+			var value = e.target.value;
+			activeFilter = value ? value : activeFilter;
+		}, false);
+		getCamera();
+		getRecorder();
+		getEvents();
+	}else{
+		con("Constructor Single");
+		getEvents();
+	}
+	
 }
 
 function vidLoaded() {
@@ -464,17 +471,6 @@ function getCamera() {
 	con("Camara OK");
 }
 
-function getAudio(){
-	/*
-	$('.grabar').hide();
-	$("#super_audio").trigger('load');
-	$("#super_audio").bind("load",function(){
-        $('.grabar').show();
-        con("Pista de audio cargada");
-    });
-    */
-}
-
 function getEvents(){
 
 	//Gonzo script
@@ -574,6 +570,16 @@ function getEvents(){
 	    // Animation complete.
 	  });
 	});
+	$('#play_video_def').click(function() {
+    	$('#play_video_def').hide();
+    	$('#stop_video_def').show();
+    	playAudioVideo($("#video_def"));
+    });
+    $('#stop_video_def').click(function() {
+    	$('#play_video_def').show();
+    	$('#stop_video_def').hide();
+    	stopAudioVideo($("#video_def"));
+    });
 
 	$('#options_video').slideUp(0);
 	con("Eventos OK");
@@ -781,6 +787,9 @@ function makeXMLHttpRequest(url, data, callback) {
     request.open('POST', url);
     request.send(data);
 }
+
+
+
 
 window.onload = init();
 
