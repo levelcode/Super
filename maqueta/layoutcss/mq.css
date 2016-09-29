@@ -26,7 +26,7 @@
     .wrapper_int .box_instrucciones .box_pasos_instrucciones .pasos p
     {
         font-size: 16px;
-        line-height: 21px;
+        line-height: 18px;
     }
     .wrapper_int .box_instrucciones .titulo_instrucciones p
     {
@@ -434,6 +434,10 @@
     {
         zoom: 0.4;
         margin: 500px 0 0;
+    }
+    .banner
+    {
+        width: 100%;
     }
     
 
