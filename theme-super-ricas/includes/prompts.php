@@ -20,7 +20,7 @@
 
     <div class="box_formulario">
         <div class="titulo_formulario">
-            <p>¡Está listo! ya hiciste el reto Super Crokante, ahora solo debes compartir la URL a todos tus amigos para que puedas ganar</p>
+            <p>¡Estás listo! ya hiciste el reto Super Crokante, ahora solo debes compartir la URL a todos tus amigos para que puedas ganar</p>
         </div>
 
         <form class="formulario" id="apfform" action="" method="post"enctype="multipart/form-data">

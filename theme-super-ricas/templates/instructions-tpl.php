@@ -33,4 +33,7 @@
 	    </div>
 	</div><!--box_instrucciones-->
 </div>
+<script>
+var init_single = true;
+</script>
 <?php get_footer();?>

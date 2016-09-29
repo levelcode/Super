@@ -15,6 +15,10 @@
 </head>
 <body <?php body_class(); ?>>
 
+    <div class="loader" style="width: 100%;height: 100%;background-color: #b10e17; z-index: 10000;display:block">
+        <div class="loader_center"></div>
+    </div>
+
     <div class="menu_icon">
         <a href="javascript:void(0);" class="menu"></a>
     </div>
@@ -29,10 +33,6 @@
 
 	<header>
         <nav>
-            <div class="social">
-                <a href="javascript:void(0);" class="youtube_header"></a>
-                <a href="javascript:void(0);" class="facebook_header"></a>
-            </div>
             <ul>
                 <li><a href="<?php echo home_url('/'); ?>">HOME</a></li>
                 <li><a href="/instrucciones">INSTRUCCIONES</a></li>

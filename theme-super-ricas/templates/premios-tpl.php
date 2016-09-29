@@ -18,4 +18,7 @@
         </a>
     </div><!--box_compartir-->
 </div>
+<script>
+var init_single = true;
+</script>
 <?php get_footer();?>

@@ -2,8 +2,10 @@
   <center class="wrapper">
       <div class="wrapper_container">
           <div class="booth">
-              <canvas id="canvas" width="720" height="480"></canvas>
-              <video src="https://supercrokantes.tk/wp-content/themes/theme-super-ricas/video/barra.mp4" id="super_video"></video>
+              <canvas id="canvas" width="720" height="480" poster="https://supercrokantes.tk/wp-content/themes/theme-super-ricas/ing/poster.png"></canvas>
+              <video id="super_video" height="720" width="60" webkit-playsinline playsinline>
+                <source src="https://supercrokantes.tk/wp-content/themes/theme-super-ricas/video/barra.mp4">
+              </video>
           </div>
           <div id="objetos">
               <h2>Fondos</h2>
@@ -59,3 +61,6 @@
   <a href="javascript:void(0);" class="instrucciones_widget"></a>
 
 </div>
+<script>
+var init_single = false;
+</script>
