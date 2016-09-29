@@ -644,6 +644,14 @@ footer .terminos_y_condiciones a.logo_footer img
   height: 32px;
   float: left;
   margin-bottom: 5px;
+  text-align: left;
+  line-height: 30px;
+  vertical-align: top;
+}
+.widget .content_videos .box_content_videos .box_estrellas img
+{
+  float: left;
+  margin: 8px !important;  
 }
 .widget .content_videos .box_content_videos .box_estrellas .estrella
 {
