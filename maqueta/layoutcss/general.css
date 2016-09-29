@@ -51,7 +51,14 @@ body
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-video
+.banner
+{
+  display: block;
+  clear: both;
+  margin: 0 auto;
+  max-width: 700px;
+}
+video.videos_galeria
 {
   width: 100%;
   height: 100%;
@@ -59,12 +66,13 @@ video
 .menu_icon
 {
   width: 100%;
-  height: 30px;
+  height: 40px;
   left:0;
   position: relative;
   top: 0;
-  background: #000;
+  background: #1e8f88;
   display: none;
+  padding: 5px 0;
 }
 .menu_icon a.menu
 {
@@ -76,13 +84,18 @@ video
   solid red;
   float: left;
   left: 5%;
-  border: 1px solid red;
+  background: transparent url(../assets/mainMenuMobile.png) no-repeat center;
+  background-size: contain;
+}
+.menu_icon a.menu.active
+{
+  background: transparent url(../assets/closeMobileMenu.png) no-repeat center;
+  background-size: contain;
 }
  #menu_p
 {
   width: 100%;
   height: 100%;
-  background:url(../assets/backgrounds/bg_menu.png);
   top: 0;
   left:0;
   right:0;
@@ -94,7 +107,7 @@ video
 #menu_p ul
 {
   height: 200px;
-  background: #000;
+  background: #1e8f88;
 }
 #menu_p ul li
 {
@@ -103,6 +116,22 @@ video
   display: flex;
   justify-content: space-around;
   border-bottom: 1px solid #fff;
+}
+#menu_p ul li:nth-child(1)
+{
+  background: #1e8f88;
+}
+#menu_p ul li:nth-child(2)
+{
+  background: #8aa830;
+}
+#menu_p ul li:nth-child(3)
+{
+  background: #e41915;
+}
+#menu_p ul li:nth-child(4)
+{
+  background: #f29425;
 }
 #menu_p ul li a
 {
@@ -140,11 +169,8 @@ video
 
 #options_video {
   z-index: 10;
-  width: 40%;
-  padding: 20px;
   display: inline-block;
   vertical-align: top;
-  border-right: solid 1px white;
 }
 
 #options_fabric p{
@@ -284,22 +310,30 @@ video
   border-radius: 5px;
 }
 .filtros_menu{
-  width: 870px;
-  overflow: hidden;
-  height: 350px;
-  background: rgba(0,0,0,0.8);
-  border-radius: 0 0 10px 10px;
+  width: 85px;
+  padding-top: 10px;
+  height: 328px;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: 614px;
+  margin-top: -437px;
 }
 #options_video button {
-    padding: 10px;
-    background: #fff;
-    border-radius: 5px;
-    margin: 10px;
-    border: 1px solid gray;
-    font-size: 12px;
-    background: transparent;
-    color: white;
-    width: 81px;
+  padding: 4px;
+  border-radius: 5px;
+  margin: 1px;
+  border: 1px solid gray;
+  font-size: 12px;
+  background: transparent;
+  color: white;
+  width: 81px;
+}
+.crono{
+  position: absolute;
+  margin-left: 470px;
+  margin-top: 22px;
+  font-family: sans-serif;
+  font-size: 20px;
 }
 
 
@@ -518,7 +552,7 @@ footer .terminos_y_condiciones a.logo_footer img
   height: auto;
   width: 100%;
   display: block;
-  background: url(../assets/bg_widget.png) no-repeat center;
+  background: url(../assets/bg_widget.jpg) no-repeat center;
   background-size: cover;
   z-index: 0;
   position: relative;
@@ -604,6 +638,7 @@ footer .terminos_y_condiciones a.logo_footer img
   display: block;
   float: left;
   background: #eeeeee url(../assets/play_button.png) no-repeat center;
+  overflow: hidden;
 }
 .widget .content_videos .box_content_videos .nombre_video
 {
@@ -716,7 +751,7 @@ button.buscar
   width: 100%;
   height: auto;
   display: block;
-  background: url(../assets/fondo_int.png) no-repeat center;
+  background: url(../assets/fondo_int.jpg) no-repeat center;
   background-size: cover;
   z-index: 0;
   position: relative;
@@ -730,7 +765,7 @@ button.buscar
   width: 100%;
   height: auto;
   display: block;
-  background: url(../assets/fondo_premios.png) no-repeat center bottom;
+  background: url(../assets/fondo_premios.jpg) no-repeat center bottom;
   background-size: cover;
   z-index: 0;
   position: relative;
@@ -1108,7 +1143,7 @@ button.buscar
   background: url(../assets/shadow.png) no-repeat center;
   background-size: 101%;
 }
-.wrapper_int .box_formulario .volver
+.wrapper_int .volver
 {
   width: 172px;
   height: 73px;
@@ -1118,6 +1153,23 @@ button.buscar
   background: url(../assets/volver.png) no-repeat center;
   background-size: 85%;
 }
+
+.wrapper_int .publish_preview{
+  display:block;
+  background-color:orange;
+  width:200px;
+  text-align: center;
+  padding:1em;
+  text-transform:uppercase;
+  color:#fff;
+  text-decoration:none;
+  border-radius:.5em;
+  box-shadow:0 0 10px #333;
+  font-size:2em;
+  font-weight:bold;
+
+}
+
 .formulario
 {
   float: left;
@@ -1151,6 +1203,12 @@ button.buscar
   -moz-box-shadow: inset -8px 8px 8px -4px rgba(0,0,0,0.27);
   box-shadow: inset -8px 8px 8px -4px rgba(0,0,0,0.27);
 }
+.formulario input.succed{
+  border:1px solid green;
+  background-color:#b2f49b;
+  color:green;
+}
+
  /* WebKit browsers */
 .formulario input::-webkit-input-placeholder {
   color: #fff !important;
@@ -1222,17 +1280,18 @@ button.buscar
   display:none;
 }
 
-body.active_form .wrapper_int
-{
+body.active_form .wrapper_int,
+body.active_preview .wrapper_int {
   display:block;
 }
-body.active_form .wrapper_int .box_formulario
-{
+
+body.active_preview .wrapper_int .box_preview,
+body.active_form .wrapper_int .box_formulario {
   display:block;
 }
+
 /* hide record button */
-body.active_form  .boton.grabar
-{
+body.active_form  .boton.grabar {
   display:none;
 }
 /*single page*/
@@ -1242,6 +1301,22 @@ body.active_form  .boton.grabar
 .single .wrapper_int {
   display: block;
 }
+
+/*box preview*/
+
+.box_preview .box_social_compartir{
+  text-align:center
+}
+
+.box_preview .box_social_compartir > a{
+  position:relative;
+  margin:0 0 0 0 !important;
+  float:none;
+  vertical-align:middle;
+  left:auto !important;
+  display:inline-block!important;
+}
+
 /*hide record button*/
 body.active_form  .boton.grabar
 {
@@ -1276,6 +1351,31 @@ display:block;
   display:block;
 }
 
-  .page-template .wrapper_int div{
-    display:block;
-  }
+.page-template .wrapper_int div{
+  display:block;
+}
+
+/*loader form*/
+.formulario
+{
+  position: relative;
+}
+.formulario .loader{
+  display: none;
+}
+
+.formulario.loading .loader{
+  display:block;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,.7);
+  z-index: 2;
+}
+
+.formulario.loading .loader img{
+  display: block;
+  margin: 30% auto;
+}
