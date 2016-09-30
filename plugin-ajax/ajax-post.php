@@ -95,11 +95,14 @@ function apf_addpost() {
     $results = '';
     $link_post = '';
 
-    $title = $_POST['apftitle'];
+    $rand = rand(1000000, 9999999);
+    $title = $rand;
     $video =  $_POST['apfvideo'];
     $mail =  $_POST['apfmail'];
     $alias =  $_POST['apfalias'];
     $content = $_POST['apfcontents'];
+    $error = "";
+
 
     //Conditional for duplicate post
 
@@ -108,7 +111,7 @@ function apf_addpost() {
         $post_id = wp_insert_post( array(
             'post_title'        => $title,
             'post_content'      => $content,
-            'post_status'       => 'pending',
+            'post_status'       => 'publish',
             'post_author'       => '2'
         ));
 
@@ -117,15 +120,19 @@ function apf_addpost() {
         update_post_meta($post_id,'Alias',$alias);
         update_post_meta($post_id,'url_video',$video);
         //get permalink
+
         $link_post = get_permalink($post_id);
+    }else{
+        $error = "nombre de post ya existe";
     }
 
     if ( $post_id != 0 )
     {
-        $results = $link_post.'&preview=true';
+        
+        $results = $link_post;
     }
     else {
-        $results = '*Error al añadir el video';
+        $results = 'Error '.$error;
     }
     // Return the String
     die($results);

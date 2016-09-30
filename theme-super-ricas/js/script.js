@@ -148,6 +148,8 @@ function vidLoaded() {
 function createCanvas() {
 	c = new fabric.Canvas('canvas');
 	ctx = c.getContext('2d');
+	ctx.translate(720, 0);
+  	ctx.scale(-1, 1);
 	c.width = 0;
 	c.height = 0;
 

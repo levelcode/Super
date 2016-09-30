@@ -10,7 +10,7 @@
 	    	echo '<h2>pronto verás tu post</h2>';
 	    } else {
 	    while(have_posts()):the_post();
-
+	    	$alias = get_post_meta($post->ID, 'Alias' );
             $videoUrl = get_post_meta($post->ID, 'url_video' );
             $post_state = get_post_meta($post->ID, 'meta-box-dropdown' );
 
@@ -20,7 +20,7 @@
 				<!--content compartir-->
 	    <div class="box_compartir">
 	        <div class="titulo_compartir">
-	            <p><strong><?php the_title(); ?></strong>, ya hizo el <strong>Reto Super Crokantes</strong>, anímate a hacer el tuyo y podrás viajar a disfrutar los sonidos de Colombia...</p>
+	            <p><strong><?php echo $alias[0]; ?></strong>, ya hizo el <strong>Reto Super Crokantes</strong>, anímate a hacer el tuyo y podrás viajar a disfrutar los sonidos de Colombia...</p>
 	        </div>
 	        <div class="box_video">
 	        	<video id="video_def" webkit-playsinline playsinline>

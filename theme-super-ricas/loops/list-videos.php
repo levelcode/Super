@@ -3,19 +3,15 @@
         <form action="" class="videos_form">
             <div class="select-style select_1">
                 <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                <option value="volvo">Alias</option>
+                <option value="saab">Fecha</option>
                 </select>
             </div>
 
             <div class="select-style select_2">
                 <select>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                <option value="volvo">Ascendente</option>
+                <option value="saab">Descendente</option>
                 </select>
             </div>
             <button class="buscar"></button>
@@ -36,6 +32,7 @@
         while(have_posts()):the_post();
 
             $videoUrl = get_post_meta($post->ID, 'url_video' );
+            $alias = get_post_meta($post->ID, 'Alias' );
     ?>
 
         <div class="videos">
@@ -50,7 +47,7 @@
                 </a>
             </div>
             <span class="nombre_video">
-                <?php the_title();?>
+                <?php echo $alias[0] ?>
             </span>
             <!--span class="titulo_video">
                 Reto super ricas
