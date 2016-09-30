@@ -2,9 +2,9 @@
   <center class="wrapper">
       <div class="wrapper_container">
           <div class="booth">
-              <canvas id="canvas" width="720" height="480" poster="https://supercrokantes.tk/wp-content/themes/theme-super-ricas/ing/poster.png"></canvas>
+              <canvas id="canvas" width="720" height="405" poster="<?php bloginfo('template_url')?>/ing/poster.png"></canvas>
               <video id="super_video" height="720" width="60" webkit-playsinline playsinline>
-                <source src="https://supercrokantes.tk/wp-content/themes/theme-super-ricas/video/barra.mp4">
+                <source src="<?php bloginfo('template_url')?>/video/barra.mp4">
               </video>
           </div>
           <div id="objetos">
@@ -26,13 +26,13 @@
           </div>
           <div id="controls">
               <audio id="super_audio" style="display:none">
-                <source src="https://supercrokantes.tk/wp-content/themes/theme-super-ricas/audio/super.ogg" type="audio/ogg">
-                <source src="https://supercrokantes.tk/wp-content/themes/theme-super-ricas/audio/super.mp3" type="audio/mpeg">
+                <source src="<?php bloginfo('template_url')?>/audio/super.ogg" type="audio/ogg">
+                <source src="<?php bloginfo('template_url')?>/audio/super.mp3" type="audio/mpeg">
                 Tu navegador no soporta audio HTML5
               </audio>
               
               <!--<h3>Controles</h3>-->
-              <p class="crono">0:0</p>
+              <p class="crono">30</p>
               <button class="boton grabar" >Grabar</button>
               <button class="boton parar" style="display:none;" >Parar</button>
               <div class="filtros_menu">
@@ -52,13 +52,11 @@
                 </div>
               </div>
               <button class="boton filtros" >Ver filtros</button>
-              <button class="boton borrar" >Borrar Elemento</button>
           </div>
       </div>
       
   </center>
-
-  <a href="javascript:void(0);" class="instrucciones_widget"></a>
+  <img src="<?php bloginfo('template_url')?>/assets/pauta.png" alt="" class="banner">
 
 </div>
 <script>

@@ -15,7 +15,7 @@
 </head>
 <body <?php body_class(); ?>>
 
-    <div class="loader" style="width: 100%;height: 100%;background-color: #b10e17; z-index: 10000;display:block">
+    <div class="loader" style="width: 100%;height: 100%;background-color: rgb(190, 4, 17); z-index: 10000;display:block">
         <div class="loader_center"></div>
     </div>
 
@@ -24,7 +24,7 @@
     </div>
     <div id="menu_p">
         <ul>
-            <li><a href="<?php echo home_url('/'); ?>">HOME</a></li>
+            <li><a href="<?php echo home_url('/'); ?>">INICIO</a></li>
             <li><a href="/instrucciones">INSTRUCCIONES</a></li>
             <li><a href="/premios">PREMIOS</a></li>
             <li><a href="<?php echo home_url('/'); ?>#gallery">GALERIAS</a></li>
@@ -34,7 +34,7 @@
 	<header>
         <nav>
             <ul>
-                <li><a href="<?php echo home_url('/'); ?>">HOME</a></li>
+                <li><a href="<?php echo home_url('/'); ?>">INICIO</a></li>
                 <li><a href="/instrucciones">INSTRUCCIONES</a></li>
                 <li><a href="<?php echo home_url('/'); ?>"><img src="<?php bloginfo('template_url')?>/assets/logo.png" alt=""></a></li>
                 <li><a href="/premios">PREMIOS</a></li>

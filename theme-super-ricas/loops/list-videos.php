@@ -33,6 +33,7 @@
 
             $videoUrl = get_post_meta($post->ID, 'url_video' );
             $alias = get_post_meta($post->ID, 'Alias' );
+            $post_state = get_post_meta($post->ID, 'meta-box-dropdown' );
     ?>
 
         <div class="videos">
@@ -41,9 +42,15 @@
             </div>
             <div class="box_video">
                 <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">
-                    <video class="videos_galeria">
-                        <source src="<?php echo $videoUrl[0]; ?>" type="video/webm">
-                    </video>
+                    <?php if($post_state[0] == "publicado"){ ?>
+                        <video class="videos_galeria">
+                            <source src="<?php echo $videoUrl[0]; ?>" type="video/webm">
+                        </video>
+                    <?php }else{ ?>
+                        <div class="img-poster" style="display: block;">
+                            <img src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="">
+                        </div>
+                    <?php } ?>
                 </a>
             </div>
             <span class="nombre_video">
@@ -59,6 +66,6 @@
         endwhile;
         wp_reset_query();
     ?>
-    <img src="<?php bloginfo('template_url')?>/assets/pauta.png" alt="" class="banner">
+    
     </div>
 </div>
