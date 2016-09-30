@@ -832,7 +832,7 @@ button.buscar
   background-size: 80%;
   z-index: 0;
   position: relative;
-  margin: 0 -7%;
+  margin: 6% -7% 0;
 }
 .wrapper_int .box_compartir .titulo_compartir p
 {

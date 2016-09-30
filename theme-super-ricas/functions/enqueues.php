@@ -53,10 +53,9 @@ function bst_enqueues() {
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
-	 if( is_front_page() )
-    {
-        wp_register_script('custom-script-js', get_template_directory_uri() . '/js/script.js', false, null, true);
-		wp_enqueue_script('custom-script-js');
-    }
+	
+    wp_register_script('custom-script-js', get_template_directory_uri() . '/js/script.js', false, null, true);
+	wp_enqueue_script('custom-script-js');
+    
 }
 add_action('wp_enqueue_scripts', 'bst_enqueues', 100);

@@ -129,7 +129,7 @@
     .wrapper_int .box_compartir .titulo_compartir,
     .wrapper_int .box_formulario .titulo_formulario
     {
-        margin: 0 -6%;
+        margin: 20% -6% 0;
         background-size: 100%;
     }
     .wrapper_int .box_compartir .titulo_compartir p
@@ -216,7 +216,7 @@
     {
         background: url(../assets/mobile_compartir.png) no-repeat center;
         background-size: contain;
-        margin: 120px auto 50px;
+        margin: 201px auto 50px;
     }
     .wrapper_int .box_formulario .titulo_formulario p,
     .wrapper_int .box_premios .titulo_premios p,

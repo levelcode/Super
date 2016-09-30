@@ -6,7 +6,17 @@ var append_video;
 //variable global
 var blob_video;
 
+//**********************
+//*** Salida Consola ***
+//**********************
 
+function console_dev(string){
+	console.log(string);
+};
+
+//**********************
+//*** Salida Consola ***
+//**********************
 
 //******************************
 //*** Validadores de Browser ***
