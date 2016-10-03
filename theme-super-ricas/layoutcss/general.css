@@ -1448,8 +1448,9 @@ display:block;
 .wrapper_int .img-poster{
   display:block;
 }
-  .wrapper_int .img-poster img{
-    margin:15% auto 0;
-    max-width:100%;
-    display:block;
-  }
+
+.wrapper_int .img-poster img{
+  margin:15% auto 0;
+  max-width:100%;
+  display:block;
+}

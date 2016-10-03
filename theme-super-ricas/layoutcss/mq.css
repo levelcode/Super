@@ -4,7 +4,7 @@
 {
     header nav ul
     {
-        max-width: 1000px;
+        /*max-width: 1000px;*/
     }
     header nav ul li:nth-child(2) 
     {

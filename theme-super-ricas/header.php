@@ -36,7 +36,8 @@
             <ul>
                 <li><a href="<?php echo home_url('/'); ?>">INICIO</a></li>
                 <li><a href="/instrucciones">INSTRUCCIONES</a></li>
-                <li><a href="<?php echo home_url('/'); ?>"><img src="<?php bloginfo('template_url')?>/assets/logo.png" alt=""></a></li>
+                <li><a href="<?php echo home_url('/'); ?>">
+                <img src="<?php bloginfo('template_url')?>/img/logo.png" alt=""></a></li>
                 <li><a href="/premios">PREMIOS</a></li>
                 <li><a href="<?php echo home_url('/'); ?>#gallery">GALERIAS</a></li>
             </ul>
