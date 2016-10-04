@@ -40,7 +40,7 @@
             </div>
             <a href="javascript:void(0);" class="generar_url">GENERAR URL</a>
             <input type="text" class="url_generated" placeholder="URL GENERADA">
-            <input type="submit" class="enviar_compartir" >
+            <input type="button" class="enviar_compartir" >
         </form>
 
         <div class="box_video_formulario">

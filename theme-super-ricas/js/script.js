@@ -629,6 +629,23 @@ function getEvents(){
 		    }
 		});
     });
+    $('.enviar_compartir').click(function() {
+    	FB.ui({
+		    method: 'share',
+		    href: $('.url_generated').val(),
+		  },
+		  // callback
+		  function(response) {
+		    if (response && !response.error_message) {
+		      alert('Posting completed.');
+		    } else {
+		      alert('Error while posting.');
+		    }
+		});
+    });
+
+
+    
 
 
 }
