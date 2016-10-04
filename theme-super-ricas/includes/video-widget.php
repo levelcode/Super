@@ -25,7 +25,7 @@
               </ul>
           </div>
           <div id="controls">
-              <img class="logo_superC" src="<?php bloginfo('template_url')?>/img/super-crokantes.png" alt="Super Crokantes" style="position: absolute;margin-left: -414px; margin-top: -510px;">
+              <img class="logo_superC" src="<?php bloginfo('template_url')?>/img/super-crokantes.png" alt="Super Crokantes" style="position: absolute;margin-left: -414px;margin-top: -528px;">
               <audio id="super_audio" style="display:none">
                 <source src="<?php bloginfo('template_url')?>/audio/super.ogg" type="audio/ogg">
                 <source src="<?php bloginfo('template_url')?>/audio/super.mp3" type="audio/mpeg">

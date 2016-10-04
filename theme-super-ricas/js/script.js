@@ -182,6 +182,9 @@ function createCanvas() {
 	c.width = 0;
 	c.height = 0;
 
+	var url_back = 'https://supercrokantes.com/wp-content/themes/theme-super-ricas/img/objetos/default.png';
+	insertarFotoDrag(url_back,false, 0, "init", 1, 0, 0);
+
 
 	c2 = document.createElement('canvas');
 	ctx2 = c2.getContext('2d');
