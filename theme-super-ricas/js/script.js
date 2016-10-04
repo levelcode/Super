@@ -102,12 +102,14 @@ var fb_inapp = isFacebookApp();
 }());
 
 // stats
+/*
 var stats = new Stats();
 stats.setMode(0);
 stats.domElement.style.position = 'absolute';
 stats.domElement.style.top = '137px';
 stats.domElement.style.zIndex = 1;
 $('.booth').append(stats.domElement);
+*/
 
 
 var c, ctx, c2, ctx2, v, winWidth, winHeight, vHeight, c2Width, c2Height, ratio, animation;
@@ -810,7 +812,7 @@ function makeXMLHttpRequest(url, data, callback) {
     };
 
     request.upload.onload = function() {
-        callback('progreso: Generando imagen para publicar');
+        callback('progreso: Generando imagen');
     };
 
     request.upload.onerror = function(error) {
