@@ -92,9 +92,7 @@
 	            <a href="javascript:void(0);" class="compartir_facebook_video"></a>
 	            <a href="<?php echo home_url('/'); ?>" class="inicia_el_reto"></a>
 	        </div>
-	        <script>
-	        var init_single = true;
-	        </script>
+	        
 	    </div><!--box_compartir-->
 
 
@@ -110,6 +108,9 @@
 	    	wp_reset_query();
 	    	}
 	    ?>
+	    <script>
+        	var init_single = true;
+        </script>
     </div>
 </div>
 <?php get_footer();?>

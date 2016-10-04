@@ -1,3 +1,4 @@
+<div id="fb-root"></div>
 <footer>
     <div class="terminos_y_condiciones">
         <span>Términos y condiciones</span>

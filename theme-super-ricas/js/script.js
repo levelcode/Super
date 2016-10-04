@@ -6,6 +6,23 @@ var append_video;
 //variable global
 var blob_video;
 
+window.fbAsyncInit = function() {
+	FB.init({
+	appId      : '336586346674445',
+	xfbml      : true,
+	version    : 'v2.7'
+	});
+	console.log("Listo FB SDK")
+};
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=336586346674445";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
 //**********************
 //*** Salida Consola ***
 //**********************
@@ -597,6 +614,23 @@ function getEvents(){
 
 	$('#options_video').slideUp(0);
 	con("Eventos OK");
+
+	$('.box_social_compartir').click(function() {
+    	FB.ui({
+		    method: 'share',
+		    href: window.location.href ,
+		  },
+		  // callback
+		  function(response) {
+		    if (response && !response.error_message) {
+		      alert('Posting completed.');
+		    } else {
+		      alert('Error while posting.');
+		    }
+		});
+    });
+
+
 }
 //Publish preview in form
 function postPublicado(progress, response){
