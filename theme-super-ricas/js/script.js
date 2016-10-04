@@ -178,14 +178,14 @@ function createCanvas() {
 	  c.setBackgroundColor('', c.renderAll.bind(c));
 	  c.renderAll();
 	  fabric.util.requestAnimFrame(render);
-	  stats.update();
+	  //stats.update();
 	});
 }
 
 function loop() {
 	animation = requestAnimationFrame( function(){ loop(); } );
 	draw();
-	stats.update();
+	//stats.update();
 }
 
 function draw() {
