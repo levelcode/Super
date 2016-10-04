@@ -132,8 +132,15 @@ function apf_addpost() {
 
     if ( $post_id != 0 )
     {
-        
-        $results = $link_post;
+        $to = "admin@supercrokantes.com";
+        $subject = "Nuevo Video de ".$name." en SuperCrokantes.com";
+        $txt = "El usuario: ".$name." con alias: ".$alias." acaba de grabar su video en SuperCrokantes.com";
+        $headers = "From: no-reply@supercrokantes.com" . "\r\n" .
+        "CC: leonardo@levelcode.com, admin@supercrokantes.com";
+
+        if(mail($to,$subject,$txt,$headers)){
+            $results = $link_post;
+        } 
     }
     else {
         $results = 'Error '.$error;
