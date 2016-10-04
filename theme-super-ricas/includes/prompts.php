@@ -24,8 +24,10 @@
         </div>
 
         <form class="formulario" id="apfform" action="" method="post"enctype="multipart/form-data">
-            <div class="loader">
+            <div class="loader_form">
                 <img src="<?php bloginfo('template_url');?>/img/loading.svg" alt="loader">
+                <p></p>
+                <span>Subiendo tu Video</span>
             </div><!--loader-->
 
             <div id="apf-response" style="background-color:#E6E6FA"></div>

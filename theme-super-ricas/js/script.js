@@ -597,29 +597,45 @@ function getEvents(){
 	con("Eventos OK");
 }
 //Publish preview in form
-function postPublicado(string, error){
-	if(string == "error"){
-		con(String('Error al Publicar '+error));
+function postPublicado(progress, response){
+	if(progress == "error"){
+		con(String('Error al Publicar '+response));
 	}else{
 		con('Éxito al publicar en Wordpress');
-		$('.formulario').removeClass('loading');
+		$('.loader_form').hide(200);
 	};
 };
 //Upload Video
 function upload(callback){
-	uploadToServer(blob_video, function(progress, fileURL) {
-	    if(progress === 'termino') {
-	       	con("Subida satisfactoria:" + fileURL);
-	        $(this).parent().removeClass('loading');
-	        var title = $('.formulario .name').val(),
-			contents = fileURL,
-			mail = $('.formulario .mail').val(),
-			alias = $('.formulario .alias').val();
-			//Subida de post a WordPress
-			apfaddpost(title,contents,mail,alias,callback);
-	    }else{
-	    	callback("error", "Subiendo archivo");
-	    };
+	uploadToServer(blob_video, function(progress, response) {
+	    switch(progress) {
+		    case "fin":
+		        con("Video subido con éxito:" + response);
+		       	var tName = Math.floor((Math.random() * 1000000) + 1);
+		       	create(c, tName, callback_foto);
+		       	function callback_foto(url, nombre){
+		       		var title = nombre,
+		       		name = $('.formulario .name').val(),
+		       		photo = url, 
+					contents = response,
+					mail = $('.formulario .mail').val(),
+					alias = $('.formulario .alias').val();
+					//Subida de post a WordPress !!! AGREGARLE LOS CAMPOS: photo y name.  
+					apfaddpost(title,contents,mail,alias,callback);
+		       	}
+		        break;
+		    case "progreso":
+		    	$('.loader_form').show(200);
+		    	$('.loader_form p').html(response);
+		    	con("Subiendo: " + response);
+		        break;
+		    case "error":
+		        callback(progress, response);
+
+		        break;
+		    default:
+		        con("Error General");
+		};
 	});
 };
 //Start Recording 
@@ -671,7 +687,7 @@ function detener_fn(valid_end){
 		    $('.content_widget').hide();
 		}else{
 			blob = null;
-			alert("Debes grabar los 20 segundos para concursar!");
+			alert("Debes grabar los 30 segundos para concursar!");
 		}
 	});
 };
@@ -758,13 +774,22 @@ function uploadToServer(blob, callback) {
     callback('Uploading ' + fileType + ' recording to server.');
 
     makeXMLHttpRequest('https://supercrokantes.tk/wp-content/themes/theme-super-ricas/save.php', formData, function(progress) {
-        if (progress !== 'Archivo Disponible') {
-            callback(progress);
-            return;
-        }else{
-        	var initialURL = 'https://supercrokantes.tk/wp-content/themes/theme-super-ricas/uploads/';
-        	callback('termino', initialURL + fileName);
-        }
+		var res = progress.split(":");
+
+		switch(res[0]) {
+		    case "fin":
+		        var initialURL = 'https://supercrokantes.tk/wp-content/themes/theme-super-ricas/uploads/';
+        		callback(res[0], initialURL + fileName);
+		        break;
+		    case "progreso":
+		        callback(res[0], res[1]);
+		        break;
+		    case "error":
+		        callback(res[0], res[1]);
+		        break;
+		    default:
+		        con("Error General");
+		}
     });
 }
 
@@ -772,29 +797,29 @@ function makeXMLHttpRequest(url, data, callback) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
-            callback('Archivo Disponible');
+            callback('fin: Archivo Disponible');
         }
     };
 
     request.upload.onloadstart = function() {
-        callback('Iniciando Subida...');
+        callback('progreso: Iniciando Subida...');
     };
 
     request.upload.onprogress = function(event) {
-        callback('Progreso: ' + Math.round(event.loaded / event.total * 100) + "%");
+        callback('progreso:' + Math.round(event.loaded / event.total * 100) + "%");
     };
 
     request.upload.onload = function() {
-        callback('Termino Subida');
+        callback('progreso: Termino Subida');
     };
 
     request.upload.onerror = function(error) {
-        callback('Failed to upload to server');
+        callback('error :Failed to upload to server');
         console.error('XMLHttpRequest failed', error);
     };
 
     request.upload.onabort = function(error) {
-        callback('Upload aborted.');
+        callback('error :Upload aborted.');
         console.error('XMLHttpRequest aborted', error);
     };
 
@@ -802,8 +827,54 @@ function makeXMLHttpRequest(url, data, callback) {
     request.send(data);
 }
 
+//Funcion para crear la foto en el canvas
 
 
+
+//create(canvas, tName, callback);
+
+function create(canvas, tName, callback){
+    canvas.discardActiveObject();
+    canvas.renderAll();
+    var return_t = '';
+
+    con('name: ' + tName);
+    canvas = document.getElementById("canvas");
+    var imagen = canvas.toDataURL({
+        format: 'jpeg',
+        multiplier: 1,
+        quality: 6
+    })
+    var file= dataURLtoBlob(imagen);
+    //creamos un form data object
+    var fd = new FormData();
+    fd.append("foto", file);
+    fd.append("name_file",tName);
+    // Envío del canvas via ajax
+    $.ajax({
+        url: "https://supercrokantes.tk/wp-content/themes/theme-super-ricas/upload_photo.php",
+        type: "POST",
+        data: fd,
+        processData: false,
+        contentType: false,
+    }).done(function(respond){
+        /*
+        var nombre_foto = Math.floor((Math.random() * 1000000) + 1);
+        downloadURL = "https://www.datapola.com/download_pic.php?file="+respond+"&name="+nombre_foto;
+        */
+        con('foto id:'+respond);
+        callback(respond, tName);
+        $('body').removeClass('loading');
+    });
+};
+function dataURLtoBlob(dataURL) {
+      var binary = atob(dataURL.split(',')[1]);
+      var array = [];
+      for(var i = 0; i < binary.length; i++) {
+          array.push(binary.charCodeAt(i));
+      }
+      return new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
+};
 
 window.onload = init();
 

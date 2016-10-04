@@ -43,12 +43,12 @@
             <div class="box_video">
                 <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">
                     <?php if($post_state[0] == "publicado"){ ?>
-                        <video class="videos_galeria">
-                            <source src="<?php echo $videoUrl[0]; ?>" type="video/webm">
-                        </video>
+                        <div class="img-poster" style="display: block;">
+                            <img src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="Preview video">
+                        </div>
                     <?php }else{ ?>
                         <div class="img-poster" style="display: block;">
-                            <img src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="">
+                            <img src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="Video NO Aprobado">
                         </div>
                     <?php } ?>
                 </a>

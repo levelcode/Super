@@ -40,12 +40,6 @@ function bst_enqueues() {
 	wp_register_script('canvasRec-js', 'https://cdn.webrtc-experiment.com/RecordRTC/CanvasRecorder.js', false, null, true);
 	wp_enqueue_script('canvasRec-js');
 
-	wp_register_script('clmtr-js', get_template_directory_uri() . '/js/clmtrackr.js', false, null, true);
-	wp_enqueue_script('clmtr-js');
-
-	wp_register_script('model_pca-js', get_template_directory_uri() . '/js/model_pca_20_svm.js', false, null, true);
-	wp_enqueue_script('model_pca-js');
-
 	wp_register_script('gscript-js', get_template_directory_uri() . '/js/gonzo.js', false, null, true);
 	wp_enqueue_script('gscript-js');
 
