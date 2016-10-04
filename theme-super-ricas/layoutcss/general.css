@@ -1474,3 +1474,7 @@ display:block;
   max-width:100%;
   display:block;
 }
+/*estilos de rating widget*/
+.rw-ui-report .rw-ui-poweredby{
+  display: none !important;
+}

@@ -35,11 +35,11 @@
             $alias = get_post_meta($post->ID, 'Alias' );
             $photo = get_post_meta($post->ID, 'photo' );
             $post_state = get_post_meta($post->ID, 'meta-box-dropdown' );
-    ?>
+        ?>
 
         <div class="videos">
             <div class="box_estrellas">
-                <?php echo do_shortcode('[usr 3]');?>
+                <?php echo do_shortcode('[ratingwidget]');?>
             </div>
             <div class="box_video">
                 <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">
