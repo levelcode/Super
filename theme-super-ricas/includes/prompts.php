@@ -35,7 +35,9 @@
             <input type="email" class="mail" placeholder="Correo" name="apfmail" required>
             <input type="text" class="alias" placeholder="Alias">
             <input type="hidden" class="content" name="apfcontents">
-            <div class="box_captcha"></div>
+            <div class="box_captcha">
+                <div class="g-recaptcha" data-sitekey="6LdCVggUAAAAAME42kSwJkp8enkbldoR2emOHkjm"></div>
+            </div>
             <a href="javascript:void(0);" class="generar_url">GENERAR URL</a>
             <input type="text" class="url_generated" placeholder="URL GENERADA">
             <input type="submit" class="enviar_compartir" >

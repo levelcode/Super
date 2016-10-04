@@ -16,6 +16,7 @@
     <div class="derechos_copy">
         Reservados todos los derechos.
     </div>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <?php wp_footer(); ?>
 </footer>
     
