@@ -33,6 +33,7 @@
 
             $videoUrl = get_post_meta($post->ID, 'url_video' );
             $alias = get_post_meta($post->ID, 'Alias' );
+            $photo = get_post_meta($post->ID, 'photo' );
             $post_state = get_post_meta($post->ID, 'meta-box-dropdown' );
     ?>
 
@@ -44,11 +45,11 @@
                 <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">
                     <?php if($post_state[0] == "publicado"){ ?>
                         <div class="img-poster" style="display: block;">
-                            <img src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="Preview video">
+                            <img width="248" src="<?php echo bloginfo('template_url');?>/<?php echo $photo[0]; ?>" alt="Preview video2">
                         </div>
                     <?php }else{ ?>
                         <div class="img-poster" style="display: block;">
-                            <img src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="Video NO Aprobado">
+                            <img width="248" src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="Video NO Aprobado">
                         </div>
                     <?php } ?>
                 </a>

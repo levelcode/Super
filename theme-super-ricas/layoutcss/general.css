@@ -635,9 +635,9 @@ footer .terminos_y_condiciones a.logo_footer img
 }
 .widget .content_videos .box_content_videos .videos
 {
-  border:1px solid #fff;
+  border: 1px solid #fff;
   width: 260px;
-  height: 320px;
+  height: 250px;
   display: inline-block;
   background: rgba(255, 255, 255, 0.37);
   padding: 10px 5px;
@@ -677,7 +677,7 @@ footer .terminos_y_condiciones a.logo_footer img
 .widget .content_videos .box_content_videos .box_video
 {
   width: 100%;
-  height: 195px;
+  height: auto;
   display: block;
   float: left;
   background: #eeeeee url(../assets/play_button.png) no-repeat center;

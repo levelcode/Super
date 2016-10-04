@@ -100,6 +100,8 @@ function apf_addpost() {
     $video =  $_POST['apfvideo'];
     $mail =  $_POST['apfmail'];
     $alias =  $_POST['apfalias'];
+    $photo =  $_POST['apfphoto'];
+    $name =  $_POST['apfname'];
     $content = $_POST['apfcontents'];
     $error = "";
 
@@ -119,11 +121,13 @@ function apf_addpost() {
         update_post_meta($post_id,'Mail',$mail);
         update_post_meta($post_id,'Alias',$alias);
         update_post_meta($post_id,'url_video',$video);
+        update_post_meta($post_id,'name',$name);
+        update_post_meta($post_id,'photo',$photo);
         //get permalink
 
         $link_post = get_permalink($post_id);
     }else{
-        $error = "nombre de post ya existe";
+        $error = "El Nombre de post ya existe";
     }
 
     if ( $post_id != 0 )

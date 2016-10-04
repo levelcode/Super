@@ -564,7 +564,7 @@ function getEvents(){
 		var fondo = c.item(0);
 		c.remove(fondo);
 		var var_url = $(this).attr('datan');
-		var url_back = 'https://supercrokantes.tk/wp-content/themes/theme-super-ricas/img/objetos/gif'+var_url+'.png';
+		var url_back = 'https://supercrokantes.com/wp-content/themes/theme-super-ricas/img/objetos/gif'+var_url+'.png';
 		insertarFotoDrag(url_back,false, 0, "init", 1, 0, 0);
 		num_zobject++
 	});
@@ -621,7 +621,7 @@ function upload(callback){
 					mail = $('.formulario .mail').val(),
 					alias = $('.formulario .alias').val();
 					//Subida de post a WordPress !!! AGREGARLE LOS CAMPOS: photo y name.  
-					apfaddpost(title,contents,mail,alias,callback);
+					apfaddpost(title,contents,mail,alias,name,photo,callback);
 		       	}
 		        break;
 		    case "progreso":
@@ -773,12 +773,12 @@ function uploadToServer(blob, callback) {
 
     callback('Uploading ' + fileType + ' recording to server.');
 
-    makeXMLHttpRequest('https://supercrokantes.tk/wp-content/themes/theme-super-ricas/save.php', formData, function(progress) {
+    makeXMLHttpRequest('https://supercrokantes.com/wp-content/themes/theme-super-ricas/save.php', formData, function(progress) {
 		var res = progress.split(":");
 
 		switch(res[0]) {
 		    case "fin":
-		        var initialURL = 'https://supercrokantes.tk/wp-content/themes/theme-super-ricas/uploads/';
+		        var initialURL = 'https://supercrokantes.com/wp-content/themes/theme-super-ricas/uploads/';
         		callback(res[0], initialURL + fileName);
 		        break;
 		    case "progreso":
@@ -810,7 +810,7 @@ function makeXMLHttpRequest(url, data, callback) {
     };
 
     request.upload.onload = function() {
-        callback('progreso: Termino Subida');
+        callback('progreso: Generando imagen para publicar');
     };
 
     request.upload.onerror = function(error) {
@@ -852,7 +852,7 @@ function create(canvas, tName, callback){
     fd.append("name_file",tName);
     // Envío del canvas via ajax
     $.ajax({
-        url: "https://supercrokantes.tk/wp-content/themes/theme-super-ricas/upload_photo.php",
+        url: "https://supercrokantes.com/wp-content/themes/theme-super-ricas/upload_photo.php",
         type: "POST",
         data: fd,
         processData: false,
