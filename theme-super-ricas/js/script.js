@@ -162,7 +162,7 @@ function init() {
 		con("Constructor Single");
 		getEvents();
 	}
-	
+
 }
 
 function vidLoaded() {
@@ -515,16 +515,16 @@ function getEvents(){
                 opacity: 0,
                 margin: '-100% 0 0 0',
                 'z-index': -100
-            }, 900 );           
+            }, 900 );
         }else{
             $(this).addClass('active');
             $('#menu_p').animate({
                 opacity: 1,
                 margin: '30px 0 0 0',
-            }, 900 ).css('z-index', 100);  
+            }, 900 ).css('z-index', 100);
         }
     });
-	
+
 	$( ".grabar" ).click(function() {
 		if(ios == true){
 			alert("Lo sentimos, tu dispositivo no soporta grabación en linea.");
@@ -568,14 +568,14 @@ function getEvents(){
 	$('.volver').click(function(event) {
 		$('body').removeClass('active_form');
 		$('body').removeClass('active_preview');
-		
+
 		//Clean video
 		$('.box_formulario .box_video_formulario').find('video').remove();
 		$('.box_formulario .box_video_formulario').find('video').remove();
-		
+
 		//Reset value form
 		$('#apfform input.content').val('');
-		
+
 		//Animation scroll
 	    $('html, body').animate({
           	scrollTop: 0
@@ -633,6 +633,17 @@ function getEvents(){
 		});
     });
     $('.enviar_compartir').click(function() {
+
+    	//form validation
+    	var name = $.trim($('#apfform .name').val()),
+    		mail = $.trim($('#apfform .mail').val()),
+    		alias = $.trim($('#apfform .alias').val());
+
+    		if(name === '' || mail === '' || alias === ''){
+    			alert('Ingresa los datos completos');
+    			return false;
+    		}
+
     	FB.ui({
 		    method: 'share',
 		    href: $('.url_generated').val(),
@@ -648,7 +659,7 @@ function getEvents(){
     });
 
 
-    
+
 
 
 }
@@ -672,11 +683,11 @@ function upload(callback){
 		       	function callback_foto(url, nombre){
 		       		var title = nombre,
 		       		name = $('.formulario .name').val(),
-		       		photo = url, 
+		       		photo = url,
 					contents = response,
 					mail = $('.formulario .mail').val(),
 					alias = $('.formulario .alias').val();
-					//Subida de post a WordPress !!! AGREGARLE LOS CAMPOS: photo y name.  
+					//Subida de post a WordPress !!! AGREGARLE LOS CAMPOS: photo y name.
 					apfaddpost(title,contents,mail,alias,name,photo,callback);
 		       	}
 		        break;
@@ -694,7 +705,7 @@ function upload(callback){
 		};
 	});
 };
-//Start Recording 
+//Start Recording
 function start_fn(){
 	playVideo();
 	cronoStart();
