@@ -15,8 +15,7 @@ function filterPost(var1,var2) {
         },
         error: function(MLHttpRequest, textStatus, errorThrown) {
             callback("error", errorThrown);
-        },
-        timeout: 3000
+        }
     });
 }
 

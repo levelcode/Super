@@ -24,15 +24,10 @@ add_action('wp_enqueue_scripts', filter_enqueuescripts);
 
 
 //ajax action
-
-
 function my_ajax_filter() {
 
     $par1 = $_POST['par1'];
     $par2 = $_POST['par2'];
-
-    var_dump($post_ID);
-    var_dump(get_post_type($post_ID));
 
     $args = array(
         'post_type' => 'post',
