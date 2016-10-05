@@ -1,17 +1,17 @@
 <div class="content_videos" id="gallery">
     <div class="header_videos">
-        <form action="" class="videos_form">
+        <form action="" class="videos_form" id="filter_video">
             <div class="select-style select_1">
-                <select>
-                <option value="volvo">Alias</option>
-                <option value="saab">Fecha</option>
+                <select id="filter">
+                <option value="title">Alias</option>
+                <option value="DATE">Fecha</option>
                 </select>
             </div>
 
             <div class="select-style select_2">
-                <select>
-                <option value="volvo">Ascendente</option>
-                <option value="saab">Descendente</option>
+                <select id="filter2">
+                <option value="ASC">Ascendente</option>
+                <option value="DESC">Descendente</option>
                 </select>
             </div>
             <button class="buscar"></button>
@@ -21,54 +21,9 @@
     <div class="box_content_videos">
 
     <?php
-        //Query posts type
-        $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => 200
-        );
 
-        query_posts($args);
+        get_template_part('loops/default-loop');
 
-        while(have_posts()):the_post();
-
-            $videoUrl = get_post_meta($post->ID, 'url_video' );
-            $alias = get_post_meta($post->ID, 'Alias' );
-            $photo = get_post_meta($post->ID, 'photo' );
-            $post_state = get_post_meta($post->ID, 'meta-box-dropdown' );
-        ?>
-
-        <div class="videos">
-            <div class="box_estrellas">
-                <?php echo do_shortcode('[ratingwidget]');?>
-            </div>
-            <div class="box_video">
-                <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">
-                    <?php 
-                    //if($post_state[0] == "publicado"){ 
-                    if(1 == 1){ 
-                    ?>
-                        <div class="img-poster" style="display: block;">
-                            <img width="248" src="<?php echo bloginfo('template_url');?>/<?php echo $photo[0]; ?>" alt="Preview video2">
-                        </div>
-                    <?php }else{ ?>
-                        <div class="img-poster" style="display: block;">
-                            <img width="248" src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="Video NO Aprobado">
-                        </div>
-                    <?php } ?>
-                </a>
-            </div>
-            <span class="nombre_video">
-                <?php echo $alias[0] ?>
-            </span>
-            <!--span class="titulo_video">
-                Reto super ricas
-            </span-->
-            <div class="shadow_video"></div>
-        </div>
-
-    <?php
-        endwhile;
-        wp_reset_query();
     ?>
     
     </div>

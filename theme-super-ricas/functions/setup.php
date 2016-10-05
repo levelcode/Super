@@ -1,5 +1,6 @@
 <?php
 
+
 function bst_setup() {
 	add_editor_style('css/editor-style.css');
 	add_theme_support('post-thumbnails');
