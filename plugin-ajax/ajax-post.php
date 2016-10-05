@@ -31,13 +31,13 @@ function select_meta_box_markup($object)
                         if($value == get_post_meta($object->ID, "meta-box-dropdown", true))
                         {
                             ?>
-                                <option selected><?php echo $value; ?></option>
+                                <option><?php echo $value; ?></option>
                             <?php
                         }
                         else
                         {
                             ?>
-                                <option><?php echo $value; ?></option>
+                                <option selected><?php echo $value; ?></option>
                             <?php
                         }
                     }
@@ -134,7 +134,7 @@ function apf_addpost() {
     {
         $to = "admin@supercrokantes.com";
         $subject = "Nuevo Video de ".$name." en SuperCrokantes.com";
-        $txt = "El usuario: ".$name." con alias: ".$alias." acaba de grabar su video en SuperCrokantes.com";
+        $txt = "El usuario: ".$name." con alias: ".$alias." acaba de grabar su video en SuperCrokantes.com. El ID de la publicación es:".$title;
         $headers = "From: no-reply@supercrokantes.com" . "\r\n" .
         "CC: leonardo@levelcode.com, admin@supercrokantes.com";
 

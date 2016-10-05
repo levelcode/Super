@@ -66,7 +66,8 @@
 
         <?php
             //post validation
-            if($post_state[0] == "publicado"){
+            //if($post_state[0] == "publicado"){
+            if(1 == 1){
          ?>
 				<!--content compartir-->
 	    <div class="box_compartir">
