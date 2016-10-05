@@ -13,7 +13,6 @@ define('FILURL', WP_PLUGIN_URL."/".dirname( plugin_basename( __FILE__ ) ) );
 define('FILPATH', WP_PLUGIN_DIR."/".dirname( plugin_basename( __FILE__ ) ) );
 
 
-
 //Se instancian los scripts
 function filter_enqueuescripts()
 {
@@ -21,8 +20,6 @@ function filter_enqueuescripts()
     wp_localize_script('ajaxFilter', 'filterAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
 add_action('wp_enqueue_scripts', filter_enqueuescripts);
-
-
 //ajax action
 function my_ajax_filter() {
 
@@ -48,7 +45,7 @@ function my_ajax_filter() {
         ?>
     <div class="videos">
         <div class="box_estrellas">
-
+            <?php if(function_exists('the_ratings')) { the_ratings(); } ?>
         </div>
         <div class="box_video">
             <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">
