@@ -64,7 +64,7 @@ function my_ajax_filter() {
             </a>
         </div>
         <span class="nombre_video">
-            <?php echo $alias[0] ?>
+            <?php echo $alias[0]; ?>
         </span>
         <!--span class="titulo_video">
             Reto super ricas
