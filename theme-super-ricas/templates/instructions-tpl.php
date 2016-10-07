@@ -13,13 +13,14 @@
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/compra_logo.png" alt="">
 	            <span><strong>1. PRUEBA</strong></span>
-	            <p>Ten un paquete de cualquier sabor de Super Ricas Super Crokantes a la mano.</p>
+	            <p>Ten un paquete de cualquier sabor de Super Ricas Super Crokantes en la mano.</p>
 	        </div>
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/rec_logo.png" alt="">
 	            <span><strong>2. JUEGA</strong></span>
 	            <p>Grábate comiendo tus papas Super Crokantes al ritmo de la música, intenta caer en el Croonch. Decora tu
-video cómo quieras con los filtros y paisajes. Y listo… ¡Métele toda la actitud!</p>
+video cómo quieras con los filtros y paisajes de Medellín, Bogotá, Caño
+cristales, etc. Y listo… ¡Métele toda la actitud!</p>
 	        </div>
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/ingresa_logo_2.png" alt="">

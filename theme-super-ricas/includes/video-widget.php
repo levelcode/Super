@@ -46,7 +46,6 @@
                   <button id="blur" value="blur">Desenfocar</button>
                   <button id="sharpen" value="sharpen">Enfocar</button>
                   <button id="edges" value="edges">Contornos</button>
-                  <button id="lumos" value="lumos">Niebla</button>
                   <button id="redCyan" value="redCyan">Hypster</button>
                   <button id="redCyan2" value="redCyan2">Hypster 2</button>
                   <button id="dots" value="dots">Ruido TV 2</button>

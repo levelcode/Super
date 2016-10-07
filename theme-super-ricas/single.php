@@ -18,14 +18,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- keywords -->
-    <meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="">
+    <meta name="description" content="Ayúdame a ganar votos para ir a conocer caño Cristales Con Super Ricas Super Crokantes">
+	<meta name="keywords" content="Super, Ricas, super, crokantes">
+    <meta property="fb:app_id"             content="336586346674445" />
 	<meta property="og:url"                content="<?php the_permalink();?>" />
 	<meta property="og:type"               content="article" />
-	<meta property="og:title"              content="<?php echo $name[0] ?> ya hizo el reto supercrokantes! Entra aquí para votar!"/>
-	<meta property="og:description"        content="Ingresa, graba tu video y participa por fantásticos premios." />
+	<meta property="og:title"              content="Vota por mi video del Reto Super Crokante"/>
+	<meta property="og:description"        content="Ayúdame a ganar votos para ir a conocer caño Cristales Con Super Ricas Super Crokantes" />
 	<meta property="og:image"              content="<?php echo bloginfo('template_url');?>/<?php echo $photo[0]; ?>" />
+    <meta property="article:publisher" content="https://www.facebook.com/superricasoficial" />
+    <meta property="article:author" content="https://www.facebook.com/superricasoficial" />
 	<!-- title -->
     <title><?php wp_title('•', true, 'right'); bloginfo('name'); ?></title>
     <?php wp_head(); ?>
@@ -64,12 +66,7 @@
 <div class="widget single">
 	<div class="wrapper_int"><!--colocar clase premios para colocar el otro bg-->
 
-        <?php
-            //post validation
-            //if($post_state[0] == "publicado"){
-            if(1 == 1){
-         ?>
-				<!--content compartir-->
+		<!--box_compartir-->
 	    <div class="box_compartir">
 	        <div class="titulo_compartir">
 	            <p><strong><?php echo $alias[0]; ?></strong>, ya hizo el <strong>Reto Super Crokantes</strong>, anímate a hacer el tuyo y podrás viajar a disfrutar los sonidos de Colombia...</p>
@@ -88,6 +85,9 @@
                 Tu navegador no soporta audio HTML5
               	</audio>
 	        </div>
+            <div class="box_estrellas">
+                <?php if(function_exists('the_ratings')) { the_ratings(); } ?>
+            </div>
 	        <div class="shadow_compartir"></div>
 	        <div class="box_social_compartir">
 	            <a href="javascript:void(0);" class="compartir_facebook_video"></a>
@@ -95,15 +95,6 @@
 	        </div>
 	        
 	    </div><!--box_compartir-->
-
-
-         <?php } else { ?>
-         	<div class="img-poster" style="display: block;">
-         		<img src="<?php bloginfo('template_url')?>/img/no_pub.jpg" alt="">
-         	</div>
-
-        <?php } ?>
-
 	    <?php
 	    	endwhile;
 	    	wp_reset_query();

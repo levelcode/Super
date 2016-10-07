@@ -49,7 +49,8 @@ function my_ajax_filter() {
         </div>
         <div class="box_video">
             <a href="<?php the_permalink();?>" data-attr="<?php echo $videoUrl[0]; ?>">
-                <?php if($post_state[0] == "publicado"){ ?>
+                <?php //if($post_state[0] == "publicado"){ ?>
+                <?php if(true){ ?>
                     <div class="img-poster" style="display: block;">
                         <img width="248" src="<?php echo bloginfo('template_url');?>/<?php echo $photo[0]; ?>" alt="Preview video2">
                     </div>
