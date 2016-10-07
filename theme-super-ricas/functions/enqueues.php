@@ -17,6 +17,9 @@ function bst_enqueues() {
 	wp_register_style('mq-css', get_template_directory_uri() . '/layoutcss/mq.css', false, null);
 	wp_enqueue_style('mq-css');
 
+	wp_register_style('validator-css', get_template_directory_uri() . '/js/validator/validationEngine.jquery.css', false, null);
+	wp_enqueue_style('validator-css');
+
 	/* Scripts */
 
 	//add ajax support
@@ -35,6 +38,12 @@ function bst_enqueues() {
 
 	wp_register_script('fabric-js', get_template_directory_uri() . '/js/fabric.js', false, null, true);
 	wp_enqueue_script('fabric-js');
+
+	wp_register_script('validator-engine', get_template_directory_uri() . '/js/validator/jquery.validationEngine.js', false, null, true);
+	wp_enqueue_script('validator-engine');
+
+	wp_register_script('validator-engine-lang', get_template_directory_uri() . '/js/validator/jquery.validationEngine-es.js', false, null, true);
+	wp_enqueue_script('validator-engine-lang');
 
 	wp_register_script('whamy-js', 'https://cdn.webrtc-experiment.com/RecordRTC/Whammy.js', false, null, true);
 	wp_enqueue_script('whamy-js');

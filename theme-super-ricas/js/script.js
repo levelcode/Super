@@ -559,9 +559,20 @@ function getEvents(){
 	});
 
 	//Ajax form data
+	
 	$('.generar_url').click(function(event) {
-		upload(postPublicado);
-		$(this).parent().addClass('loading');
+		event.preventDefault();
+		console.log("Enviando POST");
+		if ($('#apfform').validationEngine('validate') ) {
+			if (grecaptcha.getResponse() == ""){
+			    alert("Tienes que validar que eres Humano! ®reCaptcha");
+			} else {
+			    upload(postPublicado);
+			}
+		}else{
+			//salen las alertas de 
+		}
+		return false;
 	});
 
 	//Back button
@@ -618,7 +629,7 @@ function getEvents(){
 	$('#options_video').slideUp(0);
 	con("Eventos OK");
 
-	$('.box_social_compartir').click(function() {
+	$('.compartir_facebook_video').click(function() {
     	FB.ui({
 		    method: 'share',
 		    href: window.location.href ,
@@ -634,16 +645,6 @@ function getEvents(){
     });
     $('.enviar_compartir').click(function() {
 
-    	//form validation
-    	var name = $.trim($('#apfform .name').val()),
-    		mail = $.trim($('#apfform .mail').val()),
-    		alias = $.trim($('#apfform .alias').val());
-
-    		if(name === '' || mail === '' || alias === ''){
-    			alert('Ingresa los datos completos');
-    			return false;
-    		}
-
     	FB.ui({
 		    method: 'share',
 		    href: $('.url_generated').val(),
@@ -658,10 +659,6 @@ function getEvents(){
 		});
     });
 
-
-
-
-
 }
 //Publish preview in form
 function postPublicado(progress, response){
@@ -669,6 +666,9 @@ function postPublicado(progress, response){
 		con(String('Error al Publicar '+response));
 	}else{
 		con('Éxito al publicar en Wordpress');
+		$('.enviar_compartir').show();
+		$('.url_generated').show();
+		$('.generar_url').hide();
 		$('.loader_form').hide(200);
 	};
 };

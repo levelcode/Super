@@ -23,7 +23,7 @@
             <p>¡Estás listo! ya hiciste el reto Super Crokante, ahora solo debes compartir la URL a todos tus amigos para que puedas ganar</p>
         </div>
 
-        <form class="formulario" id="apfform" action="" method="post"enctype="multipart/form-data">
+        <form class="formulario" id="apfform" method="post" enctype="multipart/form-data">
             <div class="loader_form">
                 <img src="<?php bloginfo('template_url');?>/img/loading.svg" alt="loader">
                 <p></p>
@@ -31,16 +31,16 @@
             </div><!--loader-->
 
             <div id="apf-response" style="background-color:#E6E6FA"></div>
-            <input type="text" class="name" placeholder="Nombre" name="apftitle" required>
-            <input type="email" class="mail" placeholder="Correo" name="apfmail" required>
-            <input type="text" class="alias" placeholder="Alias">
+            <input type="text" class="name validate[required,minSize[3]]" placeholder="Nombre" name="apftitle" required>
+            <input type="email" class="mail validate[required,custom[email]]" placeholder="Correo" name="apfmail" required>
+            <input type="text" class="alias validate[required,minSize[3]]" placeholder="Alias">
             <input type="hidden" class="content" name="apfcontents">
             <div class="box_captcha">
                 <div class="g-recaptcha" data-sitekey="6LdCVggUAAAAAME42kSwJkp8enkbldoR2emOHkjm"></div>
-            </div>
-            <a href="javascript:void(0);" class="generar_url">GENERAR URL</a>
-            <input type="text" class="url_generated" placeholder="URL GENERADA">
-            <input type="button" class="enviar_compartir" >
+            </div>  
+            <input type="button" class="generar_url" value="Subir">
+            <input type="text" class="url_generated" placeholder="URL GENERADA" style="display:none">
+            <input type="button" class="enviar_compartir" style="display:none">
         </form>
 
         <div class="box_video_formulario">

@@ -1298,12 +1298,12 @@ button.buscar
 }
 .formulario .box_captcha
 {
-  height: 130px;
+  height: 77px;
   width: 95%;
   display: block;
   background: #fff;
-  margin: 0 auto 10px;
-  border: 1px solid red;
+  margin: 1px -16px 10px;
+  transform: scale(0.85);
 }
 .formulario .generar_url
 {
