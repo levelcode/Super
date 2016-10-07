@@ -7,7 +7,7 @@
 <div class="wrapper_int">
 	<div class="box_instrucciones">
 	    <div class="titulo_instrucciones">
-	        <p>Solo debes seguir estos 4 pasos y podrás ganar <strong>increíbles premios</strong></p>
+	        <p>Solo debes seguir estos 4 pasos y podrás ganar <strong>Increíbles premios</strong></p>
 	    </div>
 	    <div class="box_pasos_instrucciones">
 	        <div class="pasos">

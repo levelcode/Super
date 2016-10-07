@@ -3,15 +3,16 @@
         <form action="" class="videos_form" id="filter_video">
             <div class="select-style select_1">
                 <select id="filter">
-                <option value="title">Alias</option>
+                <option value="Alias">Alias</option>
                 <option value="DATE">Fecha</option>
+                <option value="ratings_score">Votos</option>
                 </select>
             </div>
 
             <div class="select-style select_2">
                 <select id="filter2">
-                <option value="ASC">Ascendente</option>
-                <option value="DESC">Descendente</option>
+                <option value="ASC">Descendente</option>
+                <option value="DESC">Ascendente</option>
                 </select>
             </div>
             <button class="buscar"></button>
