@@ -85,10 +85,10 @@
                 Tu navegador no soporta audio HTML5
               	</audio>
 	        </div>
+	        <div class="shadow_compartir"></div>
             <div class="box_estrellas">
                 <?php if(function_exists('the_ratings')) { the_ratings(); } ?>
             </div>
-	        <div class="shadow_compartir"></div>
 	        <div class="box_social_compartir">
 	            <a href="javascript:void(0);" class="compartir_facebook_video"></a>
 	            <a href="<?php echo home_url('/'); ?>" class="inicia_el_reto"></a>

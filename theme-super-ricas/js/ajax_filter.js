@@ -7,10 +7,26 @@ jQuery(document).ready(function($) {
     //Click action
     $('#filter_video .buscar').on("click",function(e){
         e.preventDefault();
-            $('.default-query').remove();
-            //assign vars
-            var par1 = $('#gallery #filter').val(),
-                par2 = $('#gallery #filter2').val();
-            filterPost(par1,par2);
-        });
+        $('.default-query').remove();
+        //assign vars
+        var par1 = $('#gallery #filter').val(),
+            par2 = $('#gallery #filter2').val();
+        filterPost(par1,par2);
+    });
+   $('#gallery #filter').on('change', function(e) {
+      e.preventDefault();
+        $('.default-query').remove();
+        //assign vars
+        var par1 = $('#gallery #filter').val(),
+            par2 = $('#gallery #filter2').val();
+        filterPost(par1,par2);
+    });
+   $('#gallery #filter2').on('change', function(e) {
+      e.preventDefault();
+        $('.default-query').remove();
+        //assign vars
+        var par1 = $('#gallery #filter').val(),
+            par2 = $('#gallery #filter2').val();
+        filterPost(par1,par2);
+    });
 });
