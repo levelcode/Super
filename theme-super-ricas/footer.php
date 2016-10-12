@@ -17,6 +17,10 @@
     <div class="derechos_copy">
         Reservados todos los derechos.
     </div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3ZTSD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <?php wp_footer(); ?>
 </footer>
