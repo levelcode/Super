@@ -37,7 +37,8 @@
             <input type="hidden" class="content" name="apfcontents">
             <div class="box_captcha">
                 <div class="g-recaptcha" data-sitekey="6LdCVggUAAAAAME42kSwJkp8enkbldoR2emOHkjm"></div>
-            </div>  
+            </div> 
+            <input type="checkbox" class="validate[required]" placeholder="Alias"><span class="tyc">Acepto<a href="">Términos y Condiciones</a></span>
             <input type="button" class="generar_url" value="Subir">
             <input type="text" class="url_generated" placeholder="URL GENERADA" style="display:none">
             <input type="button" class="enviar_compartir" style="display:none">
