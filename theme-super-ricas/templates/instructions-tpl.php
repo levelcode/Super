@@ -13,26 +13,23 @@
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/compra_logo.png" alt="">
 	            <span><strong>1. PRUEBA</strong></span>
-	            <p>Ten un paquete de cualquier sabor de Super Ricas Super Crokantes en la mano.</p>
+	            <p>Compra un paquete de cualquier sabor de Super Ricas Super Crokantes.</p>
 	        </div>
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/rec_logo.png" alt="">
 	            <span><strong>2. JUEGA</strong></span>
-	            <p>Grábate comiendo tus papas Super Crokantes al ritmo de la música, intenta caer en el Croonch. Decora tu
-video cómo quieras con los filtros y paisajes de Medellín, Bogotá, Caño
-cristales, etc. Y listo… ¡Métele toda la actitud!</p>
+	            <p>Grábate comiendo tus papas al ritmo de la música y cae en el Croonch. <br> Decora tu video para que sea más original y métele toda la actitud  <a href="#">Ver video instructivo</a>  </p>
 	        </div>
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/ingresa_logo_2.png" alt="">
 	            <span><strong>3. COMPARTE</strong></span>
-	            <p>Escribe tus datos y comparte tu video en Facebook.</p>
+	            <p>Regrístralo y compártelo en Facebook.<br>Pídele a tus amigos que voten por tu video. <br><a href="#">Ver Cómo</a></p>
 	        </div>
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/premios.png" alt="">
 	            <span><strong>4. GANA</strong></span>
-	            <p>Pídele a tus amigos a través de tus redes que voten por tu video en la página web. Si tu video es el más votado
-de la semana ganarás un increíble premio y quedarás seleccionado para participar por un viaje para dos
-personas a Caño Cristales con todo incluido*. <a href="<?php echo site_url(); ?>/premios" class="">Ver Premios</a></p>
+	            <p>Si tu video es el más votado de la semana ganarás unos increíbles audífonos Sony y anchetas de nuestro producto.
+Adicional a esto quedarás seleccionado para participar por el Gran Premio*. <br><a href="<?php echo site_url(); ?>/premios" class="">Ver Premios</a></p>
 	        </div>
 	    </div>
 	</div><!--box_instrucciones-->

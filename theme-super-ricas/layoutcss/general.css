@@ -819,10 +819,10 @@ button.buscar
 }
 
 /*premios*/
-.titulos-premios h1{width: 100%;text-align: center;font-size: 34px;line-height: 22px;font-family: 'prelow01-mediumregular';margin-top: 30px;font-weight: bold;}
+.titulos-premios h1{width: 100%;text-align: center;font-size: 34px;line-height: 22px;font-family: 'prelow01-mediumregular';margin-top: 0px;font-weight: bold;}
 .titulos-premios h2{
   width: 80%;
-  margin: 10%;
+  margin: 30px 10%;
   text-align: center;
   font-size: 23px;
   line-height: 22px;
@@ -840,6 +840,7 @@ button.buscar
 .titulo_premios1 img, .titulo_premios2 img {
   width: 100%;
   height: auto;
+  max-width: 320px;
 }
 
 .titulo_premios1 .texto, .titulo_premios2 .texto {
@@ -1101,7 +1102,7 @@ button.buscar
   max-width: 1024px;
   width: 100%;
   height: auto;
-  margin: 50px auto 0;
+  margin: 0px auto 0;
 }
 .wrapper_int .box_premios .titulo_premios
 {
