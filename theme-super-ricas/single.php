@@ -24,7 +24,7 @@
 	<meta property="og:url"                content="<?php the_permalink();?>" />
 	<meta property="og:type"               content="article" />
 	<meta property="og:title"              content="Vota por mi video del Reto Super Crokante"/>
-	<meta property="og:description"        content="Ayúdame a ganar votos para ir a conocer caño Cristales Con Super Ricas Super Crokantes" />
+	<meta property="og:description"        content="Ayúdame a ganar Votos en este link para ganar increibles premios con SuperCrokantes" />
 	<meta property="og:image"              content="<?php echo bloginfo('template_url');?>/<?php echo $photo[0]; ?>" />
     <meta property="article:publisher" content="https://www.facebook.com/superricasoficial" />
     <meta property="article:author" content="https://www.facebook.com/superricasoficial" />

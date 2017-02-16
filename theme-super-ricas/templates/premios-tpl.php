@@ -7,8 +7,10 @@
 <div class="wrapper_int premios">
 	<div class="box_premios">
         <div class="titulos-premios">
-            <h2>Si tu vídeo es uno de los más votados en una de las semanas del Reto Super Crokantes, podrás participar para ganar y escoger el premio que más te guste.</h2>
-            <h1>GRANDES PREMIOS</h1>
+        <h1>Vive experiencias únicas con Super Ricas - Super crokantes</h1>
+        
+        <h2>Si tu video es el más votado de los 10 finalistas del Reto Super Crokantes, serás el ganador de uno de estos grandes premios:</h2>
+            
         </div>
         
         <div class="titulo_premios1">
@@ -31,7 +33,6 @@
                 <h3>El premio incluye:</h3>
                 <ul>
                     <li>Preparación  en la cabina del avión o en simulador.</li>
-                    <li>Preparación  en la cabina del avión o en simulador.</li>
                     <li>Vuelo en monomotor junto a Piloto Experto.</li>
                     <li>Transporte ida y vuelta de la ciudad de destino al lugar de la actividad.</li>
                     <li>Refrigerio.</li>
@@ -40,7 +41,7 @@
             </div>
         </div>
         <div class="titulo_premios_2">
-            <p>Todas las semanas premiaremos el vídeo más votado con Audífonos Plegables e increíbles Anchetas de <span> <strong>nuestros productos.</strong></span></p>
+            <p>Los 9 finalistas restantes automáticamente serán ganadores de audífonos <strong>Sony</strong> y anchetas de <span> <strong>nuestros productos.</strong></span></p>
         </div>
         <a href="javascript:void(0);" class="inicia_el_reto"></a>
         <a href="javascript:void(0);" class="terminos_condiciones_premios">

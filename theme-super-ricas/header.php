@@ -21,7 +21,12 @@
     <!-- End Google Tag Manager -->
 </head>
 <body <?php body_class(); ?>>
-
+    <div class="modal">
+        <div class="cerrar-modal">X</div>
+      <div class="video">
+        
+      </div>
+    </div>
     <div class="loader" style="width: 100%;height: 100%;background-color: rgb(190, 4, 17); z-index: 10000;display:block">
         <div class="loader_center"></div>
     </div>
@@ -34,7 +39,7 @@
             <li><a href="<?php echo home_url('/'); ?>">INICIO</a></li>
             <li><a href="/instrucciones">INSTRUCCIONES</a></li>
             <li><a href="/premios">PREMIOS</a></li>
-            <li><a href="<?php echo home_url('/'); ?>#gallery">GALERIAS</a></li>
+            <li><a href="<?php echo home_url('/'); ?>#gallery">RANKING</a></li>
         </ul>   
     </div>
 
@@ -46,7 +51,7 @@
                 <li><a href="<?php echo home_url('/'); ?>">
                 <img src="<?php bloginfo('template_url')?>/img/logo.png" alt=""></a></li>
                 <li><a href="/premios">PREMIOS</a></li>
-                <li><a href="<?php echo home_url('/'); ?>#gallery">GALERIAS</a></li>
+                <li><a href="<?php echo home_url('/'); ?>#gallery">RANKING</a></li>
             </ul>
         </nav>
     </header>

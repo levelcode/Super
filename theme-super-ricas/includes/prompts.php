@@ -37,8 +37,18 @@
             <input type="hidden" class="content" name="apfcontents">
             <div class="box_captcha">
                 <div class="g-recaptcha" data-sitekey="6LdCVggUAAAAAME42kSwJkp8enkbldoR2emOHkjm"></div>
-            </div> 
-            <input type="checkbox" class="validate[required]" placeholder="Alias"><span class="tyc">Acepto<a href="">Términos y Condiciones</a></span>
+            </div>
+            <span class="autorizacion" style="color:gray">Autorizo de manera voluntaria, previa, explícita, informada e inequívoca, que mis datos personales sean
+recolectados y tratados de conformidad con la Política de Tratamiento de la Información de COMESTIBLES
+RICOS S.A. <br>
+La autorización suministrada en el presente formulario faculta a COMESTIBLES RICOS S.A para que dé a sus
+datos aquí recopilados el tratamiento señalado en las Políticas, incluyendo entre otros, el envío de
+comunicaciones, correspondencia, correos electrónicos o contacto telefónico. El titular de los datos podrá, en
+cualquier momento, solicitar que la información sea modificada, actualizada o suprimida de las bases de datos
+de COMESTIBLES RICOS S.A. al correo electrónico habeasdata@superricas.com.<br><br></span>
+            <input class="validate[required] checkbox" type="checkbox" id="agree" name="agree"/>
+            <span class="tyc">Acepto <a href="">Términos y Condiciones</a>
+            </span>
             <input type="button" class="generar_url" value="Subir">
             <input type="text" class="url_generated" placeholder="URL GENERADA" style="display:none">
             <input type="button" class="enviar_compartir" style="display:none">
