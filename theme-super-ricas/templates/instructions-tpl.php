@@ -23,12 +23,13 @@
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/ingresa_logo_2.png" alt="">
 	            <span><strong>3. COMPARTE</strong></span>
-	            <p>Regístralo y pídele a tus amigos que te ayuden votando por tu video en <a href="https://supercrokantes.com">www.supercrokantes.com</a>, en la sección del Ranking.<br><a href="#">Ver cómo</a></p>
+	            <p>Regístralo y pídele a tus amigos que te ayuden votando por tu video en 
+	            <a href="https://supercrokantes.com/#gallery">www.supercrokantes.com</a>, en la sección del Ranking.<br><a href="https://supercrokantes.com/#gallery">Ver cómo</a></p>
 	        </div>
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/premios.png" alt="">
 	            <span><strong>4. GANA</strong></span>
-	            <p>El 15 de marzo de 2017 escogeremos los 10 videos más votados.
+	            <p><b>El lunes 10 de Abril de 2017</b> escogeremos los 10 videos más votados.
 	            <br>Si tu video es el más votado de todo el concurso ,serás el ganador de uno de los grandes premios…
 	            <br>Los 9 finalistas restantes, automáticamente ganarán audífonos Sony y anchetas de nuestros productos.<br><a href="<?php echo site_url(); ?>/premios" class="">Ver premios</a></p>
 	        </div>

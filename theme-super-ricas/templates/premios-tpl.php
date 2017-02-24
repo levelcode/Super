@@ -43,8 +43,8 @@
         <div class="titulo_premios_2">
             <p>Los 9 finalistas restantes automáticamente serán ganadores de audífonos <strong>Sony</strong> y anchetas de <span> <strong>nuestros productos.</strong></span></p>
         </div>
-        <a href="javascript:void(0);" class="inicia_el_reto"></a>
-        <a href="javascript:void(0);" class="terminos_condiciones_premios">
+        <a href="<?php echo site_url(); ?>/premios" class="inicia_el_reto"></a>
+        <a href="<?php echo site_url(); ?>/terminos.pdf" class="terminos_condiciones_premios">
             *Términos y condiciones
         </a>
     </div><!--box_compartir-->

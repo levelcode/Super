@@ -1,6 +1,14 @@
 <div class="content_widget">
   <center class="wrapper">
       <div class="wrapper_container">
+      <h1 class="no-support" style="
+    position: absolute;
+    left: calc(50% - 313px);
+    top: calc(50% - 110px);
+    font-size: 30px;
+    color: black;
+    line-height: 60px;
+           ">Ups, tu navegador no soporta grabación HTML5! <br> <b>Prueba desde Chrome o Firefox!</b></h1>
           <div class="booth">
               <canvas id="canvas" width="720" height="405" poster="<?php bloginfo('template_url')?>/ing/poster.png"></canvas>
               <video id="super_video" height="720" width="60" webkit-playsinline playsinline>

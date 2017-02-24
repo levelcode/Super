@@ -82,8 +82,6 @@ function isFacebookApp() {
 var mobile = jQuery.browser.mobile;
 //Detect if comes from iOS
 var ios =  iOS();
-//Detect if comes from firefox
-var firefox =  false;
 //Detect if comes from facebook
 var fb_valid = isFacebookRef();
 //Detect if comes from FB inappbrowser
@@ -116,16 +114,11 @@ var fb_inapp = isFacebookApp();
 	}
 
 	if( getBrowserName() == "Safari" ){
-	    console_dev("Estas usando Safari");
+	    console_dev("You are using Safari");
 	    $('#controls').hide();
 	    $('#objetos').hide();
 	    $('#super_video').hide();
-	} else if( getBrowserName() == "Firefox" ){
-		console_dev("Estas usando Firefox");
-		$('.no-support').hide();
-		firefox = true;
-
-	} else {
+	}else{
 		$('.no-support').hide();
 		
 	    console_dev("Navegando desde " + getBrowserName(name));
@@ -506,12 +499,9 @@ function colorStuff(number) {
 	ctx2.putImageData(pixelData, 0, 0);
 }
 function getRecorder(){
-	recorder = new RecordRTC(document.getElementById('canvas'), {
-	    type: 'canvas'
+	recorder = new CanvasRecorder(document.getElementById('canvas'), {
+	    disableLogs: false
 	});
-	//recorder = new CanvasRecorder(, {
-	    //disableLogs: false
-	//});
 	con("Grabadora OK");
 }
 function errorMessage(message, e) {
@@ -521,68 +511,31 @@ function errorMessage(message, e) {
 
 function getCamera() {
 	if (location.protocol === 'https:') {
-		if(firefox == true){
-			/*
-			navigator.mediaDevices.getUserMedia({ video: true })
-			.then(function(stream) {
-			  // Older browsers may not have srcObject
-			  if ("srcObject" in v) {
-			    v.src = stream;
-			  } else {
-			    // Avoid using this in new browsers, as it is going away.
-			    v.src = window.URL.createObjectURL(stream);
-			  }
-			  v.onloadedmetadata = function(e) {
-			    v.play();
-			  };
-			})
-			.catch(function(err) {
-			  console.log(err.name + ": " + err.message);
-			});
-			*/
-
-
-
-			var constraints = { video: { width: 1280, height: 720 } }; 
-
-			navigator.mediaDevices.getUserMedia(constraints)
-			.then(function(mediaStream) {
-			  //var video = document.querySelector('v');
-			  v.srcObject = mediaStream;
-			  v.onloadedmetadata = function(e) {
-			    v.play();
-			  };
-			})
-			.catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
-
-
-		}else{
-			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mediaDevices.getUserMedia || navigator.msGetUserMedia;
-			if (navigator.getUserMedia) {
-				window.URL = window.URL || window.webkitURL;
-				navigator.getUserMedia({video: true}, function(localMediaStream) {
-					v.src = window.URL.createObjectURL(localMediaStream);
-				}, function (e) {
-		            var message;
-		            switch (e.name) {
-		                case 'NotFoundError':
-		                case 'DevicesNotFoundError':
-		                    message = 'Porfavor configure su webcam primero';
-		                    break;
-		                case 'SourceUnavailableError':
-		                    message = 'La cámara esta en estado ocupado';
-		                    break;
-		                case 'PermissionDeniedError':
-		                case 'SecurityError':
-		                    message = 'Permisos Negados';
-		                    break;
-		                default: errorMessage('Reeeejected!', e);
-		                    return;
-		            }
-		            errorMessage(message);
-		        });
-			} else errorMessage('Navegador Incompatible');
-		}
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+		if (navigator.getUserMedia) {
+			window.URL = window.URL || window.webkitURL;
+			navigator.getUserMedia({video: true}, function(localMediaStream) {
+				v.src = window.URL.createObjectURL(localMediaStream);
+			}, function (e) {
+	            var message;
+	            switch (e.name) {
+	                case 'NotFoundError':
+	                case 'DevicesNotFoundError':
+	                    message = 'Porfavor configure su webcam primero';
+	                    break;
+	                case 'SourceUnavailableError':
+	                    message = 'La cámara esta en estado ocupado';
+	                    break;
+	                case 'PermissionDeniedError':
+	                case 'SecurityError':
+	                    message = 'Permisos Negados';
+	                    break;
+	                default: errorMessage('Reeeejected!', e);
+	                    return;
+	            }
+	            errorMessage(message);
+	        });
+		} else errorMessage('Navegador Incompatible');
 	} else errorMessage('Use https:// para ver este sitio')
 	con("Camara OK");
 }
@@ -795,7 +748,7 @@ function start_fn(){
 	$('.parar').show();
 	c.discardActiveObject();
 	c.renderAll();
-	recorder.startRecording();
+	recorder.record();
 }
 //Stop Recording
 function detener_fn(valid_end){
@@ -807,11 +760,11 @@ function detener_fn(valid_end){
 	$(this).hide();
 	$(this).parent().addClass('loading');
 	//temporal video
-	recorder.stopRecording(function() {
+	recorder.stop(function(blob) {
 		if(valid_end ==true)
 		{
 			//Blob a glogal
-			blob_video = recorder.getBlob();
+			blob_video = blob;
 			//Video en URL
 		    url_video = URL.createObjectURL(blob_video);
 		    //Elemento del video en el append
