@@ -24,7 +24,7 @@
 	<meta property="og:url"                content="<?php the_permalink();?>" />
 	<meta property="og:type"               content="article" />
 	<meta property="og:title"              content="Vota por mi video del Reto Super Crokante"/>
-	<meta property="og:description"        content="Ayúdame a ganar Votos en este link para ganar increibles premios con SuperCrokantes" />
+	<meta property="og:description"        content="Ayúdame a ganar votos para ir a conocer caño Cristales Con Super Ricas Super Crokantes" />
 	<meta property="og:image"              content="<?php echo bloginfo('template_url');?>/<?php echo $photo[0]; ?>" />
     <meta property="article:publisher" content="https://www.facebook.com/superricasoficial" />
     <meta property="article:author" content="https://www.facebook.com/superricasoficial" />
@@ -86,6 +86,12 @@
               	</audio>
 	        </div>
 	        <div class="shadow_compartir"></div>
+
+            <div class="box_captcha">
+                <span class="warn-captcha">Para votar primero debes hacer click en el captcha.</span>
+                <div class="g-recaptcha" data-sitekey="6LdCVggUAAAAAME42kSwJkp8enkbldoR2emOHkjm" data-callback='onVote'></div>
+            </div>
+            
             <div class="box_estrellas">
                 <?php if(function_exists('the_ratings')) { the_ratings(); } ?>
             </div>
@@ -100,9 +106,17 @@
 	    	wp_reset_query();
 	    	}
 	    ?>
-	    <script>
-        	var init_single = true;
-        </script>
     </div>
 </div>
 <?php get_footer();?>
+
+<script>
+    var init_single = true;
+    function onVote(){
+        $('.single .box_estrellas').show(300);
+
+        $('.single .box_estrellas').on('click', function(event) {
+            return true;
+        });
+    }
+</script>

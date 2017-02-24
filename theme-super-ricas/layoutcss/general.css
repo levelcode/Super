@@ -657,7 +657,6 @@ footer .terminos_y_condiciones a.logo_footer img
 .widget .content_videos .box_content_videos .box_estrellas img
 {
   float: left;
-  background-color: #ff3e3e;
   border-radius: 10px;
 }
 .widget .content_videos .box_content_videos .box_estrellas .estrella
@@ -1021,6 +1020,24 @@ button.buscar
   display: block;
   background: url(../assets/shadow.png) no-repeat center;
 }
+
+.single .box_captcha
+{
+  text-align: center;
+  margin-bottom: 4em;
+}
+
+.single .box_captcha .warn-captcha{
+  display:block;
+  width: 100%;
+  font-size: 2em;
+  margin: 1em auto 2em;
+}
+
+.single .box_captcha .g-recaptcha{
+  display: inline-block;
+}
+
 /* instrucciones */
 .wrapper_int .box_instrucciones
 {

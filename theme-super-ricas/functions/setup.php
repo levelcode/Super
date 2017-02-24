@@ -1,6 +1,5 @@
 <?php
 
-
 function bst_setup() {
 	add_editor_style('css/editor-style.css');
 	add_theme_support('post-thumbnails');
@@ -10,11 +9,16 @@ function bst_setup() {
 }
 add_action('init', 'bst_setup');
 
-//Add excerpt 
+//Add excerpt
 add_action( 'init', 'my_add_excerpts_to_pages' );
 function my_add_excerpts_to_pages() {
      add_post_type_support( 'page', 'excerpt' );
 }
+
+function custom_rating_image_extension() {
+    return 'png';
+}
+add_filter( 'wp_postratings_image_extension', 'custom_rating_image_extension' );
 
 if (! isset($content_width))
 	$content_width = 600;
@@ -28,7 +32,7 @@ add_filter('excerpt_more', 'bst_excerpt_readmore');
 
 function bst_browser_body_class( $classes ) {
 	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
-	
+
 	if($is_lynx) $classes[] = 'lynx';
 	elseif($is_gecko) $classes[] = 'gecko';
 	elseif($is_opera) $classes[] = 'opera';
@@ -55,9 +59,9 @@ function bst_browser_body_class( $classes ) {
 	        }
 	}
 	else $classes[] = 'unknown';
- 
+
 	if( $is_iphone ) $classes[] = 'iphone';
- 
+
 	return $classes;
 }
 add_filter( 'body_class', 'bst_browser_body_class' );

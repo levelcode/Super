@@ -589,6 +589,10 @@ function getCamera() {
 
 function getEvents(){
 
+	$('.element_voto > img').remove();
+
+	$('.element_voto').prepend('<img src="https://supercrokantes.com/wp-content/plugins/wp-postratings/images/heart/rating_1_on.png">');
+
 	//Gonzo script
      $('a.menu').click(function() {
         if($(this).hasClass('active')){
