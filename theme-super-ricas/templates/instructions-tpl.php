@@ -18,7 +18,7 @@
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/rec_logo.png" alt="">
 	            <span><strong>2. JUEGA</strong></span>
-	            <p>Grábate comiendo tus papas al ritmo de la música y cae en el Croonch. <br> Decora tu video para que sea más original y métele toda la actitud.<br> <a href="#">Ver video instructivo.</a>  </p>
+	            <p>Grábate comiendo tus papas al ritmo de la música y cae en el Croonch. <br> Decora tu video para que sea más original y métele toda la actitud.<br> <a class="ver_instructivo" href="#">Ver video instructivo.</a> </p>
 	        </div>
 	        <div class="pasos">
 	            <img src="<?php bloginfo('template_url')?>/assets/ingresa_logo_2.png" alt="">

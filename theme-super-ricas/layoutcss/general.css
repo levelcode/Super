@@ -176,7 +176,6 @@ video.videos_galeria
   position: absolute;
   width: 720px;
   height: 60px;
-  margin-left: -360px;
 }
 #video_prev{
   width: 660px;
@@ -1641,4 +1640,13 @@ display:block;
   top: 11%;
   background-color: orange;
   cursor: pointer;
+}
+.no-support{
+      position: absolute;
+      left: calc(50% - 313px);
+      top: calc(50% - 180px);
+      font-size: 30px;
+      color: black;
+      line-height: 60px;
+      width: 640px;
 }

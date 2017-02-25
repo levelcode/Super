@@ -108,8 +108,6 @@
 	    ?>
     </div>
 </div>
-<?php get_footer();?>
-
 <script>
     var init_single = true;
     function onVote(){
@@ -120,3 +118,5 @@
         });
     }
 </script>
+<?php get_footer();?>
+

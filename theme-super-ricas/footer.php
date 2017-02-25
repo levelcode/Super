@@ -15,7 +15,7 @@
         </a>
     </div>
     <div class="derechos_copy">
-        Reservados todos los derechos.
+        Reservados todos los derechos. <a href="https://supercrokantes.com/terminos.pdf" target="_blank">Términos y Condiciones</a>
     </div>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3ZTSD"

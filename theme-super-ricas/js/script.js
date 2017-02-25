@@ -88,6 +88,12 @@ var firefox =  false;
 var fb_valid = isFacebookRef();
 //Detect if comes from FB inappbrowser
 var fb_inapp = isFacebookApp();
+//URL imagen destacada
+var video_image = "";
+//Nombre imagen destacada
+var video_name = "";
+//Aleatorio
+var tName = "";
 
 //******************************
 //*** Validadores de Browser ***
@@ -122,11 +128,21 @@ var fb_inapp = isFacebookApp();
 	    $('#super_video').hide();
 	} else if( getBrowserName() == "Firefox" ){
 		console_dev("Estas usando Firefox");
-		$('.no-support').hide();
+
+		//ocultamos al iniciar
+		$('#controls').hide();
+	    $('#objetos').hide();
+	    $('#super_video').hide();
+	    $('.no-support').html('¡Da clic en el bóton de <b>"Permitir Cámara"</b> en la parte superior izquierda para poder grabar tu video!');
 		firefox = true;
 
 	} else {
-		$('.no-support').hide();
+		
+		//ocultamos al iniciar
+		$('#controls').hide();
+	    $('#objetos').hide();
+	    $('#super_video').hide();
+	    $('.no-support').html('¡Da clic en el bóton de <b>"Permitir Cámara"</b> en la parte superior izquierda para poder grabar tu video!');
 		
 	    console_dev("Navegando desde " + getBrowserName(name));
 	}
@@ -214,6 +230,16 @@ function vidLoaded() {
 	v.height = vHeight;
 
 	createCanvas();
+	acepto_cam();
+	con("Acepto video");
+
+}
+function acepto_cam(){
+	//ocultamos al iniciar
+	$('.no-support').hide();
+	$('#controls').show();
+	$('#objetos').show();
+	$('#super_video').show();
 }
 
 function createCanvas() {
@@ -516,7 +542,8 @@ function getRecorder(){
 }
 function errorMessage(message, e) {
     console.error(message, typeof e == 'undefined' ? '' : e);
-    //alert(message);
+    alert(message);
+    $('.no-support').html(message);
 }
 
 function getCamera() {
@@ -567,16 +594,18 @@ function getCamera() {
 		            switch (e.name) {
 		                case 'NotFoundError':
 		                case 'DevicesNotFoundError':
-		                    message = 'Porfavor configure su webcam primero';
+		                    message = 'Tu equipo no cuenta con webcam!';
 		                    break;
 		                case 'SourceUnavailableError':
 		                    message = 'La cámara esta en estado ocupado';
 		                    break;
 		                case 'PermissionDeniedError':
-		                case 'SecurityError':
-		                    message = 'Permisos Negados';
+		                	message = 'Denegaste los permisos de acceso a la cámara web, da click en el candado verde en la esquina superior izquierda de la barra de direcciones, haz clic en "Cámara" y luego "Permitir siempre", luego recargas y ¡ Listo !';
 		                    break;
-		                default: errorMessage('Reeeejected!', e);
+		                case 'SecurityError':
+							message = 'Denegaste los permisos de acceso a la cámara web, da click en el candado verde en la esquina superior izquierda de la barra de direcciones, haz clic en "Cámara" y luego "Permitir siempre", luego recargas y ¡ Listo !';		                    
+							break;
+		                default: errorMessage('Un error ha sucedido:'+ String(e.name), e);
 		                    return;
 		            }
 		            errorMessage(message);
@@ -764,18 +793,18 @@ function upload(callback){
 	    switch(progress) {
 		    case "fin":
 		        con("Video subido con éxito:" + response);
-		       	var tName = Math.floor((Math.random() * 1000000) + 1);
-		       	create(c, tName, callback_foto);
-		       	function callback_foto(url, nombre){
-		       		var title = nombre,
-		       		name = $('.formulario .name').val(),
-		       		photo = url,
-					contents = response,
-					mail = $('.formulario .mail').val(),
-					alias = $('.formulario .alias').val();
-					//Subida de post a WordPress !!! AGREGARLE LOS CAMPOS: photo y name.
-					apfaddpost(title,contents,mail,alias,name,photo,callback);
-		       	}
+		       	//video_image = url;
+				//video_name = nombre;
+		       	con("Creando publicación "+video_name);
+	       		var title = video_name,
+	       		name = $('.formulario .name').val(),
+	       		photo = video_image,
+				contents = response,
+				mail = $('.formulario .mail').val(),
+				alias = $('.formulario .alias').val();
+				//Subida de post a WordPress !!! AGREGARLE LOS CAMPOS: photo y name.
+				apfaddpost(title,contents,mail,alias,name,photo,callback);
+		       	
 		        break;
 		    case "progreso":
 		    	$('.loader_form').show(200);
@@ -801,10 +830,19 @@ function start_fn(){
 	c.renderAll();
 	recorder.startRecording();
 }
+function caption(){
+	tName = Math.floor((Math.random() * 1000000) + 1);
+	create(c, tName, callback_caption);
+	function callback_caption(url, nombre){
+		video_image = url;
+		video_name = nombre;
+	}
+}
 //Stop Recording
 function detener_fn(valid_end){
 	stopVideo();
 	cronoStop();
+	
 
 	$('.grabar').show();
 	$('.parar').hide();
@@ -814,6 +852,7 @@ function detener_fn(valid_end){
 	recorder.stopRecording(function() {
 		if(valid_end ==true)
 		{
+			caption();
 			//Blob a glogal
 			blob_video = recorder.getBlob();
 			//Video en URL
@@ -897,7 +936,6 @@ function stopVideo(){
 var crono;
 function cronoStart(){
 	var tiempo = 0;
-	var duracion = 20;
 	crono = setInterval(function(){
 		tiempo = $("#super_video").prop("currentTime");
 		var tiempo_v = 29 - Math.floor(tiempo);

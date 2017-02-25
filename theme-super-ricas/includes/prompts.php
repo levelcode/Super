@@ -46,8 +46,10 @@ datos aquí recopilados el tratamiento señalado en las Políticas, incluyendo e
 comunicaciones, correspondencia, correos electrónicos o contacto telefónico. El titular de los datos podrá, en
 cualquier momento, solicitar que la información sea modificada, actualizada o suprimida de las bases de datos
 de COMESTIBLES RICOS S.A. al correo electrónico habeasdata@superricas.com.<br><br></span>
-            <input class="validate[required] checkbox" type="checkbox" id="agree" name="agree"/>
-            <span class="tyc">Acepto <a href="">Términos y Condiciones</a>
+            <input class="validate[required] checkbox" type="checkbox" id="agree1" name="agree1"/>
+            <span class="tyc">Acepto</span>
+            <input class="validate[required] checkbox" type="checkbox" id="agree2" name="agree2"/>
+            <span class="tyc">Acepto <a href="https://supercrokantes.com/terminos.pdf" target="_blank">Términos y Condiciones</a>
             </span>
             <input type="button" class="generar_url" value="Subir">
             <input type="text" class="url_generated" placeholder="URL GENERADA" style="display:none">
