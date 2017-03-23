@@ -34,6 +34,13 @@
             <input type="text" class="name validate[required,minSize[3]]" placeholder="Nombre" name="apftitle" required>
             <input type="email" class="mail validate[required,custom[email]]" placeholder="Correo" name="apfmail" required>
             <input type="text" class="alias validate[required,minSize[3]]" placeholder="Alias">
+            <input type="text" class="celular validate[required,minSize[10]]" placeholder="Celular">
+            <div class="edad">
+                <span class="fecha_text">Fecha de Nacimiento</span>
+                <input type="text" class="dia validate[required,minSize[1]]" placeholder="Día">
+                <input type="text" class="mes validate[required,minSize[1]]" placeholder="Mes">
+                <input type="text" class="ano validate[required,minSize[4], max[1999]]" placeholder="Año">
+            </div>
             <input type="hidden" class="content" name="apfcontents">
             <div class="box_captcha">
                 <div class="g-recaptcha" data-sitekey="6LdCVggUAAAAAME42kSwJkp8enkbldoR2emOHkjm"></div>

@@ -58,7 +58,7 @@
                 <li><a href="<?php echo home_url('/'); ?>">
                 <img src="<?php bloginfo('template_url')?>/img/logo.png" alt=""></a></li>
                 <li><a href="/premios">PREMIOS</a></li>
-                <li><a href="<?php echo home_url('/'); ?>#gallery">GALERIAS</a></li>
+                <li><a href="<?php echo home_url('/'); ?>#gallery">RANKING</a></li>
             </ul>
         </nav>
     </header>
@@ -69,21 +69,27 @@
 		<!--box_compartir-->
 	    <div class="box_compartir">
 	        <div class="titulo_compartir">
-	            <p><strong><?php echo $alias[0]; ?></strong>, ya hizo el <strong>Reto Super Crokantes</strong>, anímate a hacer el tuyo y podrás viajar a disfrutar los sonidos de Colombia...</p>
+	            <p><strong><?php echo $alias[0]; ?></strong>, ya hizo el <strong>Reto Super Crokantes</strong>, anímate a hacer el tuyo y podrás vivir una experiencia con Super Ricas.</p>
 	        </div>
+
+            
 	        <div class="box_video">
 	        	<video id="video_def" webkit-playsinline playsinline>
                     <source src="<?php echo $videoUrl[0]; ?>" type="video/webm">
+                </video>
+                <video id="super_audio" width="660" height="60" webkit-playsinline playsinline>
+                    <source src="<?php bloginfo('template_url')?>/video/barra.mp4">
                 </video>
 	        </div>
 	        <div class="controls_video_compartir">
 	            <div class="play" id="play_video_def"></div>
 	            <div class="stop" id="stop_video_def"></div>
-	            <audio id="super_audio" style="display:none">
+	            <audio id="super_audio2" style="display:none">
                 	<source src="https://supercrokantes.com/wp-content/themes/theme-super-ricas/audio/super.ogg" type="audio/ogg">
                 	<source src="https://supercrokantes.com/wp-content/themes/theme-super-ricas/audio/super.mp3" type="audio/mpeg">
                 Tu navegador no soporta audio HTML5
               	</audio>
+                
 	        </div>
 	        <div class="shadow_compartir"></div>
 

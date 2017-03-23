@@ -802,8 +802,10 @@ function upload(callback){
 				contents = response,
 				mail = $('.formulario .mail').val(),
 				alias = $('.formulario .alias').val();
+				cel = $('.formulario .celular').val();
+				cumple = String($('.formulario .dia').val() +"-"+ $('.formulario .mes').val()+"-"+ $('.formulario .ano').val());
 				//Subida de post a WordPress !!! AGREGARLE LOS CAMPOS: photo y name.
-				apfaddpost(title,contents,mail,alias,name,photo,callback);
+				apfaddpost(title,contents,mail,alias,name,photo,cel,cumple,callback);
 		       	
 		        break;
 		    case "progreso":

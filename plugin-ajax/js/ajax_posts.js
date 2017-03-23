@@ -1,5 +1,5 @@
 //funcion ajax para añadir`posts
-function apfaddpost(posttitle,postcontent,postmail,postalias,postname,postphoto,callback) {
+function apfaddpost(posttitle,postcontent,postmail,postalias,postname,postphoto,postcel,postcumple,callback) {
     jQuery.ajax({
         type: 'POST',
         url: apfajax.ajaxurl,
@@ -11,6 +11,8 @@ function apfaddpost(posttitle,postcontent,postmail,postalias,postname,postphoto,
             apfalias: postalias,
             apfname: postname,
             apfphoto: postphoto,
+            apfcel: postcel,
+            apfcumple: postcumple,
             apfvideo: postcontent
 
         },

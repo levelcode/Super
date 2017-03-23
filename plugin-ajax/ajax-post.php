@@ -102,6 +102,8 @@ function apf_addpost() {
     $alias =  $_POST['apfalias'];
     $photo =  $_POST['apfphoto'];
     $name =  $_POST['apfname'];
+    $cumple =  $_POST['apfcumple'];
+    $cel =  $_POST['apfcel'];
     $content = $_POST['apfcontents'];
     $error = "";
 
@@ -123,6 +125,8 @@ function apf_addpost() {
         update_post_meta($post_id,'url_video',$video);
         update_post_meta($post_id,'name',$name);
         update_post_meta($post_id,'photo',$photo);
+        update_post_meta($post_id,'cumple',$cumple);
+        update_post_meta($post_id,'cel',$cel);
         //get permalink
 
         $link_post = get_permalink($post_id);

@@ -692,6 +692,9 @@ footer .terminos_y_condiciones a.logo_footer img
   color: #fff;
   display: block;
   float: left;
+  overflow: hidden;
+  height: 30px;
+  line-height: 18px;
 }
 .widget .content_videos .box_content_videos .titulo_video
 {
@@ -1643,10 +1646,22 @@ display:block;
 }
 .no-support{
       position: absolute;
-      left: calc(50% - 313px);
-      top: calc(50% - 180px);
-      font-size: 30px;
-      color: black;
-      line-height: 60px;
-      width: 640px;
+    left: calc(50% - 313px);
+    top: calc(50% - 110px);
+    font-size: 30px;
+    color: black;
+    line-height: 60px;
+    width: 640px;
+}
+.fecha_text{
+  color: #464646;
+  margin-left: 7px;
+  font-size: 14px;
+  padding-bottom: 10px;
+  display: block;
+}
+.edad input{
+  width: 51px;
+  height: 50px;
+  display: inline-block;
 }
